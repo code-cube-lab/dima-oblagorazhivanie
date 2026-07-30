@@ -89,7 +89,7 @@ try {
   });
 
   const navigation = await page.goto(url, { waitUntil: "networkidle", timeout: 120_000 });
-  await page.locator(".model-status").getByText(/Точная GLB-модель v15 загружена/).waitFor({
+  await page.locator(".model-status").getByText(/GLB-модель v16 загружена/).waitFor({
     timeout: 120_000,
   });
   const bodyText = await page.locator("body").innerText();
@@ -132,7 +132,20 @@ try {
     title: (await page.title()) === "Дима · Дом и участок — интерактивный проект",
     exactOrientation: bodyText.includes("гараж слева, витраж справа"),
     roomsAndBath: bodyText.includes("Комнаты и мебель") && bodyText.includes("Баня 3×7 м"),
-    plantingAndBudget: bodyText.includes("55") && bodyText.includes("21–38 млн"),
+    balconyGeometry:
+      bodyText.includes("7,50 м") &&
+      bodyText.includes("1,80 м") &&
+      bodyText.includes("два выхода"),
+    interiorRenovation:
+      bodyText.includes("Кухня-гостиная") &&
+      bodyText.includes("Детская Дарины") &&
+      bodyText.includes("Детская Ярика"),
+    lightingAndBudget:
+      bodyText.includes("L01–L17") &&
+      bodyText.includes("27,61–50,85 млн"),
+    procurementAndAvitoStatus:
+      bodyText.includes("Подрядчики, мебель и техника") &&
+      bodyText.includes("Авито"),
     glbLoaded: glbResponses.some((response) => response.status === 200),
     threeDimensionalViewer: canvasCount > 0,
     layerControlsWork: await roomLayer.isChecked(),

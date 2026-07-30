@@ -173,7 +173,7 @@ const ProjectViewer = forwardRef<
     };
 
     loader.load(
-      publicAsset("/models/dima-v15.glb"),
+      publicAsset("/models/dima-v16.glb"),
       (gltf) => {
         if (disposed) return;
         loadedModel = gltf.scene;
@@ -203,7 +203,7 @@ const ProjectViewer = forwardRef<
         modelRoot.scale.setScalar(fitScale);
         const fittedBox = new THREE.Box3().setFromObject(modelRoot);
         modelRoot.position.y -= fittedBox.min.y;
-        onStatus("Точная GLB-модель v15 загружена: дом, комнаты, участок, баня и растения.");
+        onStatus("GLB-модель v16 загружена: дом, отремонтированные комнаты, балкон 7,50 м, участок, баня, растения и свет.");
       },
       (event) => {
         if (event.total > 0) {
@@ -298,7 +298,7 @@ const roomFloors = [
   {
     title: "Первый этаж",
     total: "149,47 м²",
-    image: "/plans/v15/floor-1-c4d.png",
+    image: "/plans/v16/floor-1-c4d.png",
     rooms: [
       ["Кухня-гостиная", "50,12"],
       ["Гараж", "47,75"],
@@ -314,7 +314,7 @@ const roomFloors = [
   {
     title: "Второй этаж",
     total: "91,99 м²",
-    image: "/plans/v15/floor-2-c4d.png",
+    image: "/plans/v16/floor-2-c4d.png",
     rooms: [
       ["Детская Дарины", "16,33"],
       ["Детская Ярика", "16,87"],
@@ -340,14 +340,14 @@ const plants = [
 ];
 
 const costGroups = [
-  ["Обследование и рабочие проекты", "0,9–1,6 млн ₽", "обмеры, архитектура, конструктив, инженерные разделы"],
-  ["Инженерия дома и газ", "1,6–3,0 млн ₽", "электрика, вода, канализация, отопление, вентиляция, согласования"],
-  ["Черновая и чистовая отделка", "6,5–11,5 млн ₽", "241,46 м² по планам, без изменения коробки"],
-  ["Балкон, фасады и мангальная", "2,2–4,2 млн ₽", "усиления, ограждение, навес, дымоудаление, мойка"],
-  ["Кухня, мебель и техника", "4,0–7,0 млн ₽", "семейная комплектация среднего/выше среднего уровня"],
-  ["Двор, водоотвод, забор и свет", "3,0–5,5 млн ₽", "бетон, дорожки, ливнёвка, ворота, наружное освещение"],
-  ["Баня 3×7 м", "2,0–3,6 млн ₽", "коробка, печь, инженерия, внутренняя отделка"],
-  ["Растения, газон и полив", "0,8–1,6 млн ₽", "посадочный материал, грунт, посадка, капельный полив"],
+  ["Обследование, архитектура и проекты", "0,8–1,8 млн ₽", "обмеры, дизайн, конструктив, ЭОМ, ВК, ОВ и газ"],
+  ["Балкон 7,50 м", "1,85–3,80 млн ₽", "расчёт, новый проём, каркас/плита, ограждение 1,20 м и экраны 1,80 м"],
+  ["Электрика и освещение", "1,1–2,2 млн ₽", "щит, кабели, автоматика, 17 групп света, монтаж и пуск"],
+  ["Инженерия дома", "2,4–4,3 млн ₽", "вода, канализация, отопление, вентиляция и газ"],
+  ["Черновая и чистовая отделка", "7,7–12,9 млн ₽", "241,46 м² по планам, без стоимости существующей коробки"],
+  ["Кухня, мебель, техника, сантехника", "3,85–7,60 млн ₽", "семейная комплектация среднего/выше среднего уровня"],
+  ["Мангальная", "0,85–1,60 млн ₽", "кирпичная линия, мойка, дымоудаление и негорючие узлы"],
+  ["Двор, баня, хозблок и озеленение", "5,0–9,7 млн ₽", "водоотвод, бетон, дорожки, наружный свет, баня 3×7 м и посадки"],
 ];
 
 const stages = [
@@ -361,15 +361,46 @@ const stages = [
 ];
 
 const gallery = [
-  ["Фасад с улицы", "/renders/v15/01-front-photoreal.png", "Гараж слева, высокий витраж справа, бетонный двор и зелёная полоса справа."],
-  ["Общий безопасный балкон", "/renders/v15/02-balcony-photoreal.png", "Два выхода — из спальни родителей и детской — на единый Г‑образный балкон."],
-  ["Мангальная терраса", "/renders/v15/03-mangal-photoreal.png", "Кирпичная рабочая линия, мангал, казан, мойка и высокий светлый навес."],
-  ["Баня 3×7 м", "/renders/v15/04-bathhouse-photoreal.png", "Отступ 1 м слева и 1 м сзади, отдельная освещённая дорожка."],
+  ["Фасад с улицы", "/renders/v16/01-front-photoreal.png", "Гараж слева, высокий витраж справа, бетонный двор и зелёная полоса справа."],
+  ["Балкон на весь гараж", "/renders/v16/02-balcony-photoreal.png", "Передняя часть 7,50 м, высокие экраны 1,80 м и два выхода на единый Г‑образный балкон."],
+  ["Кухня-гостиная", "/renders/v16/03-kitchen-living-photoreal.png", "Кухня 5,2 м с островом, стол на шесть мест, диван и ТВ-стена."],
+  ["Спальня родителей", "/renders/v16/04-parents-bedroom-photoreal.png", "Спокойная отделка, кровать 1800 мм, туалетный стол Олеси и связь с гардеробом."],
+  ["Детская Дарины", "/renders/v16/05-darina-room-photoreal.png", "Шалфейный акцент, гимнастический мат, шведская стенка и хранение инвентаря."],
+  ["Детская Ярика", "/renders/v16/06-yarik-room-photoreal.png", "Синий акцент, рабочий стол и закрытое хранение формы и мяча."],
+  ["Санузел родителей", "/renders/v16/07-bathroom-photoreal.png", "Ванна, двойная тумба, инсталляция и влагостойкий свет."],
+  ["Мангальная терраса", "/renders/v16/08-mangal-photoreal.png", "Кирпичная рабочая линия, мангал, казан, мойка и высокий светлый навес."],
+  ["Баня 3×7 м", "/renders/v16/09-bathhouse-photoreal.png", "Отступ 1 м слева и 1 м сзади, отдельная освещённая дорожка."],
+];
+
+const interiorSpecs = [
+  ["Кухня-гостиная · 50,12 м²", "теплый белый, микроцемент, дуб", "кухня 5,2 м, остров, стол на 6, диван, ТВ-стена", "L01–L04 + L11"],
+  ["Спальня родителей · 15,58 м²", "теплый белый, мягкое изголовье, дуб", "кровать 1800, тумбы, стол Олеси, гардероб", "L06 + 2 бра"],
+  ["Детская Дарины · 16,33 м²", "теплый белый, шалфейный акцент", "кровать, стол, шкаф, гимнастика, ленты и обручи", "L07 + рабочий"],
+  ["Детская Ярика · 16,87 м²", "теплый белый, приглушенный синий", "кровать, стол, шкаф, хранение формы и мяча", "L08 + рабочий"],
+  ["Санузлы · 22,91 м² суммарно", "светлый керамогранит R10", "инсталляции, ванна, душевая 1200×800, зеркала", "L09 IP44"],
+  ["Гостевая и прихожая", "моющаяся краска, дуб и керамогранит", "кровать 1600, шкафы до потолка, банкетка", "L05 + L10"],
+];
+
+const lightingGroups = [
+  ["L01–L04", "Кухня, остров, гостиная, стол", "3000К · CRI90 · диммер", "готовка / ужин / кино"],
+  ["L05–L08", "Гостевая, родители, Дарина, Ярик", "3000К · CRI90", "общий / чтение / учеба / игра"],
+  ["L09–L11", "Санузлы, лестница, кухня LED", "IP44 в мокрых зонах", "зеркало / ночной / рабочий"],
+  ["L12–L13", "Дорожки и общий балкон", "3000К · IP65", "вечер / безопасность"],
+  ["L14–L17", "Мангальная, баня, фасады, хозблок", "3000К · IP65", "готовка / фасад / датчик"],
+];
+
+const products = [
+  ["Кухня «Мария» · Вектор софт", "от 298 063 ₽", "ориентир базовой компоновки; точный расчёт 5,2 м + остров", "https://stavropol.marya.ru/price/"],
+  ["MAUNFELD CVI593SFBK LUX", "26 240 ₽", "индукционная панель с Flex Zone; проверить наличие и мощность", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
+  ["MAUNFELD MBF177SWGR", "81 365 ₽", "встраиваемый холодильник-морозильник; сверить нишу и вентиляцию", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
+  ["Grohe Rapid SL 38528001", "31 350 ₽", "инсталляция 50×13,5×113 см; клавиша приобретается отдельно", "https://stavropol.santehnica.ru/product/69119.html"],
+  ["Матовый натяжной потолок", "280–700 ₽/м²", "публичный ориентир Ставрополя; итог только после замера", "https://potolokstavropol.ru/"],
+  ["Световые линии", "от 2 800 ₽/м²", "уточнить состав профиля, блоки питания и сервисный доступ", "https://potolokstavropol.ru/"],
 ];
 
 export function DimaProjectApp() {
   const viewerRef = useRef<ViewerApi>(null);
-  const [status, setStatus] = useState("Подготовка точной модели v15…");
+  const [status, setStatus] = useState("Подготовка точной модели v16…");
   const [selection, setSelection] = useState("Ничего не выбрано");
   const [activeView, setActiveView] = useState<ViewKey>("front");
   const [layers, setLayers] = useState<Record<LayerKey, boolean>>({
@@ -416,15 +447,15 @@ export function DimaProjectApp() {
       </header>
 
       <section className="hero" id="top">
-        <img src={publicAsset("/renders/v15/01-front-photoreal.png")} alt="Фотореалистичный вид точного фасада с улицы" />
+        <img src={publicAsset("/renders/v16/01-front-photoreal.png")} alt="Фотореалистичный вид точного фасада с улицы" />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <span className="kicker">Предпроект v15 · Ставрополь · 30 июля 2026</span>
+          <span className="kicker">Предпроект v16 · Ставрополь · 30 июля 2026</span>
           <h1>Дом и участок, которые можно проверить</h1>
           <p>
             Не абстрактный рендер: модель восстановлена по 18 листам PDF. Улица находится
-            спереди, гараж слева, витраж справа. Комнаты, баня, общий балкон, мангальная,
-            растения, размеры и бюджет собраны в одном понятном проекте.
+            спереди, гараж слева, витраж справа. Балкон 7,50 м перекрывает весь гараж,
+            а комнаты показаны с ремонтом, мебелью, техникой и 17 группами освещения.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#model">Открыть точную 3D-модель</a>
@@ -503,6 +534,16 @@ export function DimaProjectApp() {
             </aside>
           </div>
         </div>
+        <div className="drawing-grid">
+          <figure>
+            <img src={publicAsset("/plans/v16/balcony-detail.svg")} alt="Размерная схема балкона на всю ширину гаража" />
+            <figcaption><strong>Балкон 7,50 м</strong><span>Линиями показаны полная ширина, ограждение 1,20 м и высокие перегородки 1,80 м.</span></figcaption>
+          </figure>
+          <figure>
+            <img src={publicAsset("/plans/v16/lighting-scheme.svg")} alt="Схема внутреннего и наружного освещения L01–L17" />
+            <figcaption><strong>Свет L01–L17</strong><span>Отдельные группы для комнат, санузлов, балкона, мангальной, бани, дорожек и фасадов.</span></figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="section" id="plan">
@@ -544,6 +585,7 @@ export function DimaProjectApp() {
             <article><span>Дом</span><strong>14,50 м</strong><p>Наружная ширина; между осями 14,10 м, глубина по осям 11,46 м.</p></article>
             <article><span>Отступы дома</span><strong>1,50 / 4,00 м</strong><p>До левой и правой границ по наружным стенам.</p></article>
             <article><span>Перед домом</span><strong>5,05–5,89 м</strong><p>Гараж выдвинут ближе к дороге, основная часть стоит глубже.</p></article>
+            <article><span>Общий балкон</span><strong>7,50 м</strong><p>Передняя часть на всю ширину гаража, соединена с боковым выходом родителей; экраны 1,80 м.</p></article>
             <article><span>Баня</span><strong>3 × 7 м</strong><p>1,00 м от левой и 1,00 м от задней границы.</p></article>
             <article><span>Хозблок</span><strong>1 × 3 м</strong><p>В переднем левом углу, вплотную к линии забора.</p></article>
             <article className="warning"><span>До стройки</span><strong>Нужна топосъёмка</strong><p>Проверить границы, высоты, уклоны, вводы и нормы отступов.</p></article>
@@ -584,6 +626,17 @@ export function DimaProjectApp() {
           <article><strong>Ярик · 6 лет</strong><p>Детская с рабочим столом, хранением формы и свободной зоной для игры с мячом.</p></article>
           <article><strong>Семейная дача</strong><p>Большая кухня-гостиная, задняя терраса и светлая мангальная зона для разных блюд.</p></article>
         </div>
+        <div className="section-title compact-title">
+          <span className="kicker">Ремонт по помещениям</span>
+          <h2>Отделка, мебель и свет уже связаны между собой</h2>
+          <p>Это не пустые цветные коробки: для каждой комнаты задана функция, отделка, комплектация и группа освещения.</p>
+        </div>
+        <div className="plant-table interior-table" role="table" aria-label="Ведомость ремонта по помещениям">
+          <div className="plant-head" role="row"><span>Помещение</span><span>Отделка</span><span>Мебель и оборудование</span><span>Свет</span></div>
+          {interiorSpecs.map((row) => (
+            <div role="row" key={row[0]}>{row.map((cell) => <span role="cell" key={cell}>{cell}</span>)}</div>
+          ))}
+        </div>
       </section>
 
       <section className="section">
@@ -604,16 +657,16 @@ export function DimaProjectApp() {
           ))}
         </div>
         <div className="evidence-strip">
-          <a href={publicAsset("/plans/v15/source-front.png")} target="_blank">
-            <img src={publicAsset("/plans/v15/source-front.png")} alt="Исходный передний фасад из PDF" />
+          <a href={publicAsset("/plans/v16/source-front.png")} target="_blank">
+            <img src={publicAsset("/plans/v16/source-front.png")} alt="Исходный передний фасад из PDF" />
             <span>1. Исходный фасад PDF</span>
           </a>
-          <a href={publicAsset("/renders/v15/06-front-c4d-control.png")} target="_blank">
-            <img src={publicAsset("/renders/v15/06-front-c4d-control.png")} alt="Контрольная геометрия Cinema 4D" />
+          <a href={publicAsset("/renders/v16/10-front-c4d-control.png")} target="_blank">
+            <img src={publicAsset("/renders/v16/10-front-c4d-control.png")} alt="Контрольная геометрия Cinema 4D" />
             <span>2. Контроль геометрии C4D</span>
           </a>
-          <a href={publicAsset("/renders/v15/01-front-photoreal.png")} target="_blank">
-            <img src={publicAsset("/renders/v15/01-front-photoreal.png")} alt="Фотореалистичный фасад" />
+          <a href={publicAsset("/renders/v16/01-front-photoreal.png")} target="_blank">
+            <img src={publicAsset("/renders/v16/01-front-photoreal.png")} alt="Фотореалистичный фасад" />
             <span>3. Материалы и озеленение</span>
           </a>
         </div>
@@ -632,14 +685,20 @@ export function DimaProjectApp() {
           ))}
         </div>
         <div className="lighting-card">
-          <div><span className="kicker">Освещение 3000K</span><h3>Свет без ослепления соседей</h3></div>
+          <div><span className="kicker">17 групп света · 3000K</span><h3>Внутри, на балконе и по всему участку</h3></div>
           <ul>
-            <li>6 низких опор вдоль правой дорожки, шаг около 3 м;</li>
-            <li>3 опоры к бане и отдельный свет у входа;</li>
-            <li>подсветка входа, ворот, балкона и рабочей линии мангальной;</li>
-            <li>аварийный свет и ручное отключение; фасадные приборы направлены вниз;</li>
-            <li>кабели и автоматика рассчитываются отдельным разделом электрики.</li>
+            <li>жилые комнаты: CRI90, диммирование, отдельные рабочие и вечерние группы;</li>
+            <li>санузлы: IP44, раздельный общий свет, зеркало и ночной сценарий;</li>
+            <li>дорожки, общий балкон, мангальная, баня и фасады: IP65;</li>
+            <li>ночной проход, датчики, астрореле, аварийное и ручное отключение;</li>
+            <li>кабели, УЗО, автоматы и нагрузки рассчитываются проектом ЭОМ.</li>
           </ul>
+        </div>
+        <div className="plant-table lighting-table" role="table" aria-label="Группы освещения">
+          <div className="plant-head" role="row"><span>Группы</span><span>Зона</span><span>Качество и защита</span><span>Сценарии</span></div>
+          {lightingGroups.map((row) => (
+            <div role="row" key={row[0]}>{row.map((cell) => <span role="cell" key={cell}>{cell}</span>)}</div>
+          ))}
         </div>
       </section>
 
@@ -653,8 +712,8 @@ export function DimaProjectApp() {
           </p>
         </div>
         <div className="budget-hero">
-          <div><span>Работы и комплектация</span><strong>21–38 млн ₽</strong><small>предварительный диапазон</small></div>
-          <div className="accent"><span>С резервом 15%</span><strong>24–44 млн ₽</strong><small>решение для планирования бюджета</small></div>
+          <div><span>Работы и комплектация</span><strong>24,65–45,40 млн ₽</strong><small>предварительный диапазон</small></div>
+          <div className="accent"><span>С резервом 12%</span><strong>27,61–50,85 млн ₽</strong><small>решение для планирования бюджета</small></div>
           <div><span>Не включено</span><strong>земля и коробка</strong><small>они считаются существующими</small></div>
         </div>
         <div className="cost-grid">
@@ -665,6 +724,12 @@ export function DimaProjectApp() {
         <div className="price-note">
           <strong>Как превратить диапазон в смету:</strong>
           <span>обмеры → ведомость объёмов → минимум 3 сопоставимых КП → договор с этапами и удержанием → резерв на скрытые дефекты.</span>
+        </div>
+        <div className="source-links document-links">
+          <a href={publicAsset("/downloads/interior-v16.csv")} download><strong>Ремонт по комнатам</strong><span>отделка, мебель, оборудование и свет для каждого помещения</span></a>
+          <a href={publicAsset("/downloads/lighting-v16.csv")} download><strong>План света L01–L17</strong><span>зоны, приборы, защита, управление и сценарии</span></a>
+          <a href={publicAsset("/downloads/procurement-contractors-v16.csv")} download><strong>Товары и подрядчики</strong><span>цены, ссылки, статус проверки и контроль перед договором</span></a>
+          <a href={publicAsset("/downloads/budget-v16.csv")} download><strong>Сводная смета</strong><span>17 разделов, минимум, максимум и резерв 12%</span></a>
         </div>
       </section>
 
@@ -682,17 +747,35 @@ export function DimaProjectApp() {
 
       <section className="section sources-section">
         <div className="section-title">
-          <span className="kicker">Кандидаты для запросов КП</span>
-          <h2>Кого и где проверять в Ставрополе</h2>
-          <p>Это не автоматическое назначение подрядчика. Перед договором нужны выезд, реквизиты, смета, гарантия и проверка реальных объектов.</p>
+          <span className="kicker">Проверено по открытым сайтам · 30.07.2026</span>
+          <h2>Подрядчики, мебель и техника для этого проекта</h2>
+          <p>Это кандидаты для сравнения, а не автоматически нанятые исполнители. Перед договором нужны выезд, реквизиты, детальная смета, гарантия и осмотр реальных объектов.</p>
         </div>
         <div className="source-links">
-          <a href="https://stavropol.mslandshaft.ru/portfolio/" target="_blank" rel="noreferrer"><strong>Ландшафт Плюс</strong><span>проект, дренаж, посадки · запросить объекты через 2–3 сезона</span></a>
-          <a href="https://vashremont26.ru/" target="_blank" rel="noreferrer"><strong>Ваш Ремонт</strong><span>местный ориентир «под ключ» от 15 000 ₽/м² · получить подробное КП</span></a>
-          <a href="https://stavropol.1remont-kvartir.ru/" target="_blank" rel="noreferrer"><strong>1 Ремонт Квартир</strong><span>публичные диапазоны по классам ремонта · сравнить состав работ</span></a>
+          <a href="https://stavropol.proff-remont.ru/" target="_blank" rel="noreferrer"><strong>Proff Ремонт</strong><span>ремонт домов и квартир · запросить смету именно по коттеджу и акты скрытых работ</span></a>
+          <a href="https://vashremont26.ru/" target="_blank" rel="noreferrer"><strong>Ваш Ремонт 26</strong><span>комплексная отделка · проверить портфолио домов, договор и технадзор</span></a>
+          <a href="https://rego-remont26.ru/" target="_blank" rel="noreferrer"><strong>Рего-ремонт 26</strong><span>кандидат на комплексный ремонт · запросить график, смету и гарантию</span></a>
+          <a href="https://potolokstavropol.ru/" target="_blank" rel="noreferrer"><strong>PotolokStavropol</strong><span>матовые потолки 280–700 ₽/м², электромонтаж от 250 ₽/м²; уточнить полный состав</span></a>
+          <a href="https://stavropol.electric-doma.ru/" target="_blank" rel="noreferrer"><strong>Клуб 24.7 Электрик</strong><span>кандидат на монтаж · требуются измерения, протоколы, схема щита и маркировка</span></a>
           <a href="https://mebelnazakaz26.ru/" target="_blank" rel="noreferrer"><strong>Мебель на заказ 26</strong><span>кухни и встроенная мебель · проверить фурнитуру и гарантию</span></a>
-          <a href="https://stavropol.marya.ru/price/" target="_blank" rel="noreferrer"><strong>Кухни «Мария»</strong><span>альтернативное КП на кухню после чистовых замеров</span></a>
-          <a href="https://stavropol.santehnica.ru/" target="_blank" rel="noreferrer"><strong>Сантехника-Онлайн</strong><span>скрытые части купить до разводки, сверить сервис и наличие</span></a>
+          <a href="https://stavropol.aristo.ru/" target="_blank" rel="noreferrer"><strong>ARISTO Ставрополь</strong><span>гардеробные и встроенная мебель · сравнить материалы, кромку и монтаж</span></a>
+          <a href="https://gardenstav.ru/" target="_blank" rel="noreferrer"><strong>GardenStav</strong><span>ландшафт и полив · запросить дендроплан, анализ почвы и гарантию приживаемости</span></a>
+        </div>
+        <div className="section-title compact-title">
+          <span className="kicker">Товары уже привязаны к модели</span>
+          <h2>Проверяемая комплектация</h2>
+          <p>Цены ниже взяты со страниц продавцов и могут измениться. Перед заказом сверяются наличие, гарантия, монтажные размеры и итоговая доставка.</p>
+        </div>
+        <div className="source-links product-links">
+          {products.map(([title, price, text, url]) => (
+            <a href={url} target="_blank" rel="noreferrer" key={`${title}-${price}`}>
+              <strong>{title}</strong><b>{price}</b><span>{text}</span>
+            </a>
+          ))}
+        </div>
+        <div className="price-note avito-note">
+          <strong>Авито — пока не внедрено как подтверждённый источник.</strong>
+          <span>Сервис заблокировал автоматический просмотр объявлений. Пришлите 3–5 ссылок на выбранных мастеров — тогда они будут проверены по рейтингу, отзывам, портфолио, договору и гарантии без выдуманных данных.</span>
         </div>
       </section>
 
@@ -708,7 +791,7 @@ export function DimaProjectApp() {
       </section>
 
       <footer>
-        <strong>Дима · Облагораживание · версия 15</strong>
+        <strong>Дима · Облагораживание · версия 16</strong>
         <span>Исходник: архитектурный PDF · модель: Cinema 4D 2026 · веб: GLB</span>
         <a href={publicAsset("/downloads/official-architecture.pdf")} target="_blank">Открыть исходные чертежи</a>
       </footer>

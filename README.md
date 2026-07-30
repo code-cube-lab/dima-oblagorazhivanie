@@ -94,11 +94,12 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 ## Dima project release note
 
-Version v14 keeps the front facade in the PDF orientation: garage on the left
-and the tall two-storey glazing on the right. The common L-shaped balcony has
-one existing side exit from the parents' bedroom and one new front exit from
-the child room. Its front slab overlaps the side slab without an internal guard
-or level change. The second front child-room window remains unchanged.
+Version v16 keeps the front facade in the PDF orientation: garage on the left
+and the tall two-storey glazing on the right. The common L-shaped balcony spans
+the full 7.50 m garage width, has 1.80 m high end screens and two connected
+exits: the existing parents' bedroom side door and the new child-room front
+door. The release also contains furnished interiors, 17 lighting groups,
+product references, contractor candidates and a preliminary budget.
 
 ## Learn More
 

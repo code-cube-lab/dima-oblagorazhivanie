@@ -242,6 +242,12 @@ img { display: block; max-width: 100%; }
 .evidence-strip a { position: relative; height: 230px; color: white; background: var(--ink); border-radius: 10px; overflow: hidden; }
 .evidence-strip img { width: 100%; height: 100%; object-fit: cover; opacity: 0.82; }
 .evidence-strip span { position: absolute; inset: auto 10px 10px; padding: 7px 9px; background: rgba(8,27,32,0.82); border-radius: 5px; font-size: 10px; }
+.drawing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.drawing-grid figure { margin: 0; padding: 12px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+.drawing-grid img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #f4f0e7; }
+.drawing-grid figcaption { display: grid; gap: 5px; padding: 14px 5px 4px; }
+.drawing-grid figcaption strong { font-family: Georgia, serif; font-size: 20px; font-weight: 500; }
+.drawing-grid figcaption span { color: var(--ink-2); font-size: 11px; line-height: 1.5; }
 
 .plant-table { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: auto; }
 .plant-table > div { min-width: 830px; display: grid; grid-template-columns: 1.35fr 0.7fr 0.9fr 0.9fr 1.2fr; border-bottom: 1px solid var(--line); }
@@ -249,6 +255,10 @@ img { display: block; max-width: 100%; }
 .plant-table span { padding: 12px; color: var(--ink-2); font-size: 11px; }
 .plant-head { color: white; background: var(--ink); }
 .plant-head span { color: white; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.interior-table > div { grid-template-columns: 1.15fr 1fr 1.55fr 0.75fr; }
+.lighting-table { margin-top: 14px; }
+.lighting-table > div { grid-template-columns: 0.72fr 1.5fr 1.2fr 1.15fr; }
+.compact-title { margin-top: 44px; }
 .lighting-card { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 30px; margin-top: 14px; padding: 28px; color: white; background: var(--ink); border-radius: 13px; }
 .lighting-card h3 { margin: 8px 0; font-family: Georgia, serif; font-size: 29px; font-weight: 500; }
 .lighting-card ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,0.72); line-height: 1.75; font-size: 12px; }
@@ -280,6 +290,10 @@ img { display: block; max-width: 100%; }
 .source-links strong, .source-links span { display: block; }
 .source-links strong { font-family: Georgia, serif; font-size: 21px; font-weight: 500; }
 .source-links span { margin-top: 13px; color: var(--ink-2); font-size: 11px; line-height: 1.55; }
+.product-links a b { display: block; margin-top: 12px; color: var(--sage); font-family: Georgia, serif; font-size: 19px; font-weight: 500; }
+.avito-note { margin-top: 18px; }
+.document-links { grid-template-columns: repeat(4, 1fr); margin-top: 12px; }
+.document-links a { min-height: 125px; }
 
 .disclaimer { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 35px; padding: 32px; color: white; background: var(--ink); border-radius: 15px; }
 .disclaimer h2 { margin: 7px 0; font-size: 38px; }
@@ -297,6 +311,7 @@ footer a { color: var(--copper); }
   .family-brief, .cost-grid { grid-template-columns: 1fr 1fr; }
   .timeline { grid-template-columns: repeat(4, 1fr); }
   .source-links { grid-template-columns: 1fr 1fr; }
+  .document-links { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -320,7 +335,7 @@ footer a { color: var(--copper); }
   .layer-panel { grid-template-columns: 1fr 1fr; }
   .plan-layout { display: block; }
   .plot-figure { padding: 28px 24px 18px; }
-  .dimension-cards, .floor-grid, .family-brief, .gallery, .evidence-strip, .budget-hero, .cost-grid, .timeline, .source-links, .lighting-card, .disclaimer { grid-template-columns: 1fr; }
+  .dimension-cards, .floor-grid, .family-brief, .gallery, .evidence-strip, .drawing-grid, .budget-hero, .cost-grid, .timeline, .source-links, .lighting-card, .disclaimer { grid-template-columns: 1fr; }
   .floor-card { display: block; }
   .floor-image { min-height: 330px; }
   .evidence-strip a { height: 190px; }
