@@ -75,5 +75,5 @@ test("publishes interior renovation, equipment, contractor candidates, and light
   assert.match(app, /MAUNFELD CVI593SFBK LUX/);
   assert.match(app, /17 групп света/);
   assert.match(app, /Авито — пока не внедрено как подтверждённый источник/);
-  assert.match(app, /24,65–45,40 млн ₽/);
+  assert.match(app, /24,35–45,40 млн ₽/);
 });

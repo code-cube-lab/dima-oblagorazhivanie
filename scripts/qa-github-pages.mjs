@@ -142,7 +142,7 @@ try {
       bodyText.includes("Детская Ярика"),
     lightingAndBudget:
       bodyText.includes("L01–L17") &&
-      bodyText.includes("27,61–50,85 млн"),
+      bodyText.includes("27,27–50,85 млн"),
     procurementAndAvitoStatus:
       bodyText.includes("Подрядчики, мебель и техника") &&
       bodyText.includes("Авито"),
