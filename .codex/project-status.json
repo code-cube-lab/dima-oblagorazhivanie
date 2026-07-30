@@ -1,0 +1,72 @@
+﻿{
+    "schema_version":  1,
+    "project_path":  "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14",
+    "current_stage":  "plan",
+    "updated_at":  "2026-07-30T00:54:33.1786548Z",
+    "stages":  [
+                   {
+                       "name":  "intake",
+                       "state":  "passed",
+                       "evidence":  [
+                                        "pasted-text.txt + user requirements consolidated 2026-07-30"
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "audit",
+                       "state":  "passed",
+                       "evidence":  [
+                                        "Source PDF 18 pages rendered and visually inspected; sheets 4-18 checked"
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "plan",
+                       "state":  "doing",
+                       "evidence":  [
+                                        "Interactive plan/site architecture defined"
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "build",
+                       "state":  "pending",
+                       "evidence":  [
+
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "telegram",
+                       "state":  "pending",
+                       "evidence":  [
+
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "payments",
+                       "state":  "pending",
+                       "evidence":  [
+
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "qa",
+                       "state":  "pending",
+                       "evidence":  [
+
+                                    ],
+                       "note":  ""
+                   },
+                   {
+                       "name":  "handoff",
+                       "state":  "pending",
+                       "evidence":  [
+
+                                    ],
+                       "note":  ""
+                   }
+               ]
+}
