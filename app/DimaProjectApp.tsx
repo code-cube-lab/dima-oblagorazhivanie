@@ -12,6 +12,14 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import {
+  ProjectViewerV17,
+  type LightingMode,
+  type MovementKey,
+  type ProjectLayer,
+  type ProjectView,
+  type ProjectViewerV17Api,
+} from "./ProjectViewerV17";
 
 type LayerKey = "house" | "interiors" | "changes" | "site" | "fence" | "plants";
 type ViewKey = "front" | "rear" | "balcony" | "mangal" | "bath" | "top";
@@ -370,6 +378,11 @@ const gallery = [
   ["Санузел родителей", "/renders/v16/07-bathroom-photoreal.png", "Ванна, двойная тумба, инсталляция и влагостойкий свет."],
   ["Мангальная терраса", "/renders/v16/08-mangal-photoreal.png", "Кирпичная рабочая линия, мангал, казан, мойка и высокий светлый навес."],
   ["Баня 3×7 м", "/renders/v16/09-bathhouse-photoreal.png", "Отступ 1 м слева и 1 м сзади, отдельная освещённая дорожка."],
+  ["Кухня-гостиная · 4 ракурса", "/renders/v17/11-kitchen-four-views.png", "Дневные и вечерний ракурсы одной планировки: кухня 5,2 м, остров, стол, диван и ТВ-зона."],
+  ["Спальня родителей · 4 ракурса", "/renders/v17/12-parents-four-views.png", "Кровать 1800 мм, гардероб, столик Олеси и реальный выход на общий балкон."],
+  ["Комната Дарины · 4 ракурса", "/renders/v17/13-darina-four-views.png", "Спальное, учебное и гимнастическое места; отдельный кадр новой двери на тот же общий балкон."],
+  ["Комната Ярика · 4 ракурса", "/renders/v17/14-yarik-four-views.png", "Кровать, рабочее место, закрытое хранение спортивной формы и вечерний сценарий света."],
+  ["Санузел родителей · 4 ракурса", "/renders/v17/15-bathroom-four-views.png", "Ванна, двойная тумба, инсталляция, душевая зона и безопасный ночной свет."],
 ];
 
 const interiorSpecs = [
@@ -391,19 +404,45 @@ const lightingGroups = [
 
 const products = [
   ["Кухня «Мария» · Vector Touch", "от 280 736 ₽", "ориентир базовой компоновки; точный расчёт 5,2 м + остров", "https://stavropol.marya.ru/price/"],
-  ["MAUNFELD CVI593SFBK LUX", "26 240 ₽", "индукционная панель с Flex Zone; проверить наличие и мощность", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
-  ["MAUNFELD MBF177SWGR", "81 365 ₽", "встраиваемый холодильник-морозильник; сверить нишу и вентиляцию", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
-  ["Grohe Rapid SL 38528001", "46 197 ₽", "инсталляция 50×13,5×113 см; гарантия 10 лет, клавиша отдельно", "https://stavropol.santehnica.ru/product/69119.html"],
+  ["MAUNFELD CVI593SFBK LUX", "41 490 ₽ · нет в наличии", "индукционная панель — недоступный ориентир; перед заказом подобрать замену и пересчитать силовую линию", "https://www.maunfeld.ru/catalog/induction/induktsionnaya-varochnaya-panel-maunfeld-cvi593sfbk-lux-inverter"],
+  ["MAUNFELD MBF177SWGR", "84 990 ₽", "кандидат: встраиваемый холодильник-морозильник; проверить нишу, вентиляцию и наличие", "https://www.maunfeld.ru/catalog/embedded-freezer/kholodilnik-morozilnik-vstraivaemyy-maunfeld-mbf177swgr-inverter"],
+  ["MAUNFELD MLP60530", "цена уточняется", "кандидат на посудомоечную машину; вода, канализация и розетка привязываются после утверждения", "https://www.maunfeld.ru/catalog/vstraivaemye-posudomoechnye-mashiny/posudomoechnaya-mashina-maunfeld-mlp60530-light-beam"],
+  ["MAUNFELD Domina 60", "цена уточняется", "кандидат на вытяжку; до заказа подтвердить канал вентиляции и высоту установки", "https://www.maunfeld.ru/catalog/embedded/kukhonnaya-vytyazhka-maunfeld-domina-60-chyernyy"],
+  ["Grohe Rapid SL 38528001", "46 197 ₽ · под заказ", "подтверждённый кандидат; клавиша и часть крепежа приобретаются отдельно", "https://stavropol.santehnica.ru/product/69119.html"],
+  ["Мебель для гостиной · Divan.ru", "по выбранным моделям", "каталог-кандидат для дивана, ТВ-зоны, обеденной группы; габариты ещё не привязаны к 3D", "https://www.divan.ru/stavropol/category/stenki"],
+  ["Кровати и матрасы · Divan.ru", "по выбранным моделям", "каталог-кандидат для спальни родителей и гостевой; розетки и бра после выбора", "https://www.divan.ru/stavropol/category/krovati-i-matrasy"],
+  ["Детская мебель · Divan.ru", "по выбранным моделям", "кандидаты для Дарины и Ярика; проверить безопасность, крепления и реальные размеры", "https://www.divan.ru/stavropol/category/mebel-dla-detskoj"],
+  ["ARISTO Ставрополь", "индивидуальный расчёт", "гардероб, прихожая и закрытое хранение только после контрольного замера", "https://stavropol.aristo.ru/"],
+  ["Maytoni Focus · 3000К · CRI>90", "цена уточняется", "кандидат внутреннего света; количество определяет светотехнический расчёт", "https://maytoni.ru/catalog/functional/potolochnye-svetilniki-func/potolochnye-vstraivaemye-svetilniki/svetilniki-downlight/c071cl-7w3k-b/"],
+  ["Maytoni Line · IP65", "цена уточняется", "кандидат для фасада и балкона; есть материалы для точной 3D-привязки", "https://maytoni.ru/catalog/street/bra/o484wl-l6gf3k/"],
+  ["Печи «Ермак»", "после расчёта парной", "каталог-кандидат для бани; модель выбирается вместе с дымоходом, основанием и вентиляцией", "https://ermak-pech.ru/pechi-dlya-bani"],
+  ["Лаванда Hidcote", "цена и сезон уточняются", "кандидат для солнечной полосы вдоль дороги, шаг посадки 0,7 м", "https://stavropol.zpitomnik.ru/product/lavanda_uzkolistnaya_hidcote/"],
+  ["Гортензия Little Lime", "цена и сезон уточняются", "кандидат для правой посадочной полосы; окончательно после анализа почвы и полива", "https://stavropol.zpitomnik.ru/product/gortenziya_metelchataya_little_lime/"],
   ["Матовый натяжной потолок", "280–700 ₽/м²", "публичный ориентир Ставрополя; итог только после замера", "https://potolokstavropol.ru/"],
   ["Световые линии", "от 2 800 ₽/м²", "уточнить состав профиля, блоки питания и сервисный доступ", "https://potolokstavropol.ru/"],
 ];
 
+const selectionPurchases = [
+  { match: /КУХН|ОСТРОВ|СТОЛЕШ|KITCHEN/, label: "Рассчитать кухню", url: "https://stavropol.marya.ru/price/", status: "индивидуальный расчёт" },
+  { match: /ДИВАН|СОФА|ТВ_|TV_|ГОСТИН/, label: "Смотреть мебель гостиной", url: "https://www.divan.ru/stavropol/category/stenki", status: "каталог-кандидат" },
+  { match: /КРОВАТ|МАТРАС|BED/, label: "Смотреть кровати и матрасы", url: "https://www.divan.ru/stavropol/category/krovati-i-matrasy", status: "каталог-кандидат" },
+  { match: /ДАРИН|ЯРИК|ДЕТСК|CHILD/, label: "Смотреть детскую мебель", url: "https://www.divan.ru/stavropol/category/mebel-dla-detskoj", status: "каталог-кандидат" },
+  { match: /УНИТАЗ|ИНСТАЛ|TOILET/, label: "Grohe Rapid SL", url: "https://stavropol.santehnica.ru/product/69119.html", status: "46 197 ₽ · под заказ" },
+  { match: /ШКАФ|ГАРДЕРОБ|WARDROBE/, label: "Рассчитать встроенный шкаф", url: "https://stavropol.aristo.ru/", status: "после контрольного замера" },
+  { match: /СВЕТ|L0[1-9]|L1[0-7]|LIGHT/, label: "Смотреть светильник 3000К", url: "https://maytoni.ru/catalog/functional/potolochnye-svetilniki-func/potolochnye-vstraivaemye-svetilniki/svetilniki-downlight/c071cl-7w3k-b/", status: "кандидат · нужен светорасчёт" },
+  { match: /БАНЯ|ПЕЧЬ|SAUNA/, label: "Смотреть печи для бани", url: "https://ermak-pech.ru/pechi-dlya-bani", status: "после расчёта парной" },
+  { match: /ЦВЕТ|ЛАВАНД|ГОРТЕНЗ|РАСТЕН|PLANT/, label: "Смотреть растения", url: "https://stavropol.zpitomnik.ru/catalog/", status: "сорт и сезон уточняются" },
+];
+
 export function DimaProjectApp() {
-  const viewerRef = useRef<ViewerApi>(null);
-  const [status, setStatus] = useState("Подготовка точной модели v16…");
+  const viewerRef = useRef<ProjectViewerV17Api>(null);
+  const [status, setStatus] = useState("Подготовка интерактивной модели v17…");
   const [selection, setSelection] = useState("Ничего не выбрано");
-  const [activeView, setActiveView] = useState<ViewKey>("front");
-  const [layers, setLayers] = useState<Record<LayerKey, boolean>>({
+  const [activeView, setActiveView] = useState<ProjectView>("front");
+  const [lighting, setLighting] = useState<LightingMode>("day");
+  const [cutaway, setCutaway] = useState(false);
+  const [walkMode, setWalkMode] = useState("Осмотр");
+  const [layers, setLayers] = useState<Record<ProjectLayer, boolean>>({
     house: true,
     interiors: true,
     changes: true,
@@ -412,20 +451,42 @@ export function DimaProjectApp() {
     plants: true,
   });
 
-  const setView = (view: ViewKey) => {
+  const setView = (view: ProjectView) => {
     setActiveView(view);
     viewerRef.current?.setView(view);
   };
 
-  const toggleLayer = (key: LayerKey) => {
+  const toggleLayer = (key: ProjectLayer) => {
     const visible = !layers[key];
     setLayers((current) => ({ ...current, [key]: visible }));
     viewerRef.current?.setLayer(key, visible);
   };
 
+  const changeLighting = (mode: LightingMode) => {
+    setLighting(mode);
+    viewerRef.current?.setLighting(mode);
+  };
+
+  const changeCutaway = () => {
+    const enabled = !cutaway;
+    setCutaway(enabled);
+    viewerRef.current?.setCutaway(enabled);
+  };
+
+  const moveButtonProps = (direction: MovementKey) => ({
+    onPointerDown: () => viewerRef.current?.setMove(direction, true),
+    onPointerUp: () => viewerRef.current?.setMove(direction, false),
+    onPointerCancel: () => viewerRef.current?.setMove(direction, false),
+    onPointerLeave: () => viewerRef.current?.setMove(direction, false),
+  });
+
   const totalPlants = useMemo(
     () => plants.reduce((sum, row) => sum + Number(row[1].match(/\d+/)?.[0] ?? 0), 0),
     [],
+  );
+  const selectedPurchase = useMemo(
+    () => selectionPurchases.find((item) => item.match.test(selection.toUpperCase())),
+    [selection],
   );
 
   return (
@@ -439,6 +500,8 @@ export function DimaProjectApp() {
           <a href="#model">3D</a>
           <a href="#plan">Размеры</a>
           <a href="#rooms">Комнаты</a>
+          <a href="#engineering">Инженерия</a>
+          <a href="#shopping">Покупки</a>
           <a href="#cost">Стоимость</a>
         </nav>
         <a className="download-link" href={publicAsset("/downloads/official-architecture.pdf")} target="_blank">
@@ -450,7 +513,7 @@ export function DimaProjectApp() {
         <img src={publicAsset("/renders/v16/01-front-photoreal.png")} alt="Фотореалистичный вид точного фасада с улицы" />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <span className="kicker">Предпроект v16 · Ставрополь · 30 июля 2026</span>
+          <span className="kicker">Интерактивный предпроект v17 · Ставрополь · 30 июля 2026</span>
           <h1>Дом и участок, которые можно проверить</h1>
           <p>
             Не абстрактный рендер: модель восстановлена по 18 листам PDF. Улица находится
@@ -473,10 +536,11 @@ export function DimaProjectApp() {
       <section className="section viewer-section" id="model">
         <div className="section-title">
           <span className="kicker">Единая модель Cinema 4D → GLB → сайт</span>
-          <h2>Осмотрите дом с любой стороны и включите комнаты</h2>
+          <h2>Осмотрите дом днём и ночью, затем пройдите его в масштабе</h2>
           <p>
             Это та же геометрия, что сохранена в Cinema 4D. Колёсико — масштаб,
-            перетаскивание — поворот. В режиме прогулки используйте WASD. По двери можно нажать.
+            перетаскивание — поворот. Для прогулки выберите вид от первого или третьего лица.
+            WASD/стрелки — движение, мышь — обзор, E или щелчок — открыть дверь.
           </p>
         </div>
         <div className="viewer-shell">
@@ -489,20 +553,73 @@ export function DimaProjectApp() {
                 ["mangal", "Мангальная"],
                 ["bath", "Баня"],
                 ["top", "Сверху"],
-              ] as [ViewKey, string][]).map(([key, label]) => (
+              ] as [ProjectView, string][]).map(([key, label]) => (
                 <button className={activeView === key ? "active" : ""} key={key} onClick={() => setView(key)}>
                   {label}
                 </button>
               ))}
             </div>
-            <button className="walk-button" onClick={() => viewerRef.current?.startWalk()}>
-              Прогулка внутри
+            <div className="viewer-mode-buttons" aria-label="Режим прогулки">
+              <button className="walk-button" onClick={() => viewerRef.current?.startThirdPerson()}>
+                От третьего лица
+              </button>
+              <button onClick={() => viewerRef.current?.startFirstPerson()}>
+                От первого лица
+              </button>
+              <button onClick={() => viewerRef.current?.stopWalk()}>Выйти</button>
+            </div>
+          </div>
+          <div className="viewer-scenes">
+            <div className="lighting-buttons" aria-label="Время суток">
+              {([
+                ["day", "День"],
+                ["evening", "Вечер"],
+                ["night", "Ночь · включить свет"],
+              ] as [LightingMode, string][]).map(([mode, label]) => (
+                <button
+                  className={lighting === mode ? "active" : ""}
+                  key={mode}
+                  onClick={() => changeLighting(mode)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <button className={cutaway ? "cutaway-button active" : "cutaway-button"} onClick={changeCutaway}>
+              {cutaway ? "Вернуть крышу" : "Разрез: показать ремонт"}
             </button>
+          </div>
+          <div className="room-camera-bar" aria-label="Камеры комнат">
+            <span>Быстро войти в комнату:</span>
+            {[
+              ["CAM_15_", "Кухня-гостиная"],
+              ["CAM_16_", "Родители"],
+              ["CAM_17_", "Дарина"],
+              ["CAM_18_", "Ярик"],
+              ["CAM_19_", "Санузел"],
+            ].map(([camera, label]) => (
+              <button key={camera} onClick={() => viewerRef.current?.focusRoom(camera)}>
+                {label}
+              </button>
+            ))}
           </div>
           <div className="viewer-grid">
             <div className="viewer-canvas">
-              <ProjectViewer ref={viewerRef} onStatus={setStatus} onSelection={setSelection} />
+              <ProjectViewerV17
+                assetUrl={publicAsset}
+                ref={viewerRef}
+                onStatus={setStatus}
+                onSelection={setSelection}
+                onModeChange={setWalkMode}
+              />
               <div className="orientation-note">Улица ↓ · задний двор ↑</div>
+              <div className="walk-mode-badge">{walkMode}</div>
+              <div className="mobile-dpad" aria-label="Экранное управление">
+                <button className="dpad-up" {...moveButtonProps("forward")} aria-label="Вперёд">↑</button>
+                <button className="dpad-left" {...moveButtonProps("left")} aria-label="Влево">←</button>
+                <button className="dpad-down" {...moveButtonProps("backward")} aria-label="Назад">↓</button>
+                <button className="dpad-right" {...moveButtonProps("right")} aria-label="Вправо">→</button>
+              </div>
             </div>
             <aside className="layer-panel">
               <span className="kicker">Слои проекта</span>
@@ -513,7 +630,7 @@ export function DimaProjectApp() {
                 ["site", "Участок и баня"],
                 ["fence", "Забор и ворота"],
                 ["plants", "Растения"],
-              ] as [LayerKey, string][]).map(([key, label]) => (
+              ] as [ProjectLayer, string][]).map(([key, label]) => (
                 <label key={key}>
                   <input checked={layers[key]} type="checkbox" onChange={() => toggleLayer(key)} />
                   <span>{label}</span>
@@ -521,6 +638,8 @@ export function DimaProjectApp() {
               ))}
               <button className="reset-button" onClick={() => {
                 setLayers({ house: true, interiors: true, changes: true, site: true, fence: true, plants: true });
+                setLighting("day");
+                setCutaway(false);
                 viewerRef.current?.reset();
               }}>
                 Сбросить вид
@@ -530,8 +649,26 @@ export function DimaProjectApp() {
                 <p>{status}</p>
                 <small>Выбрано</small>
                 <p>{selection}</p>
+                {selectedPurchase ? (
+                  <a className="object-purchase" href={selectedPurchase.url} target="_blank" rel="noreferrer">
+                    <strong>{selectedPurchase.label}</strong>
+                    <span>{selectedPurchase.status}</span>
+                  </a>
+                ) : (
+                  <a className="object-purchase muted" href="#shopping">
+                    <strong>Где купить этот объект</strong>
+                    <span>если точная модель ещё не выбрана — открыть каталог по помещениям</span>
+                  </a>
+                )}
               </div>
             </aside>
+          </div>
+          <div className="control-guide">
+            <strong>Управление без загадок</strong>
+            <span><b>Осмотр:</b> тяните мышью, колесо приближает.</span>
+            <span><b>От третьего лица:</b> WASD/стрелки или экранные кнопки.</span>
+            <span><b>От первого лица:</b> щёлкните по сцене, мышью осматривайтесь, Esc — выход.</span>
+            <span><b>Двери:</b> подойдите и нажмите E или щёлкните по полотну.</span>
           </div>
         </div>
         <div className="drawing-grid">
@@ -702,6 +839,74 @@ export function DimaProjectApp() {
         </div>
       </section>
 
+      <section className="section engineering-section" id="engineering">
+        <div className="section-title">
+          <span className="kicker">Инженерное задание · ЭОМ-01/02 · ВК-01</span>
+          <h2>Розетки, освещение, вода и канализация показаны на отдельных листах</h2>
+          <p>
+            Это привязанная к планировке схема для обсуждения с электриком и сантехником.
+            Она специально отмечена как предварительная: рабочие кабели, защиты, диаметры,
+            уклоны, отметки, газ и проходки выпускаются только после обмера, технических
+            условий и профильных расчётов.
+          </p>
+        </div>
+        <div className="drawing-grid engineering-grid">
+          <figure>
+            <a href={publicAsset("/plans/v17/electrical-floor1.svg")} target="_blank">
+              <img src={publicAsset("/plans/v17/electrical-floor1.svg")} alt="План-задание электрики первого этажа" />
+            </a>
+            <figcaption>
+              <strong>ЭОМ-01 · первый этаж</strong>
+              <span>Розетки, свет, выключатели, щит, кухня, гараж, гостевая и мокрые зоны.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <a href={publicAsset("/plans/v17/electrical-floor2.svg")} target="_blank">
+              <img src={publicAsset("/plans/v17/electrical-floor2.svg")} alt="План-задание электрики второго этажа" />
+            </a>
+            <figcaption>
+              <strong>ЭОМ-02 · второй этаж</strong>
+              <span>Детские, спальня, санузлы, ночной свет и общий безопасный балкон с двумя выходами.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <a href={publicAsset("/plans/v17/water-sewer.svg")} target="_blank">
+              <img src={publicAsset("/plans/v17/water-sewer.svg")} alt="Принципиальная схема воды и канализации" />
+            </a>
+            <figcaption>
+              <strong>ВК-01 · вода и канализация</strong>
+              <span>Ввод, коллектор, стояки, кухня, санузлы, баня, мангальная и выпуск в границах участка.</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div className="engineering-warning">
+          <strong>Что пока нельзя отдавать монтажникам как рабочий проект</strong>
+          <span>
+            Схему щита, кабели, автоматы, УЗО, заземление, диаметры труб, канализационные
+            уклоны, вентиляцию и газ. Для них нужны ТУ, перечень оборудования, фактические
+            отметки и подпись профильного специалиста.
+          </span>
+        </div>
+        <div className="source-links document-links">
+          <a href={publicAsset("/downloads/engineering-register-v17.csv")} download>
+            <strong>Реестр инженерных разделов</strong>
+            <span>что уже есть, чего не хватает и кто должен выпустить рабочий документ</span>
+          </a>
+          <a href={publicAsset("/downloads/construction-sequence-v17.csv")} download>
+            <strong>11 этапов после коробки</strong>
+            <span>действия Дмитрия, работа специалистов и запреты перехода к следующему этапу</span>
+          </a>
+          <a href={publicAsset("/downloads/lighting-v16.csv")} download>
+            <strong>Свет L01–L17</strong>
+            <span>помещения, сценарии, влагозащита и логика наружного освещения</span>
+          </a>
+          <a href={publicAsset("/downloads/official-architecture.pdf")} target="_blank">
+            <strong>Исходные архитектурные листы</strong>
+            <span>проверить ориентацию, проёмы и размеры до выпуска рабочих разделов</span>
+          </a>
+        </div>
+      </section>
+
       <section className="section" id="cost">
         <div className="section-title">
           <span className="kicker">Предварительная стоимость · Ставрополь · 30.07.2026</span>
@@ -727,8 +932,8 @@ export function DimaProjectApp() {
         </div>
         <div className="source-links document-links">
           <a href={publicAsset("/downloads/interior-v16.csv")} download><strong>Ремонт по комнатам</strong><span>отделка, мебель, оборудование и свет для каждого помещения</span></a>
-          <a href={publicAsset("/downloads/lighting-v16.csv")} download><strong>План света L01–L17</strong><span>зоны, приборы, защита, управление и сценарии</span></a>
-          <a href={publicAsset("/downloads/procurement-contractors-v16.csv")} download><strong>Товары и подрядчики</strong><span>цены, ссылки, статус проверки и контроль перед договором</span></a>
+          <a href={publicAsset("/downloads/shopping-catalog-v17.csv")} download><strong>Комплектация v17</strong><span>по помещениям: статусы, цены, прямые ссылки и требуемые подключения</span></a>
+          <a href={publicAsset("/downloads/construction-sequence-v17.csv")} download><strong>Порядок работ</strong><span>11 этапов, контрольные результаты и условия перехода</span></a>
           <a href={publicAsset("/downloads/budget-v16.csv")} download><strong>Сводная смета</strong><span>17 разделов, минимум, максимум и резерв 12%</span></a>
         </div>
       </section>
@@ -743,9 +948,15 @@ export function DimaProjectApp() {
             <article key={number}><span>{number}</span><div><strong>{title}</strong><p>{text}</p></div></article>
           ))}
         </div>
+        <div className="source-links document-links stage-download">
+          <a href={publicAsset("/downloads/construction-sequence-v17.csv")} download>
+            <strong>Скачать подробный порядок для Дмитрия</strong>
+            <span>по каждому этапу: кто отвечает, что принять и когда запрещено начинать следующий</span>
+          </a>
+        </div>
       </section>
 
-      <section className="section sources-section">
+      <section className="section sources-section" id="shopping">
         <div className="section-title">
           <span className="kicker">Проверено по открытым сайтам · 30.07.2026</span>
           <h2>Подрядчики, мебель и техника для этого проекта</h2>
@@ -791,8 +1002,8 @@ export function DimaProjectApp() {
       </section>
 
       <footer>
-        <strong>Дима · Облагораживание · версия 16</strong>
-        <span>Исходник: архитектурный PDF · модель: Cinema 4D 2026 · веб: GLB</span>
+        <strong>Дима · Облагораживание · версия 17</strong>
+        <span>Исходник: архитектурный PDF · модель: Cinema 4D 2026 · веб-режимы: GLB + Three.js</span>
         <a href={publicAsset("/downloads/official-architecture.pdf")} target="_blank">Открыть исходные чертежи</a>
       </footer>
     </main>

@@ -89,7 +89,7 @@ try {
   });
 
   const navigation = await page.goto(url, { waitUntil: "networkidle", timeout: 120_000 });
-  await page.locator(".model-status").getByText(/GLB-модель v16 загружена/).waitFor({
+  await page.locator(".model-status").getByText(/GLB v16 загружен/).waitFor({
     timeout: 120_000,
   });
   const bodyText = await page.locator("body").innerText();
@@ -100,9 +100,24 @@ try {
       width: image.naturalWidth,
     })),
   );
+  await page.locator(".viewer-canvas").screenshot({
+    path: path.join(projectDir, externalUrl ? "viewer-public-front-qa.png" : "viewer-front-qa.png"),
+  });
 
   await page.getByRole("button", { name: "Баня", exact: true }).click();
   await page.getByRole("button", { name: "Сверху", exact: true }).click();
+  await page.getByRole("button", { name: "Ночь · включить свет", exact: true }).click();
+  await page.locator(".model-status").getByText(/Ночь: включены группы L01–L17/).waitFor();
+  await page.locator(".viewer-canvas").screenshot({
+    path: path.join(projectDir, externalUrl ? "viewer-public-night-qa.png" : "viewer-night-qa.png"),
+  });
+  await page.getByRole("button", { name: "День", exact: true }).click();
+  await page.locator(".viewer-canvas").screenshot({
+    path: path.join(projectDir, externalUrl ? "viewer-public-day-qa.png" : "viewer-day-qa.png"),
+  });
+  await page.getByRole("button", { name: "От третьего лица", exact: true }).click();
+  await page.locator(".walk-mode-badge").getByText("От третьего лица", { exact: true }).waitFor();
+  await page.getByRole("button", { name: "Выйти", exact: true }).click();
   const roomLayer = page.getByRole("checkbox", { name: /Комнаты и мебель/ });
   await roomLayer.uncheck();
   await roomLayer.check();
@@ -146,6 +161,20 @@ try {
     procurementAndAvitoStatus:
       bodyText.includes("Подрядчики, мебель и техника") &&
       bodyText.includes("Авито"),
+    v17GameControls:
+      bodyText.includes("От третьего лица") &&
+      bodyText.includes("Ночь · включить свет") &&
+      bodyText.includes("Управление без загадок"),
+    engineeringSheets:
+      bodyText.includes("ЭОМ-01 · первый этаж") &&
+      bodyText.includes("ЭОМ-02 · второй этаж") &&
+      bodyText.includes("ВК-01 · вода и канализация"),
+    shoppingCatalog:
+      bodyText.includes("41 490 ₽ · нет в наличии") &&
+      bodyText.includes("84 990 ₽"),
+    multipleRoomViews:
+      bodyText.includes("Кухня-гостиная · 4 ракурса") &&
+      bodyText.includes("Комната Дарины · 4 ракурса"),
     glbLoaded: glbResponses.some((response) => response.status === 200),
     threeDimensionalViewer: canvasCount > 0,
     layerControlsWork: await roomLayer.isChecked(),

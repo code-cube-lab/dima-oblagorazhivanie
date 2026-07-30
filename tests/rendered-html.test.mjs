@@ -31,7 +31,7 @@ test("server-renders the Dima project shell", async () => {
   const html = await response.text();
   assert.match(html, /<title>Дима · Дом и участок — интерактивный проект<\/title>/i);
   assert.match(html, /Дом и участок, которые можно проверить/);
-  assert.match(html, /Осмотрите дом с любой стороны и включите комнаты/);
+  assert.match(html, /Осмотрите дом днём и ночью, затем пройдите его в масштабе/);
   assert.match(html, /Гараж слева, высокий витраж справа/);
   assert.match(html, /Баня 3×7 м/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
@@ -76,4 +76,33 @@ test("publishes interior renovation, equipment, contractor candidates, and light
   assert.match(app, /17 групп света/);
   assert.match(app, /Авито — пока не внедрено как подтверждённый источник/);
   assert.match(app, /24,35–45,40 млн ₽/);
+});
+
+test("publishes v17 game controls, engineering sheets, shopping register, and room view sets", async () => {
+  const [app, viewer, electrical1, electrical2, water, catalog, sequence, kitchenViews] =
+    await Promise.all([
+      readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/ProjectViewerV17.tsx", import.meta.url), "utf8"),
+      access(new URL("../public/plans/v17/electrical-floor1.svg", import.meta.url)),
+      access(new URL("../public/plans/v17/electrical-floor2.svg", import.meta.url)),
+      access(new URL("../public/plans/v17/water-sewer.svg", import.meta.url)),
+      access(new URL("../public/downloads/shopping-catalog-v17.csv", import.meta.url)),
+      access(new URL("../public/downloads/construction-sequence-v17.csv", import.meta.url)),
+      access(new URL("../public/renders/v17/11-kitchen-four-views.png", import.meta.url)),
+    ]);
+
+  assert.match(app, /От третьего лица/);
+  assert.match(app, /Ночь · включить свет/);
+  assert.match(app, /ЭОМ-01 · первый этаж/);
+  assert.match(app, /ВК-01 · вода и канализация/);
+  assert.match(app, /MAUNFELD CVI593SFBK LUX/);
+  assert.match(app, /41 490 ₽ · нет в наличии/);
+  assert.match(viewer, /MODEL_ROOT_REAL_SCALE/);
+  assert.match(viewer, /Проверка участка 20 × 30 м пройдена/);
+  assert.equal(electrical1, undefined);
+  assert.equal(electrical2, undefined);
+  assert.equal(water, undefined);
+  assert.equal(catalog, undefined);
+  assert.equal(sequence, undefined);
+  assert.equal(kitchenViews, undefined);
 });

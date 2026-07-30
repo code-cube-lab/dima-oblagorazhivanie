@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Предварительный план электрики первого этажа</title>
+  <desc id="desc">План-задание электрику: розетки, свет, выключатели и группы первого этажа дома Дмитрия.</desc>
+  <defs>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#17343d}.small{font-size:13px}.tiny{font-size:11px}.room{fill:#f4efe5;stroke:#17343d;stroke-width:3}.wet{fill:#dcecf0}.garage{fill:#e5e1da}.label{font-size:17px;font-weight:700}.circuit{fill:none;stroke:#d17742;stroke-width:3;stroke-dasharray:10 7}.socket{fill:#fff;stroke:#176b8b;stroke-width:3}.switch{fill:#fff;stroke:#b55f32;stroke-width:3}.light{fill:#fff3a8;stroke:#9f7a10;stroke-width:3}.dim{stroke:#526b73;stroke-width:1.5;marker-start:url(#arrow);marker-end:url(#arrow)}.note{fill:#fff8dd;stroke:#d17742;stroke-width:2}.board{fill:#17343d}.boardText{fill:#fff;font-weight:700;font-size:12px}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 4 0 0v8z" fill="#526b73"/></marker>
+    <g id="s"><rect class="socket" x="-10" y="-5" width="20" height="10" rx="2"/><circle cx="-4" cy="0" r="1.5" fill="#176b8b"/><circle cx="4" cy="0" r="1.5" fill="#176b8b"/></g>
+    <g id="l"><circle class="light" r="10"/><path d="M-6-6 6 6M6-6-6 6" stroke="#9f7a10" stroke-width="2"/></g>
+    <g id="w"><circle class="switch" r="8"/><path d="M0 0 7-7" stroke="#b55f32" stroke-width="2"/></g>
+  </defs>
+  <rect width="1200" height="800" fill="#fbfaf6"/>
+  <text x="55" y="52" font-size="27" font-weight="700">ЭОМ-01 · ПЕРВЫЙ ЭТАЖ · РОЗЕТКИ И ОСВЕЩЕНИЕ</text>
+  <rect class="note" x="55" y="68" width="1090" height="48" rx="8"/>
+  <text x="75" y="89" class="small" font-weight="700">ПРЕДВАРИТЕЛЬНОЕ ЗАДАНИЕ, НЕ РАБОЧИЙ ПРОЕКТ.</text>
+  <text x="75" y="106" class="small">Привязки уточнить по обмеру, мебели, мощностям техники, ТУ и расчёту ЭОМ профильным проектировщиком.</text>
+
+  <g transform="translate(80 150)">
+    <rect class="room garage" x="0" y="0" width="280" height="520"/><text class="label" x="110" y="250">ГАРАЖ</text><text class="small" x="102" y="271">47,75 м²</text>
+    <rect class="room" x="280" y="0" width="390" height="315"/><text class="label" x="415" y="145">КУХНЯ-ГОСТИНАЯ</text><text class="small" x="455" y="166">50,12 м²</text>
+    <rect class="room" x="280" y="315" width="190" height="205"/><text class="label" x="337" y="405">ГОСТЕВАЯ</text><text class="small" x="354" y="426">13,68 м²</text>
+    <rect class="room wet" x="470" y="315" width="200" height="205"/><text class="label" x="520" y="383">ПРИХОЖАЯ</text><text class="small" x="522" y="404">+ С/У + КОРИДОР</text><text class="tiny" x="532" y="423">вход снизу</text>
+    <rect class="room wet" x="0" y="420" width="122" height="100"/><text class="small" x="18" y="460" font-weight="700">КОТЕЛЬНАЯ</text><text class="tiny" x="23" y="479">щит / слаботочка</text>
+    <rect class="board" x="110" y="440" width="38" height="60" rx="4"/><text class="boardText" x="117" y="464">ЩР</text><text class="boardText" x="114" y="481">1Э</text>
+
+    <path class="circuit" d="M129 470H220V115H455M220 260H570M220 470H375M470 470H570V260"/>
+    <use href="#l" x="430" y="75"/><use href="#l" x="545" y="75"/><use href="#l" x="430" y="205"/><use href="#l" x="545" y="205"/>
+    <use href="#l" x="375" y="380"/><use href="#l" x="570" y="380"/><use href="#l" x="570" y="465"/>
+    <use href="#l" x="85" y="120"/><use href="#l" x="185" y="120"/><use href="#l" x="85" y="300"/><use href="#l" x="185" y="300"/>
+
+    <use href="#s" x="310" y="34"/><use href="#s" x="390" y="34"/><use href="#s" x="470" y="34"/><use href="#s" x="550" y="34"/><use href="#s" x="635" y="34"/>
+    <use href="#s" x="310" y="280"/><use href="#s" x="390" y="280"/><use href="#s" x="470" y="280"/><use href="#s" x="550" y="280"/><use href="#s" x="635" y="280"/>
+    <use href="#s" x="305" y="345"/><use href="#s" x="445" y="345"/><use href="#s" x="305" y="485"/><use href="#s" x="445" y="485"/>
+    <use href="#s" x="495" y="345"/><use href="#s" x="645" y="345"/><use href="#s" x="495" y="485"/><use href="#s" x="645" y="485"/>
+    <use href="#s" x="25" y="35"/><use href="#s" x="140" y="35"/><use href="#s" x="255" y="35"/><use href="#s" x="25" y="390"/><use href="#s" x="255" y="390"/>
+    <use href="#w" x="300" y="300"/><use href="#w" x="455" y="300"/><use href="#w" x="485" y="300"/><use href="#w" x="655" y="500"/><use href="#w" x="270" y="470"/>
+
+    <line class="dim" x1="0" y1="-22" x2="670" y2="-22"/><text class="small" x="300" y="-30">14,50 м по исходному PDF</text>
+    <line class="dim" x1="700" y1="0" x2="700" y2="520"/><text class="small" transform="translate(725 330) rotate(-90)">11,46 м по исходному PDF</text>
+  </g>
+
+  <g transform="translate(830 160)">
+    <text class="label" x="0" y="0">УСЛОВНЫЕ ОБОЗНАЧЕНИЯ</text>
+    <use href="#s" x="10" y="35"/><text class="small" x="35" y="40">розетка 230 В</text>
+    <use href="#w" x="10" y="70"/><text class="small" x="35" y="75">выключатель</text>
+    <use href="#l" x="10" y="105"/><text class="small" x="35" y="110">световая точка</text>
+    <rect class="board" x="-2" y="132" width="26" height="34" rx="3"/><text class="boardText" x="2" y="154">ЩР</text><text class="small" x="35" y="154">распределительный щит</text>
+    <path class="circuit" d="M0 195H25"/><text class="small" x="35" y="200">логика группы, не трасса</text>
+    <text class="label" x="0" y="250">ОБЯЗАТЕЛЬНО УТОЧНИТЬ</text>
+    <text class="small" x="0" y="280">• мощности варочной, духовки, ПММ;</text>
+    <text class="small" x="0" y="306">• электромобиль / ворота / верстак;</text>
+    <text class="small" x="0" y="332">• котёл, насосы, автоматика и резерв;</text>
+    <text class="small" x="0" y="358">• высоты розеток по мебели;</text>
+    <text class="small" x="0" y="384">• заземление, УЗО, СПД, селективность;</text>
+    <text class="small" x="0" y="410">• отдельные линии мокрых зон.</text>
+    <rect class="note" x="0" y="450" width="305" height="94" rx="8"/>
+    <text class="small" x="15" y="476" font-weight="700">Высоты-задание от чистого пола:</text>
+    <text class="small" x="15" y="500">обычные розетки 300 мм; рабочая зона</text>
+    <text class="small" x="15" y="522">1100 мм; выключатели 900 мм.</text>
+    <text class="tiny" x="15" y="541">Финально — только после раскладки мебели.</text>
+  </g>
+</svg>

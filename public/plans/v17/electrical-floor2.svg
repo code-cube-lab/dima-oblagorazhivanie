@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Предварительный план электрики второго этажа</title>
+  <desc id="desc">План-задание электрику: розетки, свет, выключатели и группы второго этажа с общим детским безопасным балконом.</desc>
+  <defs>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#17343d}.small{font-size:13px}.tiny{font-size:11px}.room{fill:#f4efe5;stroke:#17343d;stroke-width:3}.child{fill:#f5e3d5}.wet{fill:#dcecf0}.balcony{fill:#d8e5d6;stroke:#426548;stroke-width:4}.label{font-size:17px;font-weight:700}.circuit{fill:none;stroke:#d17742;stroke-width:3;stroke-dasharray:10 7}.socket{fill:#fff;stroke:#176b8b;stroke-width:3}.switch{fill:#fff;stroke:#b55f32;stroke-width:3}.light{fill:#fff3a8;stroke:#9f7a10;stroke-width:3}.dim{stroke:#526b73;stroke-width:1.5;marker-start:url(#arrow);marker-end:url(#arrow)}.note{fill:#fff8dd;stroke:#d17742;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 4 0 0v8z" fill="#526b73"/></marker>
+    <g id="s"><rect class="socket" x="-10" y="-5" width="20" height="10" rx="2"/><circle cx="-4" cy="0" r="1.5" fill="#176b8b"/><circle cx="4" cy="0" r="1.5" fill="#176b8b"/></g>
+    <g id="l"><circle class="light" r="10"/><path d="M-6-6 6 6M6-6-6 6" stroke="#9f7a10" stroke-width="2"/></g>
+    <g id="w"><circle class="switch" r="8"/><path d="M0 0 7-7" stroke="#b55f32" stroke-width="2"/></g>
+  </defs>
+  <rect width="1200" height="800" fill="#fbfaf6"/>
+  <text x="55" y="52" font-size="27" font-weight="700">ЭОМ-02 · ВТОРОЙ ЭТАЖ · РОЗЕТКИ И ОСВЕЩЕНИЕ</text>
+  <rect class="note" x="55" y="68" width="1090" height="48" rx="8"/>
+  <text x="75" y="89" class="small" font-weight="700">ПРЕДВАРИТЕЛЬНОЕ ЗАДАНИЕ, НЕ РАБОЧИЙ ПРОЕКТ.</text>
+  <text x="75" y="106" class="small">Два выхода соединены одним балконом над гаражом: существующий из спальни родителей и новый вместо окна детской.</text>
+
+  <g transform="translate(80 150)">
+    <rect class="room" x="0" y="0" width="275" height="215"/><text class="label" x="65" y="100">СПАЛЬНЯ РОДИТЕЛЕЙ</text><text class="small" x="108" y="122">15,58 м²</text>
+    <rect class="room" x="275" y="0" width="120" height="215"/><text class="small" x="294" y="95" font-weight="700">ГАРДЕРОБ</text><text class="tiny" x="315" y="114">7,47 м²</text>
+    <rect class="room wet" x="395" y="0" width="275" height="215"/><text class="label" x="448" y="92">САНУЗЛЫ</text><text class="small" x="427" y="114">родители + дети</text>
+    <rect class="room" x="0" y="215" width="670" height="120"/><text class="label" x="285" y="270">ХОЛЛ И ЛЕСТНИЦА</text>
+    <rect class="room child" x="0" y="335" width="335" height="185"/><text class="label" x="105" y="420">ДАРИНА · 8</text><text class="small" x="130" y="441">16,33 м²</text>
+    <rect class="room child" x="335" y="335" width="335" height="185"/><text class="label" x="452" y="420">ЯРИК · 6</text><text class="small" x="472" y="441">16,87 м²</text>
+    <rect class="balcony" x="-88" y="0" width="88" height="335"/><text class="small" transform="translate(-48 260) rotate(-90)" font-weight="700">ОБЩИЙ БЕЗОПАСНЫЙ БАЛКОН 7,50 × 1,44 м</text>
+    <path d="M0 75h-22M0 400h-22" stroke="#d17742" stroke-width="8"/><text class="tiny" x="8" y="70">выход родителей</text><text class="tiny" x="8" y="395">новая дверь Дарина</text>
+
+    <path class="circuit" d="M-40 170H130V105H520M130 275H520M130 430H510"/>
+    <use href="#l" x="135" y="105"/><use href="#l" x="335" y="105"/><use href="#l" x="470" y="105"/><use href="#l" x="590" y="105"/>
+    <use href="#l" x="180" y="275"/><use href="#l" x="490" y="275"/>
+    <use href="#l" x="165" y="430"/><use href="#l" x="500" y="430"/>
+    <use href="#l" x="-45" y="90"/><use href="#l" x="-45" y="245"/>
+
+    <use href="#s" x="25" y="30"/><use href="#s" x="135" y="30"/><use href="#s" x="245" y="30"/><use href="#s" x="25" y="185"/><use href="#s" x="245" y="185"/>
+    <use href="#s" x="420" y="30"/><use href="#s" x="530" y="30"/><use href="#s" x="645" y="30"/>
+    <use href="#s" x="25" y="365"/><use href="#s" x="165" y="365"/><use href="#s" x="310" y="365"/><use href="#s" x="25" y="490"/><use href="#s" x="310" y="490"/>
+    <use href="#s" x="360" y="365"/><use href="#s" x="500" y="365"/><use href="#s" x="645" y="365"/><use href="#s" x="360" y="490"/><use href="#s" x="645" y="490"/>
+    <use href="#w" x="10" y="75"/><use href="#w" x="10" y="400"/><use href="#w" x="265" y="205"/><use href="#w" x="385" y="205"/><use href="#w" x="325" y="345"/>
+
+    <line class="dim" x1="0" y1="-22" x2="670" y2="-22"/><text class="small" x="300" y="-30">14,50 м по исходному PDF</text>
+    <line class="dim" x1="700" y1="0" x2="700" y2="520"/><text class="small" transform="translate(725 330) rotate(-90)">11,46 м по исходному PDF</text>
+  </g>
+
+  <g transform="translate(830 160)">
+    <text class="label" x="0" y="0">ПРОВЕРКИ ДЛЯ СЕМЬИ</text>
+    <text class="small" x="0" y="34">• детские розетки со шторками;</text>
+    <text class="small" x="0" y="60">• ночной свет лестницы и коридора;</text>
+    <text class="small" x="0" y="86">• управление балконным светом из двух мест;</text>
+    <text class="small" x="0" y="112">• IP44 и уравнивание потенциалов в с/у;</text>
+    <text class="small" x="0" y="138">• отдельные линии кондиционеров;</text>
+    <text class="small" x="0" y="164">• датчики протечки и дыма.</text>
+    <text class="label" x="0" y="222">БАЛКОН</text>
+    <text class="small" x="0" y="252">Ограждение 1,20 м, перегородки 1,80 м.</text>
+    <text class="small" x="0" y="278">Свет IP65, розетка IP55 с крышкой.</text>
+    <text class="small" x="0" y="304">Кабель и проходки — после расчёта.</text>
+    <rect class="note" x="0" y="350" width="310" height="138" rx="8"/>
+    <text class="small" x="15" y="377" font-weight="700">До штробления подтвердить:</text>
+    <text class="small" x="15" y="403">планы мебели и телевизоров;</text>
+    <text class="small" x="15" y="429">рабочие места детей;</text>
+    <text class="small" x="15" y="455">кондиционеры и тёплые полы;</text>
+    <text class="small" x="15" y="481">схему щита, кабели, автоматы и УЗО.</text>
+  </g>
+</svg>
