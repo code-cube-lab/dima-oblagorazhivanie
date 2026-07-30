@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1250" viewBox="0 0 1900 1250">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}.title{font:700 38px Georgia,serif}
+      .sub{font-size:18px;fill:#557078}.h{font-size:20px;font-weight:700}.p{font-size:14px}.tiny{font-size:11px}
+      .site{fill:#f8f4e9;stroke:#173841;stroke-width:5}.house{fill:#d7d4ce;stroke:#173841;stroke-width:3}
+      .hard{fill:#c9c7c2;stroke:#777;stroke-width:2}.path{fill:#9c9c98;stroke:#5b5b58;stroke-width:2}
+      .lawn{fill:#cfe4bd;stroke:#799967;stroke-width:2}.bed{fill:#8d6847;stroke:#5c3d27;stroke-width:2}
+      .bath{fill:#8b5c39;stroke:#173841;stroke-width:3}.shed{fill:#616468;stroke:#173841;stroke-width:2}
+      .p1{fill:#f7f2d0;stroke:#648367;stroke-width:3}.p2{fill:#e690a5;stroke:#8f4257;stroke-width:2}
+      .p3{fill:#bfd6a6;stroke:#537341;stroke-width:3}.p4{fill:#d2b778;stroke:#82662f;stroke-width:2}
+      .p5{fill:#8065b5;stroke:#4f3a78;stroke-width:2}.p6{fill:#7562a8;stroke:#3f356d;stroke-width:2}
+      .dim{stroke:#b96039;stroke-width:2;fill:none;stroke-dasharray:7 5}.zone{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:7 5}
+      .tableHead{fill:#173841}.r1{fill:#fffdf8}.r2{fill:#edf3f2}
+    </style>
+  </defs>
+  <rect width="1900" height="1250" fill="#f5f1e8"/>
+  <text x="55" y="65" class="title">ЛД-20.01 · Посадочный план — участок 20 × 30 м</text>
+  <text x="55" y="100" class="sub">Ставрополь · меньше деревьев, больше цветов и кустарников · координаты X/Y от переднего левого угла участка · концепция до анализа почвы, солнца и полива</text>
+
+  <g transform="translate(55 145)">
+    <rect x="35" y="15" width="420" height="630" class="site"/>
+    <rect x="35" y="521.3" width="357" height="123.7" class="hard"/>
+    <text x="155" y="625" class="tiny">БЕТОННЫЙ ПЕРЕДНИЙ ДВОР</text>
+    <rect x="392" y="15" width="63" height="630" class="bed"/>
+    <rect x="367" y="220.8" width="25" height="318.2" class="path"/>
+    <rect x="119" y="195.6" width="273" height="25.2" class="path"/>
+    <rect x="119" y="109.5" width="25.2" height="111.3" class="path"/>
+    <rect x="144" y="15" width="248" height="180.6" class="lawn"/>
+    <rect x="56" y="36" width="63" height="147" class="bath"/>
+    <text x="87" y="112" transform="rotate(-90 87 112)" text-anchor="middle" class="p" fill="#fff">БАНЯ 3 × 7</text>
+    <rect x="35" y="582" width="21" height="63" class="shed"/>
+    <text x="45" y="615" transform="rotate(-90 45 615)" text-anchor="middle" class="tiny" fill="#fff">ХОЗБЛОК 1 × 3</text>
+    <rect x="66.5" y="297.2" width="304.5" height="241.7" class="house"/>
+    <text x="218" y="410" text-anchor="middle" class="h">ДОМ</text>
+    <text x="218" y="435" text-anchor="middle" class="p">по PDF: 14,50 × 11,51</text>
+    <rect x="66.5" y="241.3" width="304.5" height="55.9" fill="#b26f43" stroke="#173841" stroke-width="2"/>
+    <text x="218" y="272" text-anchor="middle" class="p" fill="#fff">ТЕРРАСА / МАНГАЛЬНАЯ</text>
+    <rect x="35" y="645" width="420" height="35" fill="#43464a"/>
+    <text x="245" y="669" text-anchor="middle" font-size="15" fill="#fff">ДОРОГА · ПЕРЕД УЧАСТКОМ</text>
+
+    <!-- P01 Hydrangea row: x=18.80, y=6.8..17.6, step 1.35 -->
+    <g>
+      <circle cx="429.8" cy="502.2" r="12" class="p1"/><circle cx="429.8" cy="473.9" r="12" class="p1"/>
+      <circle cx="429.8" cy="445.5" r="12" class="p1"/><circle cx="429.8" cy="417.2" r="12" class="p1"/>
+      <circle cx="429.8" cy="388.8" r="12" class="p1"/><circle cx="429.8" cy="360.5" r="12" class="p1"/>
+      <circle cx="429.8" cy="332.1" r="12" class="p1"/><circle cx="429.8" cy="303.8" r="12" class="p1"/>
+      <circle cx="429.8" cy="275.4" r="12" class="p1"/>
+      <text x="429.8" y="280" text-anchor="middle" class="tiny">P01×9</text>
+    </g>
+    <!-- P02 low front row: x=17.45..19.70, y=.85 -->
+    <g>
+      <circle cx="401.5" cy="627.2" r="8" class="p2"/><circle cx="417.2" cy="627.2" r="8" class="p2"/>
+      <circle cx="433.0" cy="627.2" r="8" class="p2"/><circle cx="448.7" cy="627.2" r="8" class="p2"/>
+      <text x="425" y="610" text-anchor="middle" class="tiny">P02×4</text>
+    </g>
+    <!-- P03 rear screen -->
+    <circle cx="427" cy="162" r="18" class="p3"/><circle cx="427" cy="99" r="18" class="p3"/><circle cx="427" cy="36" r="18" class="p3"/>
+    <text x="395" y="95" class="tiny">P03×3</text>
+    <!-- P04 grasses in right strip and by bath -->
+    <g>
+      <circle cx="407.8" cy="508.5" r="8" class="p4"/><circle cx="407.8" cy="477" r="8" class="p4"/>
+      <circle cx="407.8" cy="445.5" r="8" class="p4"/><circle cx="407.8" cy="414" r="8" class="p4"/>
+      <circle cx="407.8" cy="382.5" r="8" class="p4"/><circle cx="407.8" cy="351" r="8" class="p4"/>
+      <circle cx="407.8" cy="319.5" r="8" class="p4"/><circle cx="407.8" cy="288" r="8" class="p4"/>
+      <circle cx="152.6" cy="162" r="8" class="p4"/><circle cx="152.6" cy="141" r="8" class="p4"/>
+      <circle cx="152.6" cy="120" r="8" class="p4"/><circle cx="152.6" cy="99" r="8" class="p4"/>
+      <text x="160" y="82" class="tiny">P04×4</text>
+    </g>
+    <!-- P05/P06 bands -->
+    <rect x="398" y="282" width="7" height="221" rx="3" class="p5"/>
+    <text x="395" y="395" transform="rotate(-90 395 395)" text-anchor="middle" class="tiny">P05 ШАЛФЕЙ ×28 · шаг 400</text>
+    <rect x="157" y="188" width="204" height="9" rx="4" class="p6"/>
+    <text x="259" y="182" text-anchor="middle" class="tiny">P06 ЛАВАНДА ×20 · шаг 550</text>
+
+    <!-- key dimensions -->
+    <path d="M455 15h32M455 645h32M482 15v630" class="dim"/>
+    <text x="502" y="335" transform="rotate(90 502 335)" text-anchor="middle" class="p">30 000</text>
+    <path d="M35 695v25M455 695v25M35 714h420" class="dim"/>
+    <text x="245" y="738" text-anchor="middle" class="p">20 000</text>
+    <text x="35" y="705" class="tiny">X=0</text><text x="455" y="705" text-anchor="end" class="tiny">X=20</text>
+    <text x="12" y="645" class="tiny">Y=0</text><text x="5" y="20" class="tiny">Y=30</text>
+  </g>
+
+  <g transform="translate(560 145)">
+    <text x="0" y="25" class="h">Спецификация и точные правила посадки</text>
+    <rect y="50" width="1285" height="560" fill="#fffdf8" stroke="#173841" stroke-width="2"/>
+    <rect y="50" width="1285" height="48" class="tableHead"/>
+    <g fill="#fff" font-size="13" font-weight="700">
+      <text x="12" y="80">Поз.</text><text x="78" y="80">Растение</text><text x="365" y="80">Кол.</text>
+      <text x="425" y="80">Координаты центров</text><text x="690" y="80">Шаг</text><text x="770" y="80">Взрослый H×W</text><text x="940" y="80">Отступы/роль</text>
+    </g>
+    <g font-size="12">
+      <rect y="98" width="1285" height="78" class="r1"/><text x="12" y="126">P01</text><text x="78" y="122">Гортензия метельчатая Bobo</text><text x="78" y="145" font-style="italic">Hydrangea paniculata 'Bobo'</text><text x="365" y="132">9</text><text x="425" y="122">X=18,80; Y=6,80…17,60</text><text x="425" y="145">9 центров, ряд вдоль дома</text><text x="690" y="132">1,35 м</text><text x="770" y="132">0,9×1,2 м</text><text x="940" y="122">1,80 м от дорожки; 1,20 м от забора</text><text x="940" y="145">цветущий фон, окно/свет не закрывать</text>
+      <rect y="176" width="1285" height="78" class="r2"/><text x="12" y="204">P02</text><text x="78" y="200">Спирея японская Little Princess</text><text x="78" y="223" font-style="italic">Spiraea japonica 'Little Princess'</text><text x="365" y="210">4</text><text x="425" y="200">Y=0,85; X=17,45/18,20/18,95/19,70</text><text x="425" y="223">низкий передний ряд</text><text x="690" y="210">0,75 м</text><text x="770" y="210">0,5–0,9×0,6–1,0</text><text x="940" y="200">0,85 м от дороги; стричь единым бордюром</text><text x="940" y="223">сохранять обзор при выезде автомобиля</text>
+      <rect y="254" width="1285" height="78" class="r1"/><text x="12" y="282">P03</text><text x="78" y="278">Дёрен Sibirica Variegata</text><text x="78" y="301" font-style="italic">Cornus alba 'Sibirica Variegata'</text><text x="365" y="288">3</text><text x="425" y="278">X=18,67; Y=23,0/26,0/29,0</text><text x="425" y="301">задний экран</text><text x="690" y="288">3,00 м</text><text x="770" y="288">1,5–2,5×1,5–2,5</text><text x="940" y="278">≥1,3 м от забора и дорожки</text><text x="940" y="301">формировать обрезкой; проверить сеть/дренаж</text>
+      <rect y="332" width="1285" height="78" class="r2"/><text x="12" y="360">P04</text><text x="78" y="356">Вейник Karl Foerster</text><text x="78" y="379" font-style="italic">Calamagrostis × acutiflora 'Karl Foerster'</text><text x="365" y="366">12</text><text x="425" y="356">8 шт X=17,75 Y=6,5…17,0</text><text x="425" y="379">4 шт X=5,60 Y=23…26</text><text x="690" y="366">1,50/1,00</text><text x="770" y="366">1,5×0,5 м</text><text x="940" y="356">центр ≥0,75 м от края дорожки</text><text x="940" y="379">вертикальный ритм, не закрывает обзор</text>
+      <rect y="410" width="1285" height="78" class="r1"/><text x="12" y="438">P05</text><text x="78" y="434">Шалфей дубравный, фиолетовый сорт</text><text x="78" y="457" font-style="italic">Salvia nemorosa cv.</text><text x="365" y="444">28</text><text x="425" y="434">X=17,30; Y=6,6…17,4</text><text x="425" y="457">передний ярус правой полосы</text><text x="690" y="444">0,40 м</text><text x="770" y="444">0,5–0,8×0,4</text><text x="940" y="434">центр 0,30 м от покрытия</text><text x="940" y="457">мульча; срезать соцветия для повтора</text>
+      <rect y="488" width="1285" height="78" class="r2"/><text x="12" y="516">P06</text><text x="78" y="512">Лаванда узколистная Hidcote</text><text x="78" y="535" font-style="italic">Lavandula angustifolia 'Hidcote'</text><text x="365" y="522">20</text><text x="425" y="512">Y=21,75; X=5,80…16,25</text><text x="425" y="535">край задней дорожки</text><text x="690" y="522">0,55 м</text><text x="770" y="522">0,35–0,6×0,75</text><text x="940" y="512">центр 0,35 м от покрытия; полный дренаж</text><text x="940" y="535">солнечная ароматная линия</text>
+      <rect y="566" width="1285" height="44" class="r1"/><text x="12" y="594">ИТОГО</text><text x="78" y="594">0 новых деревьев · 16 кустарников · 60 многолетников/злаков</text><text x="770" y="594">Сажать блоками, не единичной «коллекцией».</text>
+    </g>
+  </g>
+
+  <g transform="translate(560 790)">
+    <rect width="1285" height="290" rx="12" fill="#fffdf8" stroke="#173841" stroke-width="2"/>
+    <text x="25" y="38" class="h">ТЗ садовнику и контроль результата</text>
+    <text x="25" y="72" class="p">1. До цены: геодезическая разбивка границ, фото солнца 09:00/13:00/17:00, анализ pH/механического состава, проверка застойной воды.</text>
+    <text x="25" y="102" class="p">2. Вынести оси X/Y и центры P01–P06 колышками. Заказчик принимает раскладку до копки ям.</text>
+    <text x="25" y="132" class="p">3. Согласовать сорт, посадочный размер и фото партии. Замены допускаются только с новой взрослой шириной и пересчётом шага.</text>
+    <text x="25" y="162" class="p">4. Устроить капельный полив отдельными зонами: кустарники / многолетники / лаванда. Лаванду не подключать к переувлажнённой линии.</text>
+    <text x="25" y="192" class="p">5. После посадки: исполнительная схема фактических центров, фото корневой шейки, акт полива, гарантия приживаемости и календарь ухода.</text>
+    <text x="25" y="232" class="p">Визуализация: показывать три состояния — «посадка», «3-й год», «взрослое». Финальные рендеры сайта должны совпадать с кодами P01–P06.</text>
+    <text x="25" y="265" class="tiny">Сортовой подбор подтвердить местным агрономом после осмотра. Источники размеров: RHS; локальную доступность и качество партии проверять у питомника перед оплатой.</text>
+  </g>
+  <text x="55" y="1210" class="tiny">Проверочные источники: rhs.org.uk — Bobo, Little Princess, Cornus, Salvia, Hidcote; наличие в Ставрополе сверять перед закупкой. Дата концепции: 30.07.2026.</text>
+</svg>

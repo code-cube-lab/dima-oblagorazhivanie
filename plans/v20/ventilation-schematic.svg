@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .bg{fill:#f4f1ea}.sheet{fill:#fff;stroke:#1f2b35;stroke-width:2}.sup{fill:#d8edff;stroke:#1478b8;stroke-width:3}.ext{fill:#ffe2d9;stroke:#c5482e;stroke-width:3}.sep{fill:#fff2c7;stroke:#a87700;stroke-width:3}.t{font:18px Arial;fill:#19242e}.s{font:14px Arial;fill:#34414d}.h{font:bold 28px Arial;fill:#17212b}.hh{font:bold 20px Arial;fill:#17212b}.lineS{stroke:#1478b8;stroke-width:5;fill:none}.lineE{stroke:#c5482e;stroke-width:5;fill:none}.lineX{stroke:#a87700;stroke-width:5;fill:none}.dash{stroke-dasharray:10 7}.link{fill:#0b5cab;text-decoration:underline}
+    </style>
+    <marker id="bs" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#1478b8"/></marker>
+    <marker id="be" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#c5482e"/></marker>
+    <marker id="bx" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#a87700"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="1000"/>
+  <rect class="sheet" x="24" y="22" width="1552" height="956" rx="8"/>
+  <text class="h" x="55" y="66">В-01. Вентиляция дома — схема и коды объектов Cinema 4D v20.1</text>
+  <text class="s" x="55" y="94">Синие линии — приток · красные — общеобменная вытяжка · жёлтые — отдельные системы · сечения и расходы назначает инженер после расчёта</text>
+
+  <rect class="sheet" x="55" y="125" width="1490" height="720" rx="8"/>
+  <rect class="sup" x="665" y="360" width="270" height="150" rx="12"/>
+  <text class="hh" x="700" y="400">V01 — ВУЭ 350</text>
+  <text class="s" x="690" y="430">корпус 470×730×675</text>
+  <text class="s" x="697" y="456">патрубки Ø160</text>
+  <text class="s" x="690" y="482">подбор после расчёта</text>
+
+  <rect class="sup" x="90" y="165" width="240" height="95" rx="8"/><text class="t" x="115" y="202">V-SUP-101</text><text class="s" x="115" y="228">гостевая, 1 этаж</text>
+  <rect class="sup" x="90" y="305" width="240" height="95" rx="8"/><text class="t" x="115" y="342">V-SUP-102</text><text class="s" x="115" y="368">гостиная, 1 этаж</text>
+  <rect class="sup" x="90" y="515" width="240" height="95" rx="8"/><text class="t" x="115" y="552">V-SUP-201</text><text class="s" x="115" y="578">детская Дарины</text>
+  <rect class="sup" x="90" y="655" width="240" height="95" rx="8"/><text class="t" x="115" y="692">V-SUP-202</text><text class="s" x="115" y="718">детская Ярика</text>
+  <rect class="sup" x="390" y="655" width="240" height="95" rx="8"/><text class="t" x="415" y="692">V-SUP-203</text><text class="s" x="415" y="718">спальня родителей</text>
+
+  <path class="lineS" marker-end="url(#bs)" d="M665 395H420V212H330"/>
+  <path class="lineS" marker-end="url(#bs)" d="M665 425H400V352H330"/>
+  <path class="lineS" marker-end="url(#bs)" d="M665 455H365V562H330"/>
+  <path class="lineS" marker-end="url(#bs)" d="M665 470H350V702H330"/>
+  <path class="lineS" marker-end="url(#bs)" d="M665 485H610V702H630"/>
+
+  <rect class="ext" x="1260" y="165" width="240" height="95" rx="8"/><text class="t" x="1285" y="202">V-EXT-101</text><text class="s" x="1285" y="228">санузел, 1 этаж</text>
+  <rect class="ext" x="1260" y="305" width="240" height="95" rx="8"/><text class="t" x="1285" y="342">V-EXT-102</text><text class="s" x="1285" y="368">кухня, общеобменная</text>
+  <rect class="ext" x="1260" y="515" width="240" height="95" rx="8"/><text class="t" x="1285" y="552">V-EXT-201</text><text class="s" x="1285" y="578">санузел детей</text>
+  <rect class="ext" x="1260" y="655" width="240" height="95" rx="8"/><text class="t" x="1285" y="692">V-EXT-202</text><text class="s" x="1285" y="718">санузел родителей</text>
+  <path class="lineE" marker-end="url(#be)" d="M1260 212H1080V395H935"/>
+  <path class="lineE" marker-end="url(#be)" d="M1260 352H1095V425H935"/>
+  <path class="lineE" marker-end="url(#be)" d="M1260 562H1110V455H935"/>
+  <path class="lineE" marker-end="url(#be)" d="M1260 702H1125V485H935"/>
+
+  <rect class="sep" x="975" y="745" width="260" height="75" rx="8"/>
+  <text class="t" x="995" y="775">V-K01 вытяжка плиты</text><text class="s" x="995" y="800">отдельно наружу</text>
+  <path class="lineX" marker-end="url(#bx)" d="M1105 745V650H1520"/>
+  <rect class="sep" x="665" y="165" width="270" height="95" rx="8"/>
+  <text class="t" x="690" y="200">F-B01 дымоудаление</text><text class="s" x="690" y="227">отдельно, по паспорту котла</text>
+  <path class="lineX" marker-end="url(#bx)" d="M800 260V325"/>
+  <text class="s" x="650" y="340">не подключать к V01</text>
+
+  <rect fill="#fff4e5" stroke="#c16b20" stroke-width="2" x="55" y="865" width="1490" height="85" rx="8"/>
+  <text class="hh" x="75" y="897">Перед монтажом: обмер → воздухообмен по комнатам → аэродинамика → акустика → противообмерзание → рабочие узлы проходок</text>
+  <a href="https://ventilation-system.com/ru/product/vue-350-v1b-ec-a21/" target="_blank"><text class="s link" x="75" y="929">V01 — официальная карточка и CAD-модель ВЕНТС ВУЭ 350 В1Б ЕС А21</text></a>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1250" viewBox="0 0 1800 1250">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}.title{font:700 38px Georgia,serif}
+      .sub{font-size:18px;fill:#557078}.h{font-size:21px;font-weight:700}.p{font-size:14px}.tiny{font-size:11px}
+      .panel{fill:#fffdf8;stroke:#173841;stroke-width:3}.cab{fill:#cdb79d;stroke:#173841;stroke-width:2}
+      .upper{fill:#a99680;stroke:#173841;stroke-width:2}.glass{fill:#cae8ef;stroke:#356f86;stroke-width:3}
+      .counter{fill:#eee2d2;stroke:#173841;stroke-width:2}.floor{stroke:#173841;stroke-width:5}
+      .power{fill:#fff0e6;stroke:#b96039;stroke-width:3}.water{fill:#e5f3f7;stroke:#357088;stroke-width:3}
+      .dim{stroke:#b96039;stroke-width:2;fill:none}.clear{fill:#e8f4e8;stroke:#648367;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1800" height="1250" fill="#f5f1e8"/>
+  <text x="55" y="65" class="title">КМ-20.02 · Кухня — четыре развёртки стен</text>
+  <text x="55" y="100" class="sub">Вариант A · отметки от чистого пола (AFFL) · горизонтальные привязки от левого чистового угла каждой развёртки</text>
+
+  <g transform="translate(55 145)">
+    <rect width="825" height="475" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">ЮЖНАЯ СТЕНА S · рабочая линия 5530</text>
+    <line x1="35" y1="405" x2="790" y2="405" class="floor"/>
+    <g transform="translate(90 130)">
+      <rect width="78" height="275" class="cab"/><rect x="78" width="78" height="275" class="cab"/>
+      <rect x="156" y="170" width="39" height="105" class="cab"/><rect x="195" y="170" width="104" height="105" class="cab"/>
+      <rect x="299" y="170" width="117" height="105" class="cab"/><rect x="416" y="170" width="78" height="105" class="cab"/>
+      <rect x="494" y="170" width="104" height="105" class="cab"/><rect x="598" y="170" width="78" height="105" class="cab"/>
+      <rect x="156" y="155" width="520" height="15" class="counter"/>
+      <rect x="195" y="35" width="104" height="95" class="upper"/><rect x="299" y="35" width="117" height="95" class="upper"/>
+      <rect x="416" y="35" width="78" height="95" class="upper"/><rect x="494" y="35" width="104" height="95" class="upper"/>
+      <rect x="598" y="35" width="78" height="95" class="upper"/>
+      <rect x="97" y="105" width="42" height="65" fill="#202528"/>
+      <rect x="338" y="195" width="42" height="10" fill="#202528"/>
+      <ellipse cx="546" cy="205" rx="32" ry="14" fill="#eaf0ef" stroke="#357088" stroke-width="2"/>
+      <text x="39" y="295" text-anchor="middle" class="tiny">K01 600 ХОЛ</text><text x="117" y="295" text-anchor="middle" class="tiny">K02 600 ДУХ</text>
+      <text x="175" y="295" text-anchor="middle" class="tiny">K03 300</text><text x="247" y="295" text-anchor="middle" class="tiny">K04 800</text>
+      <text x="357" y="295" text-anchor="middle" class="tiny">K05 900 ПАН</text><text x="455" y="295" text-anchor="middle" class="tiny">K06 600</text>
+      <text x="546" y="295" text-anchor="middle" class="tiny">K07 800 МОЙКА</text><text x="637" y="295" text-anchor="middle" class="tiny">K08 600 ПММ</text>
+    </g>
+    <circle cx="184" cy="265" r="14" class="power"/><text x="184" y="270" text-anchor="middle" class="tiny">E01</text>
+    <circle cx="262" cy="265" r="14" class="power"/><text x="262" y="270" text-anchor="middle" class="tiny">E02</text>
+    <circle cx="446" cy="352" r="14" class="power"/><text x="446" y="357" text-anchor="middle" class="tiny">E03</text>
+    <circle cx="650" cy="350" r="14" class="water"/><text x="650" y="355" text-anchor="middle" class="tiny">W01</text>
+    <circle cx="728" cy="350" r="14" class="power"/><text x="728" y="355" text-anchor="middle" class="tiny">E04</text>
+    <circle cx="446" cy="190" r="14" class="power"/><text x="446" y="195" text-anchor="middle" class="tiny">E05</text>
+    <text x="25" y="450" class="p">Столешница 900; верх шкафов ориентир 2400; все розетки доступны из соседнего модуля.</text>
+  </g>
+
+  <g transform="translate(920 145)">
+    <rect width="825" height="475" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">СЕВЕРНАЯ СТЕНА N · заднее остекление</text>
+    <line x1="35" y1="405" x2="790" y2="405" class="floor"/>
+    <rect x="90" y="120" width="170" height="285" class="glass"/>
+    <rect x="330" y="120" width="145" height="285" class="glass"/>
+    <rect x="565" y="120" width="145" height="285" class="glass"/>
+    <text x="175" y="105" text-anchor="middle" class="p">портал/окно по листу 7</text>
+    <text x="402" y="105" text-anchor="middle" class="p">портал/окно по листу 7</text>
+    <text x="638" y="105" text-anchor="middle" class="p">окно 03</text>
+    <rect x="65" y="70" width="670" height="40" rx="8" class="clear"/>
+    <text x="400" y="96" text-anchor="middle" class="p">ЗАПРЕТ: шкафы, столешницы, ТВ и высокий декор не заходят в световые проёмы</text>
+    <text x="25" y="447" class="p">Допустимо: только свободностоящая мебель, не мешающая открыванию и проходу; точные створки проверить на объекте.</text>
+  </g>
+
+  <g transform="translate(55 655)">
+    <rect width="825" height="475" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">ВОСТОЧНАЯ СТЕНА E · боковое окно и проход</text>
+    <line x1="35" y1="405" x2="790" y2="405" class="floor"/>
+    <rect x="505" y="135" width="175" height="210" class="glass"/>
+    <rect x="455" y="90" width="275" height="295" fill="none" stroke="#648367" stroke-width="3" stroke-dasharray="10 7"/>
+    <text x="592" y="120" text-anchor="middle" class="p">зона окна — оставить свободной</text>
+    <rect x="120" y="305" width="220" height="100" fill="#e5d6c2" stroke="#173841" stroke-width="2"/>
+    <text x="230" y="350" text-anchor="middle" class="p">обеденная консоль/хранение</text>
+    <text x="230" y="375" text-anchor="middle" class="tiny">только после проверки прохода</text>
+    <text x="25" y="447" class="p">От края мебели до откоса окна ≥300; до открывающейся створки — по фактической траектории.</text>
+  </g>
+
+  <g transform="translate(920 655)">
+    <rect width="825" height="475" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">ЗАПАДНАЯ СТОРОНА W · связь с гостиной</text>
+    <line x1="35" y1="405" x2="790" y2="405" class="floor"/>
+    <rect x="240" y="290" width="340" height="115" fill="#e4d3bc" stroke="#173841" stroke-width="3"/>
+    <rect x="220" y="165" width="380" height="110" fill="none" stroke="#648367" stroke-width="3" stroke-dasharray="10 7"/>
+    <text x="410" y="330" text-anchor="middle" class="h">ОСТРОВ 2400 × 1000</text>
+    <text x="410" y="355" text-anchor="middle" class="p">3–4 посадочных места</text>
+    <text x="410" y="215" text-anchor="middle" class="p">над островом — только свет, без вытяжки</text>
+    <text x="25" y="447" class="p">Проход к гарнитуру 1100–1200; проход к столовой ≥1000; напольный вывод только после фиксации острова.</text>
+  </g>
+
+  <rect x="55" y="1160" width="1690" height="58" rx="9" fill="#173841"/>
+  <text x="900" y="1197" text-anchor="middle" font-size="16" fill="#fff">Приоритет: окно и проходы → мебель → техника → розетки/вода → свет. Менять порядок нельзя.</text>
+</svg>

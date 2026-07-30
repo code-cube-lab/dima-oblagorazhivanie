@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}
+      .title{font:700 38px Georgia,serif}.sub{font-size:18px;fill:#557078}
+      .h{font-size:22px;font-weight:700}.p{font-size:15px}.tiny{font-size:12px}
+      .room{fill:#fffdf8;stroke:#173841;stroke-width:5}.wall{fill:#173841}
+      .glass{fill:#cbe8ef;stroke:#357088;stroke-width:3}.cab{fill:#ceb99f;stroke:#173841;stroke-width:2}
+      .tall{fill:#8e806e;stroke:#173841;stroke-width:2}.island{fill:#e4d3bc;stroke:#173841;stroke-width:3}
+      .ok{fill:#e8f4e8;stroke:#648367;stroke-width:3}.warn{fill:#fff0e8;stroke:#b96039;stroke-width:3}
+      .bad{fill:#fae7e5;stroke:#a54842;stroke-width:3}.dim{stroke:#b96039;stroke-width:2;fill:none}
+      .clear{fill:none;stroke:#59a06b;stroke-width:3;stroke-dasharray:9 6}
+      .collision{fill:#d64d45;fill-opacity:.28;stroke:#a6302b;stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1800" height="1100" fill="#f5f1e8"/>
+  <text x="60" y="70" class="title">КМ-20.01 · Формы кухни и проверка проёмов</text>
+  <text x="60" y="105" class="sub">Кухня-гостиная 50,12 м² · исходник: лист 7 PDF · размеры в мм · рабочее решение только после чистового обмера</text>
+
+  <g transform="translate(55 155)">
+    <rect width="540" height="780" rx="14" class="ok"/>
+    <text x="30" y="45" class="h">A · Линейная + остров — рекомендовано</text>
+    <text x="30" y="72" class="p">Все наружные окна и двери остаются свободными.</text>
+    <g transform="translate(45 115)">
+      <rect width="450" height="500" class="room"/>
+      <rect x="80" y="-5" width="95" height="14" class="glass"/>
+      <rect x="230" y="-5" width="100" height="14" class="glass"/>
+      <rect x="390" y="-5" width="50" height="14" class="glass"/>
+      <rect x="441" y="115" width="14" height="105" class="glass"/>
+      <text x="225" y="28" text-anchor="middle" class="tiny">ЗАДНИЕ ПРОЁМЫ — СВОБОДНЫ</text>
+      <g transform="translate(62 426)">
+        <rect width="52" height="48" class="tall"/><rect x="52" width="52" height="48" class="tall"/>
+        <rect x="104" width="26" height="48" class="cab"/><rect x="130" width="70" height="48" class="cab"/>
+        <rect x="200" width="78" height="48" class="cab"/><rect x="278" width="52" height="48" class="cab"/>
+        <rect x="330" width="70" height="48" class="cab"/><rect x="400" width="52" height="48" class="cab"/>
+      </g>
+      <rect x="145" y="260" width="210" height="86" class="island"/>
+      <text x="250" y="300" text-anchor="middle" class="p">ОСТРОВ 2400 × 1000</text>
+      <text x="250" y="322" text-anchor="middle" class="tiny">без мойки и варочной панели</text>
+      <rect x="130" y="345" width="240" height="80" class="clear"/>
+      <text x="250" y="385" text-anchor="middle" class="tiny">проход 1100–1200</text>
+      <text x="225" y="495" text-anchor="middle" class="tiny">ГЛУХАЯ ВНУТРЕННЯЯ СТЕНА 5530</text>
+    </g>
+    <text x="30" y="665" class="p">Модули: 600+600+300+800+900+600+800+600 = 5200</text>
+    <text x="30" y="693" class="p">Доборы: ориентировочно 165+165; подтвердить по обмеру.</text>
+    <text x="30" y="721" class="p">Плюсы: короткие сети, удобный сервис, нет шкафов у стекла.</text>
+    <text x="30" y="750" class="tiny">Статус: базовый вариант для ЭОМ/ВК и Cinema 4D v20.1.</text>
+  </g>
+
+  <g transform="translate(630 155)">
+    <rect width="540" height="780" rx="14" class="warn"/>
+    <text x="30" y="45" class="h">B · Г-образная — только после обмера</text>
+    <text x="30" y="72" class="p">Короткое крыло допустимо лишь вне бокового окна.</text>
+    <g transform="translate(45 115)">
+      <rect width="450" height="500" class="room"/>
+      <rect x="80" y="-5" width="95" height="14" class="glass"/>
+      <rect x="230" y="-5" width="100" height="14" class="glass"/>
+      <rect x="390" y="-5" width="50" height="14" class="glass"/>
+      <rect x="441" y="115" width="14" height="105" class="glass"/>
+      <g transform="translate(62 426)">
+        <rect width="52" height="48" class="tall"/><rect x="52" width="52" height="48" class="tall"/>
+        <rect x="104" width="296" height="48" class="cab"/>
+      </g>
+      <rect x="402" y="336" width="48" height="138" class="cab"/>
+      <rect x="398" y="110" width="56" height="120" class="collision"/>
+      <text x="372" y="96" class="tiny">ОКНО</text>
+      <text x="292" y="165" class="p">Красная зона:</text>
+      <text x="292" y="188" class="p">крыло нельзя доводить</text>
+      <text x="292" y="211" class="p">до бокового окна.</text>
+      <rect x="145" y="260" width="210" height="86" class="island"/>
+      <text x="250" y="305" text-anchor="middle" class="p">остров возможен</text>
+    </g>
+    <text x="30" y="665" class="p">Условие: минимум 300 мм от наличника/откоса окна.</text>
+    <text x="30" y="693" class="p">Проверить створки, радиатор, шторы и проход к террасе.</text>
+    <text x="30" y="721" class="p">Электрику выпускать только после выбора длины крыла.</text>
+    <text x="30" y="750" class="tiny">Статус: резервный вариант, не переносить на стройку сейчас.</text>
+  </g>
+
+  <g transform="translate(1205 155)">
+    <rect width="540" height="780" rx="14" class="bad"/>
+    <text x="30" y="45" class="h">C · По задней стене — отклонено</text>
+    <text x="30" y="72" class="p">Пересекает панорамное остекление и портит фасад.</text>
+    <g transform="translate(45 115)">
+      <rect width="450" height="500" class="room"/>
+      <rect x="80" y="-5" width="95" height="14" class="glass"/>
+      <rect x="230" y="-5" width="100" height="14" class="glass"/>
+      <rect x="390" y="-5" width="50" height="14" class="glass"/>
+      <rect x="441" y="115" width="14" height="105" class="glass"/>
+      <rect x="45" y="5" width="360" height="52" class="cab"/>
+      <rect x="72" y="-12" width="340" height="80" class="collision"/>
+      <path d="M75 10l330 48M405 10L75 58" stroke="#a6302b" stroke-width="7"/>
+      <text x="225" y="105" text-anchor="middle" class="h" fill="#a6302b">ПЕРЕКРЫВАЕТ ПРОЁМЫ</text>
+      <rect x="145" y="260" width="210" height="86" class="island"/>
+      <text x="250" y="305" text-anchor="middle" class="p">остров</text>
+    </g>
+    <text x="30" y="665" class="p">Не использовать ни в 3D, ни в мебельном заказе.</text>
+    <text x="30" y="693" class="p">Старое расположение удаляется из Cinema 4D v20.1.</text>
+    <text x="30" y="721" class="p">Розетки на задней стене не штробить под гарнитур.</text>
+    <text x="30" y="750" class="tiny">Статус: запрещённый вариант — контроль от повторной ошибки.</text>
+  </g>
+
+  <rect x="55" y="965" width="1690" height="95" rx="12" fill="#173841"/>
+  <text x="85" y="1005" font-size="18" fill="#fff">Перед выпуском в работу: лазерный обмер помещения → паспорта техники → утверждение варианта A/B → мебельные чертежи → ЭОМ/ВК → контроль коллизий.</text>
+  <text x="85" y="1037" font-size="15" fill="#dbe7e8">Этот лист — понятное задание на согласование, а не основание для штробления или изготовления мебели без контрольного обмера.</text>
+</svg>

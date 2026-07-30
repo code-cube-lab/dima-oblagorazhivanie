@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1450" viewBox="0 0 2100 1450">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}.title{font:700 38px Georgia,serif}
+      .sub{font-size:18px;fill:#557078}.h{font-size:20px;font-weight:700}.p{font-size:13px}.tiny{font-size:10px}
+      .panel{fill:#fffdf8;stroke:#173841;stroke-width:3}.room{fill:#f8f5ee;stroke:#173841;stroke-width:5}
+      .bed{fill:#d8c2aa;stroke:#173841;stroke-width:2}.desk{fill:#a37c55;stroke:#173841;stroke-width:2}
+      .ward{fill:#8f8374;stroke:#173841;stroke-width:2}.rug{fill:#bfd0c0;stroke:#6b866f;stroke-width:2}
+      .door{fill:none;stroke:#b96039;stroke-width:3}.power{fill:#fff0e6;stroke:#b96039;stroke-width:3}
+      .safe{fill:none;stroke:#648367;stroke-width:3;stroke-dasharray:8 6}.elev{fill:#f1ede4;stroke:#173841;stroke-width:2}
+      .wall{stroke:#173841;stroke-width:4}.dim{stroke:#b96039;stroke-width:2;fill:none}
+    </style>
+  </defs>
+  <rect width="2100" height="1450" fill="#f5f1e8"/>
+  <text x="55" y="65" class="title">ИД-20.01 · Спальни — планы, четыре стены и электропривязки</text>
+  <text x="55" y="100" class="sub">Масштаб схем условный · габариты помещений и мебели в мм · каждая точка уточняется после чистового обмера и выбора мебели</text>
+
+  <!-- PARENTS -->
+  <g transform="translate(45 145)">
+    <rect width="650" height="1190" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">Спальня родителей · 4430 × 3640</text>
+    <text x="25" y="64" class="p">Два выхода: боковая дверь на общий балкон + проход в гардероб.</text>
+    <g transform="translate(90 105)">
+      <rect width="443" height="364" class="room"/>
+      <rect x="132" y="112" width="180" height="210" class="bed"/>
+      <rect x="122" y="215" width="20" height="45" class="desk"/><rect x="312" y="215" width="20" height="45" class="desk"/>
+      <rect x="350" y="35" width="75" height="115" class="desk"/>
+      <rect x="85" y="86" width="275" height="245" rx="25" class="rug"/>
+      <rect x="-7" y="155" width="14" height="90" fill="#cbe8ef" stroke="#357088" stroke-width="3"/>
+      <path d="M0 155a90 90 0 0 1 90 90" class="door"/>
+      <rect x="435" y="50" width="14" height="80" fill="#ddd" stroke="#173841" stroke-width="2"/>
+      <path d="M443 50a80 80 0 0 0-80 80" class="door"/>
+      <rect x="-15" y="145" width="110" height="120" class="safe"/>
+      <text x="45" y="208" text-anchor="middle" class="tiny">маршрут на балкон ≥900</text>
+      <text x="222" y="200" text-anchor="middle" class="p">кровать 1800×2100</text>
+      <circle cx="118" cy="230" r="11" class="power"/><text x="118" y="234" text-anchor="middle" class="tiny">P01</text>
+      <circle cx="336" cy="230" r="11" class="power"/><text x="336" y="234" text-anchor="middle" class="tiny">P02</text>
+      <text x="222" y="352" text-anchor="middle" class="tiny">4430</text><text x="432" y="185" transform="rotate(90 432 185)" class="tiny">3640</text>
+    </g>
+    <text x="25" y="500" class="p">P01/P02: по 2×230 В + USB-C, Z=700, по оси тумб; S01 у входа и S02 у кровати — проходное управление.</text>
+    <g transform="translate(25 545)">
+      <text x="0" y="0" class="h">Развёртки N / E / S / W</text>
+      <g transform="translate(0 25)">
+        <rect width="285" height="190" class="elev"/><line x1="10" y1="170" x2="275" y2="170" class="wall"/>
+        <rect x="82" y="80" width="120" height="90" class="bed"/><rect x="55" y="125" width="27" height="45" class="desk"/><rect x="202" y="125" width="27" height="45" class="desk"/>
+        <circle cx="68" cy="120" r="9" class="power"/><circle cx="216" cy="120" r="9" class="power"/><text x="142" y="20" text-anchor="middle" class="p">N · изголовье</text>
+        <rect x="315" width="285" height="190" class="elev"/><line x1="325" y1="170" x2="590" y2="170" class="wall"/>
+        <rect x="335" y="35" width="90" height="135" fill="#cbe8ef" stroke="#357088" stroke-width="3"/><text x="457" y="20" text-anchor="middle" class="p">E · дверь балкона</text>
+        <rect y="220" width="285" height="190" class="elev"/><line x1="10" y1="390" x2="275" y2="390" class="wall"/>
+        <rect x="95" y="120" width="95" height="50" class="desk"/><text x="142" y="240" text-anchor="middle" class="p">S · туалетный стол</text>
+        <rect x="315" y="220" width="285" height="190" class="elev"/><line x1="325" y1="390" x2="590" y2="390" class="wall"/>
+        <rect x="490" y="65" width="80" height="105" fill="#ddd" stroke="#173841"/><text x="457" y="240" text-anchor="middle" class="p">W · вход в гардероб</text>
+      </g>
+    </g>
+    <rect x="25" y="1010" width="600" height="145" rx="9" fill="#e8f4e8" stroke="#648367" stroke-width="2"/>
+    <text x="45" y="1042" class="h">Контроль мастеру</text>
+    <text x="45" y="1070" class="p">Не заужать маршрут к балкону мебелью; розетки не попадут за изголовье;</text>
+    <text x="45" y="1095" class="p">бра центр Z=1350, выключатели Z=900; высоты согласовать с выбранной кроватью.</text>
+    <text x="45" y="1120" class="p">Перила и дверь балкона проверяет конструктор/оконщик до отделки.</text>
+  </g>
+
+  <!-- DARINA -->
+  <g transform="translate(725 145)">
+    <rect width="650" height="1190" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">Дарина · 4450 × 3950</text>
+    <text x="25" y="64" class="p">Кровать, учёба, гимнастика, хранение и новый выход на общий балкон.</text>
+    <g transform="translate(88 105)">
+      <rect width="445" height="395" class="room"/>
+      <rect x="70" y="115" width="110" height="200" class="bed"/>
+      <rect x="290" y="30" width="120" height="60" class="desk"/>
+      <rect x="345" y="275" width="85" height="105" class="ward"/>
+      <rect x="10" y="225" width="15" height="120" class="desk"/>
+      <rect x="35" y="215" width="120" height="170" rx="12" fill="#cf8fad" stroke="#7c4c64" stroke-width="2"/>
+      <rect x="-7" y="30" width="14" height="95" fill="#cbe8ef" stroke="#357088" stroke-width="3"/>
+      <path d="M0 30a95 95 0 0 1 95 95" class="door"/>
+      <rect x="-15" y="20" width="115" height="125" class="safe"/>
+      <text x="52" y="84" text-anchor="middle" class="tiny">выход на балкон</text>
+      <circle cx="325" cy="105" r="11" class="power"/><text x="325" y="109" text-anchor="middle" class="tiny">D01</text>
+      <circle cx="370" cy="105" r="11" class="power"/><text x="370" y="109" text-anchor="middle" class="tiny">D02</text>
+      <text x="235" y="385" text-anchor="middle" class="tiny">свободная зона гимнастики ≥1800×1800</text>
+    </g>
+    <text x="25" y="530" class="p">D01: 4×230 В + 2×USB-C над/под столом, Z=750/1050. D02: интернет RJ-45. D03: 2×230 В у кровати, Z=700.</text>
+    <g transform="translate(25 575)">
+      <text x="0" y="0" class="h">Развёртки N / E / S / W</text>
+      <g transform="translate(0 25)">
+        <rect width="285" height="190" class="elev"/><line x1="10" y1="170" x2="275" y2="170" class="wall"/><rect x="30" y="80" width="90" height="90" class="bed"/><text x="142" y="20" text-anchor="middle" class="p">N · кровать</text>
+        <rect x="315" width="285" height="190" class="elev"/><line x1="325" y1="170" x2="590" y2="170" class="wall"/><rect x="380" y="115" width="130" height="55" class="desk"/><circle cx="425" cy="100" r="9" class="power"/><circle cx="470" cy="100" r="9" class="power"/><text x="457" y="20" text-anchor="middle" class="p">E · рабочий стол</text>
+        <rect y="220" width="285" height="190" class="elev"/><line x1="10" y1="390" x2="275" y2="390" class="wall"/><rect x="45" y="70" width="15" height="100" class="desk"/><rect x="80" y="120" width="125" height="50" fill="#cf8fad" stroke="#7c4c64"/><text x="142" y="240" text-anchor="middle" class="p">S · гимнастика</text>
+        <rect x="315" y="220" width="285" height="190" class="elev"/><line x1="325" y1="390" x2="590" y2="390" class="wall"/><rect x="350" y="50" width="90" height="120" fill="#cbe8ef" stroke="#357088" stroke-width="3"/><rect x="500" y="75" width="70" height="95" class="ward"/><text x="457" y="240" text-anchor="middle" class="p">W · балкон / шкаф</text>
+      </g>
+    </g>
+    <rect x="25" y="1040" width="600" height="115" rx="9" fill="#e8f4e8" stroke="#648367" stroke-width="2"/>
+    <text x="45" y="1072" class="h">Безопасность</text>
+    <text x="45" y="1100" class="p">Крепление гимнастической стенки — только в несущую основу; мягкий мат;</text>
+    <text x="45" y="1125" class="p">розетки закрытого исполнения; путь к балконной двери всегда свободен.</text>
+  </g>
+
+  <!-- YARIK -->
+  <g transform="translate(1405 145)">
+    <rect width="650" height="1190" rx="12" class="panel"/>
+    <text x="25" y="38" class="h">Ярик · 5430 × 3950</text>
+    <text x="25" y="64" class="p">Кровать, учёба, хранение формы и свободная игровая зона.</text>
+    <g transform="translate(55 105)">
+      <rect width="543" height="395" class="room"/>
+      <rect x="130" y="120" width="110" height="200" class="bed"/>
+      <rect x="360" y="30" width="120" height="60" class="desk"/>
+      <rect x="430" y="275" width="90" height="105" class="ward"/>
+      <rect x="250" y="150" width="145" height="165" rx="25" fill="#9eb7d5" stroke="#496987" stroke-width="2"/>
+      <circle cx="400" cy="105" r="11" class="power"/><text x="400" y="109" text-anchor="middle" class="tiny">Y01</text>
+      <circle cx="445" cy="105" r="11" class="power"/><text x="445" y="109" text-anchor="middle" class="tiny">Y02</text>
+      <text x="325" y="235" text-anchor="middle" class="p">игровая зона</text>
+      <text x="271" y="385" text-anchor="middle" class="tiny">проход от двери ≥900</text>
+    </g>
+    <text x="25" y="530" class="p">Y01: 4×230 В + USB-C у стола, Z=750/1050. Y02: RJ-45. Y03: у кровати. Y04: резерв ТВ/консоль.</text>
+    <g transform="translate(25 575)">
+      <text x="0" y="0" class="h">Развёртки N / E / S / W</text>
+      <g transform="translate(0 25)">
+        <rect width="285" height="190" class="elev"/><line x1="10" y1="170" x2="275" y2="170" class="wall"/><rect x="50" y="80" width="90" height="90" class="bed"/><text x="142" y="20" text-anchor="middle" class="p">N · кровать</text>
+        <rect x="315" width="285" height="190" class="elev"/><line x1="325" y1="170" x2="590" y2="170" class="wall"/><rect x="390" y="115" width="135" height="55" class="desk"/><circle cx="430" cy="100" r="9" class="power"/><circle cx="475" cy="100" r="9" class="power"/><text x="457" y="20" text-anchor="middle" class="p">E · рабочий стол</text>
+        <rect y="220" width="285" height="190" class="elev"/><line x1="10" y1="390" x2="275" y2="390" class="wall"/><rect x="85" y="85" width="125" height="85" fill="#202528"/><text x="142" y="240" text-anchor="middle" class="p">S · ТВ / игровая</text>
+        <rect x="315" y="220" width="285" height="190" class="elev"/><line x1="325" y1="390" x2="590" y2="390" class="wall"/><rect x="480" y="65" width="80" height="105" class="ward"/><text x="457" y="240" text-anchor="middle" class="p">W · шкаф / форма</text>
+      </g>
+    </g>
+    <rect x="25" y="1040" width="600" height="115" rx="9" fill="#e8f4e8" stroke="#648367" stroke-width="2"/>
+    <text x="45" y="1072" class="h">Контроль мастеру</text>
+    <text x="45" y="1100" class="p">Крепить высокие шкафы к стене; предусмотреть кабель-канал данных;</text>
+    <text x="45" y="1125" class="p">не ставить розетки за корпусом кровати или неподвижным шкафом.</text>
+  </g>
+
+  <rect x="45" y="1365" width="2010" height="52" rx="8" fill="#173841"/>
+  <text x="1050" y="1398" text-anchor="middle" font-size="15" fill="#fff">В работе мастер получает: план + четыре стены + реестр точек + фото выбранной мебели + акт контрольного обмера.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .bg{fill:#fff}.frame,.thin,.module,.device,.counter{fill:none;stroke:#151515;stroke-width:2}.thin{stroke-width:1}
+      .module{fill:#ece8e1}.device{fill:#dfe7ea}.counter{fill:#eee0c9}.locked{fill:#dcebdc;stroke:#47704a;stroke-width:1.5}
+      .check{fill:#fff0cf;stroke:#a66100;stroke-width:1.5}.dim{fill:none;stroke:#b12f2f;stroke-width:1.5}
+      .h{font:bold 26px Arial;fill:#111}.t{font:bold 17px Arial;fill:#111}.s{font:14px Arial;fill:#111}.xs{font:12px Arial;fill:#111}
+      .mono{font:13px Consolas,monospace;fill:#111}
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 0 0 4 8 8Z" fill="#b12f2f"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="1000"/><rect class="frame" x="25" y="25" width="1550" height="950"/>
+  <text class="h" x="50" y="65">КМ-04. Кухня 5200 мм — координация по выбранным товарам</text>
+  <text class="s" x="50" y="92">Размеры в мм. Основание: реестр товаров v21, PDF лист 7 и связанный АР-04. Чистовые размеры и монтажные вырезы подтвердить.</text>
+
+  <g transform="translate(60 150)">
+    <text class="t" y="-20">1. Фасад нижней линии · общая ширина 5200</text>
+    <rect class="module" width="936" height="180"/>
+    <rect class="locked" x="0" width="108" height="180"/><text class="xs" x="18" y="70">K01</text><text class="xs" x="8" y="92">холодильник</text><text class="xs" x="18" y="112">600</text>
+    <rect class="locked" x="108" width="108" height="180"/><text class="xs" x="128" y="70">K02</text><text class="xs" x="120" y="92">духовка</text><text class="xs" x="132" y="112">600</text>
+    <rect class="module" x="216" width="54" height="180"/><text class="xs" x="225" y="92">карго</text><text class="xs" x="231" y="112">300</text>
+    <rect class="module" x="270" width="144" height="180"/><text class="xs" x="315" y="92">ящики</text><text class="xs" x="326" y="112">800</text>
+    <rect class="locked" x="414" width="162" height="180"/><text class="xs" x="463" y="70">K05</text><text class="xs" x="438" y="92">панель 590</text><text class="xs" x="477" y="112">900</text>
+    <rect class="module" x="576" width="108" height="180"/><text class="xs" x="602" y="92">ящики</text><text class="xs" x="612" y="112">600</text>
+    <rect class="locked" x="684" width="144" height="180"/><text class="xs" x="733" y="70">K07</text><text class="xs" x="707" y="92">мойка 490</text><text class="xs" x="740" y="112">800</text>
+    <rect class="locked" x="828" width="108" height="180"/><text class="xs" x="846" y="70">K08</text><text class="xs" x="838" y="92">ПММ 598</text><text class="xs" x="855" y="112">600</text>
+    <path class="dim" marker-start="url(#arr)" marker-end="url(#arr)" d="M0 215h936"/><text class="t" x="440" y="242">5200</text>
+    <path class="thin" d="M0 0v-12M936 0v-12"/>
+    <text class="s" x="0" y="275">Цветом выделены товары с зафиксированным паспортным габаритом. Доборы: 330 мм суммарно после чистового обмера стены 5530.</text>
+  </g>
+
+  <g transform="translate(1050 135)">
+    <text class="t" y="0">2. Остров и проходы</text>
+    <rect class="counter" x="0" y="35" width="360" height="150"/><text class="t" x="103" y="105">2400 × 1000 × 920</text><text class="s" x="85" y="132">без мойки и панели</text>
+    <path class="dim" marker-start="url(#arr)" marker-end="url(#arr)" d="M0 215h360"/><text class="s" x="160" y="238">2400</text>
+    <path class="dim" marker-start="url(#arr)" marker-end="url(#arr)" d="M395 35v150"/><text class="s" transform="translate(420 98) rotate(90)">1000</text>
+    <rect class="check" x="0" y="270" width="460" height="115"/><text class="s" x="18" y="300">Проход до линии: 1100–1200 — проверить на объекте.</text><text class="s" x="18" y="328">Открытая ПММ не должна блокировать основной маршрут.</text><text class="s" x="18" y="356">Стол Авалон в разложенном виде: 2000×800.</text>
+  </g>
+
+  <g transform="translate(60 505)">
+    <text class="t" y="-18">3. Паспортные ниши и вырезы — согласовать с мебельщиком</text>
+    <rect class="thin" width="910" height="265"/>
+    <path class="thin" d="M0 48h910M0 92h910M0 136h910M0 180h910M0 224h910M110 0v265M330 0v265M520 0v265M700 0v265"/>
+    <text class="t" x="12" y="31">Код</text><text class="t" x="125" y="31">Товар</text><text class="t" x="345" y="31">Корпус</text><text class="t" x="535" y="31">Модуль</text><text class="t" x="715" y="31">Стоп-проверка</text>
+    <text class="s" x="12" y="77">K-01</text><text class="s" x="125" y="77">CVI594SBG</text><text class="s" x="345" y="77">590×520×58</text><text class="s" x="535" y="77">900</text><text class="xs" x="715" y="70">вырез только по</text><text class="xs" x="715" y="86">монтажной схеме</text>
+    <text class="s" x="12" y="121">K-02</text><text class="s" x="125" y="121">EOEM.769S1</text><text class="s" x="345" y="121">595×575×595</text><text class="s" x="535" y="121">600-колонна</text><text class="xs" x="715" y="114">розетка рядом,</text><text class="xs" x="715" y="130">не за корпусом</text>
+    <text class="s" x="12" y="165">K-03</text><text class="s" x="125" y="165">MBF177SWGR</text><text class="s" x="345" y="165">540×545×1775</text><text class="s" x="535" y="165">600-колонна</text><text class="xs" x="715" y="158">ниша и вентиляция</text><text class="xs" x="715" y="174">по паспорту</text>
+    <text class="s" x="12" y="209">K-04</text><text class="s" x="125" y="209">MLP60530</text><text class="s" x="345" y="209">598×550×815</text><text class="s" x="535" y="209">600</text><text class="xs" x="715" y="202">цоколь, фасад,</text><text class="xs" x="715" y="218">вода и слив</text>
+    <text class="s" x="12" y="253">K-07</text><text class="s" x="125" y="253">TAKI 49-U/IF</text><text class="s" x="345" y="253">490×440×200</text><text class="s" x="535" y="253">800</text><text class="xs" x="715" y="246">вырез по типу</text><text class="xs" x="715" y="262">монтажа и образцу</text>
+  </g>
+
+  <g transform="translate(1010 535)">
+    <text class="t" y="-18">4. Верхняя линия / вода / воздух</text>
+    <rect class="device" x="0" y="0" width="250" height="62"/><text class="s" x="15" y="26">K-05 Domina 60</text><text class="xs" x="15" y="47">598×290×182 · канал D150</text>
+    <rect class="device" x="270" y="0" width="250" height="62"/><text class="s" x="285" y="26">K-06 JBMO725BK01</text><text class="xs" x="285" y="47">595×317×390</text>
+    <rect class="device" x="0" y="82" width="250" height="92"/><text class="s" x="15" y="110">K-08 NARA-S LG</text><text class="xs" x="15" y="133">H242 · вылет 186 · отверстие D35</text><text class="xs" x="15" y="154">рычаг не упирается в фартук</text>
+    <rect class="device" x="270" y="82" width="250" height="92"/><text class="s" x="285" y="110">K-09 NAGARE 500</text><text class="xs" x="285" y="133">D205×H370 под мойкой</text><text class="xs" x="285" y="154">розетка + слив + доступ</text>
+    <rect class="check" x="0" y="195" width="520" height="94"/><text class="s" x="18" y="224">До заказа: получить PDF-инструкции всех приборов,</text><text class="s" x="18" y="250">чистовой обмер, схему ЭОМ/ВК/ОВ и подписи трёх специалистов.</text><text class="s" x="18" y="276">Статус листа: координация, не рабочая документация.</text>
+  </g>
+
+  <rect class="frame" x="980" y="835" width="595" height="140"/><path class="frame" d="M980 885h595M1240 835v140M1455 835v140M980 930h595"/>
+  <text class="xs" x="995" y="858">Дима — благоустройство</text><text class="xs" x="995" y="878">Дом и участок, Ставрополь</text>
+  <text class="t" x="995" y="912">Кухня. Товары и ниши</text><text class="xs" x="995" y="951">Эскиз / координация</text>
+  <text class="xs" x="1255" y="858">Стадия</text><text class="t" x="1320" y="880">ЭП</text><text class="xs" x="1255" y="910">Масштаб</text><text class="t" x="1330" y="925">граф.</text>
+  <text class="xs" x="1470" y="858">Лист</text><text class="t" x="1510" y="880">КМ-04</text><text class="xs" x="1470" y="910">30.07.2026</text><text class="xs" x="1470" y="951">v21</text>
+</svg>
