@@ -708,8 +708,8 @@ export function DimaProjectApp() {
           </p>
         </div>
         <div className="budget-hero">
-          <div><span>Работы и комплектация</span><strong>24,65–45,40 млн ₽</strong><small>предварительный диапазон</small></div>
-          <div className="accent"><span>С резервом 12%</span><strong>27,61–50,85 млн ₽</strong><small>решение для планирования бюджета</small></div>
+          <div><span>Работы и комплектация</span><strong>24,35–45,40 млн ₽</strong><small>сумма 17 разделов</small></div>
+          <div className="accent"><span>С резервом 12%</span><strong>27,27–50,85 млн ₽</strong><small>решение для планирования бюджета</small></div>
           <div><span>Не включено</span><strong>земля и коробка</strong><small>они считаются существующими</small></div>
         </div>
         <div className="cost-grid">
