@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Предварительная схема воды и канализации дома и участка</title>
+  <desc id="desc">Принципиальная схема вводов, коллекторов, мокрых зон, бани, мангальной и канализационных выпусков.</desc>
+  <defs>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#17343d}.small{font-size:13px}.tiny{font-size:11px}.label{font-size:17px;font-weight:700}.site{fill:#e7eee3;stroke:#315342;stroke-width:4}.house{fill:#f6f1e8;stroke:#17343d;stroke-width:4}.wet{fill:#dcecf0;stroke:#6f929e;stroke-width:2}.water{fill:none;stroke:#1685b3;stroke-width:7}.hot{fill:none;stroke:#d45d3e;stroke-width:6}.sewer{fill:none;stroke:#73543e;stroke-width:10}.service{fill:none;stroke:#5d7077;stroke-width:3;stroke-dasharray:9 7}.node{fill:#fff;stroke:#17343d;stroke-width:3}.note{fill:#fff8dd;stroke:#d17742;stroke-width:2}.dim{stroke:#526b73;stroke-width:1.5;marker-start:url(#arrow);marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 4 0 0v8z" fill="#526b73"/></marker>
+  </defs>
+  <rect width="1200" height="800" fill="#fbfaf6"/>
+  <text x="55" y="52" font-size="27" font-weight="700">ВК-01 · ВОДА, КАНАЛИЗАЦИЯ И МОКРЫЕ ЗОНЫ</text>
+  <rect class="note" x="55" y="68" width="1090" height="48" rx="8"/>
+  <text x="75" y="89" class="small" font-weight="700">ПРИНЦИПИАЛЬНАЯ СХЕМА-ЗАДАНИЕ, НЕ РАБОЧИЙ ПРОЕКТ.</text>
+  <text x="75" y="106" class="small">Отметки, уклоны, диаметры, насосы и способ водоотведения — только после ТУ, обмера и расчёта ВК.</text>
+
+  <g transform="translate(70 145)">
+    <rect class="site" x="0" y="0" width="690" height="560"/>
+    <text class="small" x="285" y="585">УЧАСТОК 20 × 30 м · улица снизу</text>
+    <rect class="house" x="160" y="170" width="420" height="280"/>
+    <text class="label" x="310" y="305">ДОМ</text>
+    <text class="small" x="292" y="326">14,50 × 11,46 м</text>
+    <rect class="wet" x="160" y="345" width="92" height="105"/><text class="tiny" x="170" y="385">КОТЕЛЬНАЯ</text><text class="tiny" x="179" y="402">ввод + узел</text>
+    <rect class="wet" x="470" y="345" width="110" height="105"/><text class="tiny" x="487" y="382">С/У 1 ЭТАЖ</text>
+    <rect class="wet" x="470" y="170" width="110" height="82"/><text class="tiny" x="480" y="205">С/У 2 ЭТАЖ</text><text class="tiny" x="493" y="222">стояк</text>
+    <rect class="wet" x="350" y="170" width="120" height="82"/><text class="tiny" x="365" y="205">КУХНЯ</text><text class="tiny" x="365" y="222">мойка + ПММ</text>
+    <rect class="wet" x="55" y="35" width="150" height="70"/><text class="small" x="102" y="66" font-weight="700">БАНЯ 3 × 7 м</text><text class="tiny" x="90" y="85">отступ от забора 1 м</text>
+    <rect class="wet" x="400" y="50" width="205" height="60"/><text class="small" x="435" y="76" font-weight="700">МАНГАЛЬНАЯ</text><text class="tiny" x="430" y="94">мойка + зимний слив</text>
+
+    <path class="water" d="M50 530H206V402H410V210M206 402H525V210M206 402H130V70M206 402H502V80"/>
+    <path class="hot" d="M220 412H410V220M220 412H525V220M220 412H130V80M220 412H502V90"/>
+    <path class="sewer" d="M410 225V470H310V530M525 225V470H310M130 85V475H310M502 95V470H310"/>
+    <path class="service" d="M310 530V555"/>
+
+    <circle class="node" cx="50" cy="530" r="12"/><text class="tiny" x="8" y="558">ТОЧКА ВВОДА ВОДЫ</text>
+    <circle class="node" cx="310" cy="530" r="12"/><text class="tiny" x="255" y="558">ВЫПУСК К1</text>
+    <circle class="node" cx="206" cy="402" r="12"/><text class="tiny" x="163" y="430">КОЛЛЕКТОР</text>
+    <circle class="node" cx="525" cy="210" r="10"/><circle class="node" cx="410" cy="210" r="10"/>
+    <circle class="node" cx="130" cy="70" r="10"/><circle class="node" cx="502" cy="80" r="10"/>
+
+    <line class="dim" x1="0" y1="-20" x2="690" y2="-20"/><text class="small" x="320" y="-28">20,00 м</text>
+    <line class="dim" x1="715" y1="0" x2="715" y2="560"/><text class="small" transform="translate(738 310) rotate(-90)">30,00 м</text>
+  </g>
+
+  <g transform="translate(825 160)">
+    <text class="label" x="0" y="0">СИСТЕМЫ</text>
+    <path class="water" d="M0 32H35"/><text class="small" x="50" y="37">холодная вода</text>
+    <path class="hot" d="M0 67H35"/><text class="small" x="50" y="72">горячая вода</text>
+    <path class="sewer" d="M0 102H35"/><text class="small" x="50" y="107">самотечная канализация</text>
+    <path class="service" d="M0 137H35"/><text class="small" x="50" y="142">граница уточнения по ТУ</text>
+
+    <text class="label" x="0" y="205">ИСХОДНЫЕ ДАННЫЕ</text>
+    <text class="small" x="0" y="235">• точка и давление водоснабжения;</text>
+    <text class="small" x="0" y="261">• отметка и тип выпуска канализации;</text>
+    <text class="small" x="0" y="287">• состав сантехники и расходы;</text>
+    <text class="small" x="0" y="313">• режим зимнего проживания;</text>
+    <text class="small" x="0" y="339">• места коллекторов, фильтров и ревизий;</text>
+    <text class="small" x="0" y="365">• задание на отверстия в конструкциях.</text>
+
+    <rect class="note" x="0" y="410" width="315" height="145" rx="8"/>
+    <text class="small" x="15" y="438" font-weight="700">Нерешённые вопросы:</text>
+    <text class="small" x="15" y="464">дренаж и ливневая сеть;</text>
+    <text class="small" x="15" y="490">утилизация стоков бани;</text>
+    <text class="small" x="15" y="516">защита наружных трасс от замерзания;</text>
+    <text class="small" x="15" y="542">насосы и аварийное перекрытие протечек.</text>
+  </g>
+</svg>
