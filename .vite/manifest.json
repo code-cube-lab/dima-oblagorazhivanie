@@ -11,7 +11,7 @@
     "name": "rolldown-runtime"
   },
   "app/DimaProjectApp.tsx": {
-    "file": "assets/DimaProjectApp-BYDSDqgD.js",
+    "file": "assets/DimaProjectApp-DkXpb0_f.js",
     "name": "DimaProjectApp",
     "src": "app/DimaProjectApp.tsx",
     "isDynamicEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_78da724a473d52eabb0766d63cc4edc6/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-CpzBfEgQ.js",
+    "file": "assets/layout-segment-context-DjWdKkGl.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_78da724a473d52eabb0766d63cc4edc6/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -32,7 +32,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-DAlpBppq.js",
+    "file": "assets/index-BThgk0Dc.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
