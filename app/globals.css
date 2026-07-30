@@ -821,6 +821,85 @@ body {
 .sheet-card figcaption strong { font: 500 21px Georgia, serif; }
 .sheet-card figcaption span { color: var(--v18-muted); font-size: 11px; line-height: 1.55; }
 
+.single-sheet-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(310px, 0.55fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.single-sheet-layout > a {
+  display: block;
+  padding: 12px;
+  background: #e6eae7;
+  border: 1px solid var(--v18-line);
+  border-radius: 13px;
+  box-shadow: var(--v18-shadow);
+}
+
+.single-sheet-layout > a img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 11;
+  object-fit: contain;
+}
+
+.checklist-card ul {
+  margin: 18px 0 24px;
+  padding-left: 18px;
+}
+
+.checklist-card li {
+  margin: 0 0 10px;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.sheet-register {
+  overflow-x: auto;
+  background: var(--v18-card);
+  border: 1px solid var(--v18-line);
+  border-radius: 12px;
+  box-shadow: var(--v18-shadow);
+}
+
+.sheet-register > div,
+.sheet-register > article {
+  min-width: 980px;
+  display: grid;
+  grid-template-columns: 75px 1fr 85px 2.5fr 120px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--v18-line);
+}
+
+.sheet-register > article:last-child { border-bottom: 0; }
+.sheet-register .table-head { color: white; background: var(--v18-ink); }
+.sheet-register .table-head span { font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.sheet-register article > strong { color: var(--v18-copper); font: 500 22px Georgia, serif; }
+.sheet-register article > span { font: 500 17px Georgia, serif; }
+.sheet-register article > b { font: 500 20px Georgia, serif; }
+.sheet-register article > p { margin: 0; color: var(--v18-muted); font-size: 10px; line-height: 1.55; }
+
+.sheet-status {
+  justify-self: start;
+  padding: 7px 9px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.sheet-status.частично,
+.sheet-status.эскиз { color: #5f4a24; background: #f3e4b5; }
+.sheet-status.задание,
+.sheet-status.реестр { color: #234b52; background: #d9e9eb; }
+.sheet-status.blocked { color: #77352f; background: #f4d9d6; }
+
 .split-section {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
@@ -1137,6 +1216,7 @@ body {
   .sheet-grid,
   .compare-grid,
   .split-section,
+  .single-sheet-layout,
   .product-grid,
   .cost-line-grid,
   .estimate-summary,
