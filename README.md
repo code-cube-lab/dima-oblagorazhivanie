@@ -89,8 +89,16 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
+- `npm test`: build the Dima project and verify the two connected balcony exits
 - `npm run db:generate`: generate Drizzle migrations after schema changes
+
+## Dima project release note
+
+Version v14 keeps the front facade in the PDF orientation: garage on the left
+and the tall two-storey glazing on the right. The common L-shaped balcony has
+one existing side exit from the parents' bedroom and one new front exit from
+the child room. Its front slab overlaps the side slab without an internal guard
+or level change. The second front child-room window remains unchanged.
 
 ## Learn More
 
