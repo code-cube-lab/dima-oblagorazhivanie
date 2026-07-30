@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .bg{fill:#f4f1ea}.sheet{fill:#fff;stroke:#1d2935;stroke-width:2}.wall{fill:#d8d7d2;stroke:#1d2935;stroke-width:2}.obj{fill:#dbe6ee;stroke:#1d2935;stroke-width:2}.gas{fill:#f5cf57;stroke:#1d2935;stroke-width:2}.air{fill:#aad6f5;stroke:#1d2935;stroke-width:2}.warn{fill:#fff2db;stroke:#c16b20;stroke-width:2}.dim{stroke:#d04a38;stroke-width:2;fill:none}.thin{stroke:#66717a;stroke-width:1.5;fill:none}.t{font:18px Arial;fill:#18222c}.s{font:14px Arial;fill:#34414d}.h{font:bold 28px Arial;fill:#17212b}.hh{font:bold 20px Arial;fill:#17212b}.red{fill:#b4392a}.link{fill:#0b5cab;text-decoration:underline}
+    </style>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 0 0 4 8 8Z" fill="#d04a38"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="1000"/>
+  <rect class="sheet" x="24" y="22" width="1552" height="956" rx="8"/>
+  <text class="h" x="55" y="66">К-01. Котельная — координационная модель Cinema 4D v20.1</text>
+  <text class="s" x="55" y="94">Единицы: мм · помещение на листе 7 PDF: 8,24 м² · модельная граница: 2450 × 2950 · окончательные чистовые размеры — после обмера</text>
+
+  <text class="hh" x="70" y="142">План, вид сверху</text>
+  <rect class="wall" x="70" y="165" width="539" height="649"/>
+  <rect fill="#fff" x="92" y="187" width="495" height="605"/>
+  <path class="thin" d="M70 682h22m0 0v110m0-55h-22"/>
+  <text class="s" x="78" y="672">дверь 800, фактическую привязку проверить</text>
+
+  <rect class="obj" x="521" y="330" width="66" height="88" rx="5"/>
+  <text class="s" x="430" y="319">B01 котёл 400×300×704</text>
+  <rect fill="#c8f0de" stroke="#199968" stroke-width="2" stroke-dasharray="7 5" x="389" y="300" width="198" height="176"/>
+  <text class="s" x="397" y="461">сервисная зона 800</text>
+
+  <circle class="obj" cx="345" cy="418" r="55"/>
+  <text class="s" x="275" y="492">B02 Ø496 × 1200</text>
+  <rect class="obj" x="100" y="330" width="40" height="154"/>
+  <text class="s" x="102" y="319">B03</text>
+  <rect class="obj" x="220" y="690" width="110" height="99"/>
+  <text class="s" x="218" y="680">B04 500×450×1100</text>
+  <circle class="obj" cx="505" cy="730" r="39"/>
+  <text class="s" x="464" y="784">B05 Ø350</text>
+  <rect class="gas" x="520" y="680" width="67" height="35"/>
+  <text class="s" x="445" y="670">G01 ввод/кран/счётчик по ТУ</text>
+  <rect class="air" x="565" y="748" width="22" height="44"/>
+  <text class="s" x="420" y="748">V-B02 низкий приток</text>
+  <rect class="air" x="565" y="187" width="22" height="44"/>
+  <text class="s" x="415" y="248">V-B01 верхняя вытяжка</text>
+  <rect class="obj" x="395" y="690" width="33" height="33"/>
+  <text class="s" x="354" y="740">D01 трап</text>
+
+  <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M70 840h539"/>
+  <text class="t red" x="299" y="867">2450</text>
+  <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M635 165v649"/>
+  <text class="t red" transform="translate(663 525) rotate(90)">2950</text>
+  <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M70 286h451"/>
+  <text class="s red" x="260" y="277">2125 до грани B01</text>
+  <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M70 510h275"/>
+  <text class="s red" x="150" y="531">1250 до оси B02</text>
+
+  <text class="hh" x="680" y="142">Развёртки стен — те же координаты C4D</text>
+  <rect class="sheet" x="680" y="165" width="420" height="280"/>
+  <text class="t" x="698" y="194">Восточная стена, B01</text>
+  <line class="thin" x1="700" y1="410" x2="1075" y2="410"/>
+  <rect class="obj" x="820" y="240" width="88" height="155" rx="5"/>
+  <text class="s" x="824" y="230">B01</text>
+  <rect class="gas" x="985" y="310" width="55" height="32"/>
+  <text class="s" x="930" y="300">G01</text>
+  <rect class="air" x="1035" y="205" width="35" height="30"/>
+  <rect class="air" x="1035" y="360" width="35" height="30"/>
+  <text class="s" x="700" y="430">F-B01 60/100 — только после расчёта трассы и согласования</text>
+
+  <rect class="sheet" x="1125" y="165" width="420" height="280"/>
+  <text class="t" x="1143" y="194">Западная стена, B03</text>
+  <line class="thin" x1="1145" y1="410" x2="1520" y2="410"/>
+  <rect class="obj" x="1210" y="245" width="125" height="165"/>
+  <text class="s" x="1223" y="235">B03 коллекторы</text>
+  <rect class="obj" x="1390" y="205" width="70" height="205"/>
+  <text class="s" x="1380" y="195">E-B02 IP44</text>
+
+  <rect class="sheet" x="680" y="465" width="420" height="255"/>
+  <text class="t" x="698" y="494">Северная стена</text>
+  <line class="thin" x1="700" y1="685" x2="1075" y2="685"/>
+  <rect class="obj" x="775" y="445" width="110" height="240" rx="55"/>
+  <text class="s" x="779" y="708">B02 150 л</text>
+  <rect class="obj" x="930" y="465" width="115" height="220"/>
+  <text class="s" x="937" y="708">B04 водоподготовка</text>
+
+  <rect class="sheet" x="1125" y="465" width="420" height="255"/>
+  <text class="t" x="1143" y="494">Южная стена / дверь</text>
+  <line class="thin" x1="1145" y1="685" x2="1520" y2="685"/>
+  <rect fill="#fff" stroke="#1d2935" stroke-width="2" x="1230" y="505" width="120" height="180"/>
+  <text class="s" x="1242" y="708">проём 800 — уточнить</text>
+  <text class="s" x="1390" y="535">A01 датчик газа</text>
+  <rect class="obj" x="1430" y="548" width="45" height="28"/>
+
+  <rect class="warn" x="680" y="745" width="865" height="170" rx="8"/>
+  <text class="hh" x="700" y="778">До передачи монтажнику обязательно получить</text>
+  <text class="s" x="700" y="807">1. Технические условия на газ. 2. Теплопотери и выбранную мощность. 3. Паспорт котла и схему дымоудаления.</text>
+  <text class="s" x="700" y="833">4. Обмер помещения, окна/двери/высоту. 5. Расчёт воздухообмена. 6. Анализ воды. 7. Проект лицензированной организации.</text>
+  <a href="https://baxi.ru/production/domestic/wall/eco_nova_2025/100023941/" target="_blank"><text class="s link" x="700" y="865">B01 — официальная карточка BAXI ECO Nova 2025 1.24 F</text></a>
+  <a href="https://www.rommer.ru/catalog/boylery/napolnyy_kosvennogo_nagreva/rommer-boyler-kosvennogo-nagreva-napolnyy-150-l/" target="_blank"><text class="s link" x="700" y="892">B02 — официальная карточка ROMMER 150 л</text></a>
+  <text class="s" x="55" y="950">Статус листа: КООРДИНАЦИЯ / ТЗ. Не рабочий проект газоснабжения и не разрешение на монтаж.</text>
+</svg>

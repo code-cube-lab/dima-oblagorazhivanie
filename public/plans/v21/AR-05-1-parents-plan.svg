@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs><style>
+    .bg{fill:#fff}.frame,.wall,.obj,.door,.axis{stroke:#111;stroke-width:2;fill:none}.wall{fill:#d8d8d4}.room{fill:#fff}.obj{fill:#e7ddd2}.zone{fill:#e8f0ed;stroke:#55766b;stroke-width:1.5}.dim{stroke:#b12f2f;stroke-width:1.5;fill:none}.h{font:bold 27px Arial;fill:#111}.t{font:19px Arial;fill:#111}.s{font:15px Arial;fill:#111}.xs{font:13px Arial;fill:#111}.mono{font:13px Consolas,monospace;fill:#111}.note{fill:#fff3d7;stroke:#b66a00;stroke-width:2}
+  </style><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 0 0 4 8 8Z" fill="#b12f2f"/></marker></defs>
+  <rect class="bg" width="1600" height="1000"/><rect class="frame" x="25" y="25" width="1550" height="950"/>
+  <text class="h" x="50" y="68">АР-05.1. Спальня родителей — план расстановки</text>
+  <text class="s" x="50" y="96">Размеры в мм · вид сверху · север/сторона балкона слева · координационная стадия ЭП</text>
+  <g transform="translate(95 165)">
+    <rect class="wall" width="720" height="592"/><rect class="room" x="24" y="24" width="672" height="544"/>
+    <line class="axis" x1="360" y1="-30" x2="360" y2="622" stroke-dasharray="10 8"/><text class="xs" x="370" y="-10">ось комнаты</text>
+    <rect class="obj" x="210" y="221" width="300" height="330"/><text class="t" x="276" y="372">Нордик 180</text><text class="s" x="279" y="402">1850×2030×980</text>
+    <rect class="obj" x="122" y="370" width="72" height="72"/><text class="xs" x="116" y="462">тумба 450</text>
+    <rect class="obj" x="526" y="370" width="72" height="72"/><text class="xs" x="520" y="462">тумба 450</text>
+    <rect class="obj" x="508" y="62" width="160" height="72"/><text class="xs" x="527" y="94">стол Олеси</text><text class="xs" x="540" y="113">1100×500</text>
+    <rect class="zone" x="76" y="60" width="205" height="120"/><text class="s" x="93" y="108">свободный проход</text><text class="s" x="123" y="132">к балкону</text>
+    <path class="door" d="M0 92h24m0 0a105 105 0 0 1 105 105"/><text class="s" x="45" y="48">дверь на общий балкон</text>
+    <path class="door" d="M600 592v-24m0 0a96 96 0 0 0-96-96"/><text class="s" x="493" y="535">вход</text>
+    <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M0 625h720"/><text class="t" x="330" y="652">4430</text>
+    <path class="dim" marker-start="url(#a)" marker-end="url(#a)" d="M755 0v592"/><text class="t" transform="translate(785 265) rotate(90)">3640</text>
+  </g>
+  <g transform="translate(920 170)">
+    <text class="t" x="0" y="0">Привязки для меблировщика</text>
+    <text class="s" x="0" y="42">• Нордик 180: 2030×1850×980, по центральной оси.</text>
+    <text class="s" x="0" y="72">• Тумбы: симметрично относительно изголовья.</text>
+    <text class="s" x="0" y="102">• Проход к балконной двери не занимать.</text>
+    <text class="s" x="0" y="132">• Стол Олеси — по стене Б, не перед проёмом.</text>
+    <rect class="note" x="0" y="175" width="580" height="190"/>
+    <text class="t" x="22" y="211">Что проверить на объекте</text>
+    <text class="s" x="22" y="246">1. Чистовые 4430×3640 и диагонали.</text>
+    <text class="s" x="22" y="276">2. Реальные проёмы, наличники и радиаторы.</text>
+    <text class="s" x="22" y="306">3. Траекторию створки балконной двери.</text>
+    <text class="s" x="22" y="336">4. Розетки — от фактического изголовья Нордик 180.</text>
+    <text class="mono" x="0" y="420">Связанные C4D-камеры: CAM_14, CAM_41</text>
+    <text class="mono" x="0" y="448">Развёртки стен: лист АР-06</text>
+    <text class="mono" x="0" y="476">Основание: PDF лист 8 + изменения заказчика</text>
+  </g>
+  <rect class="frame" x="920" y="790" width="655" height="185"/><path class="frame" d="M920 845h655M1200 790v185M1450 790v185M920 920h655"/>
+  <text class="s" x="940" y="820">Дима — благоустройство · Ставрополь</text><text class="t" x="940" y="885">Спальня родителей. План</text><text class="xs" x="940" y="948">Эскиз/координация — не рабочая документация</text>
+  <text class="xs" x="1220" y="820">Стадия ЭП</text><text class="xs" x="1220" y="875">Масштаб граф.</text><text class="xs" x="1470" y="820">АР-05.1</text><text class="xs" x="1470" y="875">v21</text>
+</svg>

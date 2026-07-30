@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1150" viewBox="0 0 1800 1150">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}.title{font:700 38px Georgia,serif}
+      .sub{font-size:18px;fill:#557078}.h{font-size:21px;font-weight:700}.p{font-size:14px}.tiny{font-size:11px}
+      .panel{fill:#fffdf8;stroke:#173841;stroke-width:3}.room{fill:#deddd8;stroke:#173841;stroke-width:5}
+      .car{fill:#395c83;stroke:#173841;stroke-width:3}.shelf{fill:#73787b;stroke:#173841;stroke-width:2}
+      .bench{fill:#8c5c35;stroke:#173841;stroke-width:2}.clear{fill:#e8f4e8;fill-opacity:.55;stroke:#648367;stroke-width:3;stroke-dasharray:8 6}
+      .dim{stroke:#b96039;stroke-width:2;fill:none}.warn{fill:#fff0e8;stroke:#b96039;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1800" height="1150" fill="#f5f1e8"/>
+  <text x="55" y="65" class="title">АР/ТХ-20.01 · Гараж и подвал — расстановка и контроль габаритов</text>
+  <text x="55" y="100" class="sub">Гараж по листу 7 · подвал 58,56 м² по листу 6 · автомобиль — условный габарит 4750 × 1900 × 1720</text>
+
+  <g transform="translate(55 145)">
+    <rect width="810" height="870" rx="12" class="panel"/>
+    <text x="25" y="42" class="h">Гараж · 47,75 м²</text>
+    <text x="25" y="70" class="p">Ворота 3600 × 2800, въезд свободен — без опор балкона в проёме.</text>
+    <g transform="translate(200 115)">
+      <rect width="310" height="650" class="room"/>
+      <rect x="88" y="160" width="133" height="333" rx="35" class="car"/>
+      <rect x="78" y="145" width="153" height="365" rx="40" class="clear"/>
+      <circle cx="102" cy="200" r="22" fill="#111"/><circle cx="207" cy="200" r="22" fill="#111"/>
+      <circle cx="102" cy="455" r="22" fill="#111"/><circle cx="207" cy="455" r="22" fill="#111"/>
+      <text x="155" y="325" text-anchor="middle" class="h" fill="#fff">SUV</text>
+      <text x="155" y="347" text-anchor="middle" class="tiny" fill="#fff">1900 × 4750</text>
+      <rect x="68" y="625" width="174" height="25" fill="#222"/>
+      <text x="155" y="620" text-anchor="middle" class="p">ворота 3600</text>
+      <text x="23" y="330" transform="rotate(-90 23 330)" text-anchor="middle" class="p">глубина ≈11 070</text>
+      <text x="155" y="90" text-anchor="middle" class="p">сервис/хранение</text>
+      <rect x="20" y="25" width="270" height="80" class="shelf"/>
+      <text x="155" y="70" text-anchor="middle" class="p" fill="#fff">стеллажи / велосипеды</text>
+      <text x="55" y="180" class="tiny">≈1380 слева</text><text x="225" y="180" class="tiny">≈1150 справа</text>
+      <text x="155" y="540" text-anchor="middle" class="tiny">≈2575 до ворот</text>
+    </g>
+    <rect x="25" y="795" width="760" height="55" rx="8" class="warn"/>
+    <text x="45" y="828" class="p">Перед разметкой: подставить реальный автомобиль, проверить зеркала, дверь водителя, зарядку, трап и уклон пола.</text>
+  </g>
+
+  <g transform="translate(900 145)">
+    <rect width="845" height="870" rx="12" class="panel"/>
+    <text x="25" y="42" class="h">Подвал · 58,56 м²</text>
+    <text x="25" y="70" class="p">Контур и лестница — лист 6 PDF; чистая высота и инженерное назначение требуют обмера.</text>
+    <g transform="translate(105 120)">
+      <rect width="300" height="650" class="room"/>
+      <rect x="18" y="35" width="45" height="95" class="shelf"/><rect x="18" y="155" width="45" height="95" class="shelf"/>
+      <rect x="18" y="275" width="45" height="95" class="shelf"/><rect x="18" y="395" width="45" height="95" class="shelf"/>
+      <rect x="18" y="515" width="45" height="95" class="shelf"/>
+      <rect x="185" y="485" width="95" height="75" class="bench"/>
+      <rect x="210" y="45" width="65" height="105" class="shelf"/>
+      <rect x="235" y="250" width="65" height="160" fill="#d5c3a8" stroke="#173841" stroke-width="2"/>
+      <path d="M235 395l65-145M235 370l65-145M235 345l65-145M235 320l65-145M235 295l65-145" stroke="#173841" stroke-width="4"/>
+      <text x="145" y="335" text-anchor="middle" class="h">СВОБОДНАЯ ЗОНА</text>
+      <text x="145" y="360" text-anchor="middle" class="p">хранение / мастерская</text>
+      <text x="145" y="635" text-anchor="middle" class="tiny">контур по листу 6</text>
+    </g>
+    <g transform="translate(455 130)">
+      <text x="0" y="0" class="h">ТЗ по подвалу до ремонта</text>
+      <text x="0" y="38" class="p">1. Лазерный обмер длины, ширины, высоты.</text>
+      <text x="0" y="68" class="p">2. Обследование гидроизоляции и влажности.</text>
+      <text x="0" y="98" class="p">3. Проверка притока/вытяжки и радона.</text>
+      <text x="0" y="128" class="p">4. Отметка всех вводов, труб и приямков.</text>
+      <text x="0" y="158" class="p">5. Назначение: склад / мастерская / техника.</text>
+      <text x="0" y="188" class="p">6. После этого — ЭОМ, вентиляция и отделка.</text>
+      <rect y="235" width="340" height="180" rx="9" class="warn"/>
+      <text x="20" y="270" class="h">Не назначено без обследования</text>
+      <text x="20" y="302" class="p">• чистая высота и потолок;</text>
+      <text x="20" y="330" class="p">• дренаж/насос;</text>
+      <text x="20" y="358" class="p">• постоянное пребывание людей;</text>
+      <text x="20" y="386" class="p">• электрика и отопление.</text>
+      <text x="0" y="470" class="h">Кадры Cinema 4D</text>
+      <text x="0" y="500" class="p">CAM_37 — общий от лестницы.</text>
+      <text x="0" y="528" class="p">CAM_38 — стеллажи и верстак.</text>
+      <text x="0" y="570" class="p">Статус визуализации: проектный сценарий,</text>
+      <text x="0" y="595" class="p">пока не исполнительная съёмка подвала.</text>
+    </g>
+  </g>
+  <rect x="55" y="1050" width="1690" height="58" rx="9" fill="#173841"/>
+  <text x="900" y="1087" text-anchor="middle" font-size="16" fill="#fff">Гараж и подвал принимаются отдельными актами до чистовой отделки: размеры, влажность, уклоны, вентиляция, электробезопасность.</text>
+</svg>

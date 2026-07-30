@@ -9,7 +9,7 @@ const publicDir = path.join(projectDir, "pages-dist");
 const reportDir = path.join(projectDir, "qa", "v18");
 const basePath = "/dima-oblagorazhivanie";
 const externalBase = process.env.DIMA_QA_URL?.replace(/\/$/, "");
-const routes = ["", "landscape", "bath", "kitchen", "rooms", "model", "engineering", "sheets", "catalog", "estimate", "documents"];
+const routes = ["", "tour", "landscape", "bath", "kitchen", "rooms", "model", "engineering", "sheets", "catalog", "estimate", "documents"];
 const playwrightEntry =
   "C:\\Users\\GIGA\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\\index.mjs";
 
@@ -18,6 +18,8 @@ const mimeTypes = new Map([
   [".html", "text/html; charset=utf-8"],
   [".js", "text/javascript; charset=utf-8"],
   [".json", "application/json"],
+  [".glb", "model/gltf-binary"],
+  [".c4d", "application/octet-stream"],
   [".pdf", "application/pdf"],
   [".png", "image/png"],
   [".svg", "image/svg+xml"],
@@ -80,6 +82,7 @@ try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
     const consoleErrors = [];
     const failedRequests = [];
+    const httpErrors = [];
     page.on("console", (message) => {
       if (message.type() === "error") consoleErrors.push(message.text());
     });
@@ -87,8 +90,25 @@ try {
     page.on("requestfailed", (request) =>
       failedRequests.push({ url: request.url(), error: request.failure()?.errorText ?? "unknown" }),
     );
+    page.on("response", (httpResponse) => {
+      if (httpResponse.status() >= 400) {
+        httpErrors.push({ url: httpResponse.url(), status: httpResponse.status() });
+      }
+    });
     const url = `${rootUrl}/${route}${route ? "/" : ""}`;
     const response = await page.goto(url, { waitUntil: "networkidle", timeout: 120_000 });
+    if (route === "model") {
+      await page.locator(".c4d-loading").waitFor({ state: "detached", timeout: 120_000 });
+    }
+    let tourInteractionOk = true;
+    if (route === "tour") {
+      await page.locator(".tour-strip button").nth(2).click();
+      await page.waitForTimeout(250);
+      tourInteractionOk =
+        (await page.locator(".tour-stage img").getAttribute("src"))?.includes("50_mangal-photo-match-overview") === true &&
+        (await page.locator(".tour-caption").innerText()).includes("1640 × 1990 мм") &&
+        (await page.locator(".tour-caption a").first().getAttribute("href"))?.includes("AR-09-mangal-photo-match.svg") === true;
+    }
     const bodyText = await page.locator("body").innerText();
     const images = await page.locator("img").evaluateAll((items) =>
       items.map((image) => ({
@@ -101,7 +121,7 @@ try {
       clientWidth: document.documentElement.clientWidth,
       scrollWidth: document.documentElement.scrollWidth,
     }));
-    if (["", "landscape", "bath", "kitchen", "sheets"].includes(route)) {
+    if (["", "tour", "landscape", "bath", "kitchen", "sheets"].includes(route)) {
       await page.screenshot({
         path: path.join(reportDir, externalBase ? `${route || "home"}-public.png` : `${route || "home"}-local.png`),
         fullPage: true,
@@ -118,6 +138,10 @@ try {
           ? bodyText.includes("5530 мм") &&
             bodyText.includes("5200 мм") &&
             bodyText.includes("Посудомоечная машина")
+          : route === "tour"
+            ? bodyText.includes("Задний двор и мангальная") &&
+              tourInteractionOk &&
+              images.some((image) => image.src?.includes("51_mangal-L-firebox"))
           : route === "landscape"
             ? bodyText.length > 1000 && images.length >= 4
           : route === "bath"
@@ -129,6 +153,7 @@ try {
       brokenImages: images.filter((image) => !image.complete || image.width === 0),
       noHorizontalScroll: metrics.scrollWidth <= metrics.clientWidth + 1,
       failedRequests,
+      httpErrors,
       consoleErrors,
     });
     await page.close();
@@ -176,7 +201,7 @@ const report = {
   checkedAt: new Date().toISOString(),
   external: Boolean(externalBase),
   passed: checks.every((check) => check.pass) &&
-    results.every((result) => !result.failedRequests?.length && !result.consoleErrors?.length),
+    results.every((result) => !result.failedRequests?.length && !result.httpErrors?.length && !result.consoleErrors?.length),
   checks,
   results,
 };

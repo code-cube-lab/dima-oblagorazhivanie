@@ -1,6 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import C4DViewer from "./C4DViewer";
+import {
+  DocumentsV21,
+  EngineeringV21,
+  EstimateWorkflowV21,
+  JourneyPage,
+  ProductFirstV21,
+  RoomsV21,
+  SheetsV21,
+} from "./V21Additions";
 
 type PageKind =
   | "home"
@@ -8,6 +18,7 @@ type PageKind =
   | "bath"
   | "kitchen"
   | "rooms"
+  | "tour"
   | "model"
   | "engineering"
   | "sheets"
@@ -26,6 +37,7 @@ type Product = {
 };
 
 const navItems: [PageKind, string, string][] = [
+  ["tour", "Путешествие", "/tour/"],
   ["home", "Обзор", "/"],
   ["landscape", "Участок", "/landscape/"],
   ["bath", "Баня", "/bath/"],
@@ -379,6 +391,7 @@ function asset(path: string) {
   const base = window.location.pathname.startsWith("/dima-oblagorazhivanie")
     ? "/dima-oblagorazhivanie"
     : "";
+  if (base && (path === base || path.startsWith(`${base}/`))) return path;
   return `${base}${path}`;
 }
 
@@ -387,6 +400,7 @@ function route(path: string) {
   const base = window.location.pathname.startsWith("/dima-oblagorazhivanie")
     ? "/dima-oblagorazhivanie"
     : "";
+  if (base && (path === base || path.startsWith(`${base}/`))) return path;
   return `${base}${path}`;
 }
 
@@ -415,7 +429,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <strong>Дима · Облагораживание · v19</strong>
+        <strong>Дима · Облагораживание · v21</strong>
         <span>Многостраничный предпроект для согласования, расчётов и закупки.</span>
       </div>
       <p>
@@ -503,11 +517,11 @@ function HomePage() {
         <img src={asset("/renders/v16/01-front-photoreal.png")} alt="Фасад дома с улицы" />
         <div className="home-hero-shade" />
         <div className="home-hero-copy">
-          <span className="eyebrow">Предпроект v19 · Ставрополь · 30 июля 2026</span>
+          <span className="eyebrow">Предпроект v21 · Ставрополь · 31 июля 2026</span>
           <h1>Дом, ремонт и участок — наглядно и по разделам</h1>
           <p>
-            Плохая 3D-проходка удалена. Теперь клиент сначала видит крупные
-            фотореалистичные кадры, затем открывает размеры, инженерные задания,
+            Проект разбит на понятные разделы. Сначала клиент видит контрольные
+            кадры Cinema 4D, затем открывает размеры, инженерные задания,
             реальные товары и поэтапную стоимость.
           </p>
           <div className="hero-actions">
@@ -520,7 +534,7 @@ function HomePage() {
       <section className="summary-band">
         <article><strong>18</strong><span>листов исходного PDF</span></article>
         <article><strong>7</strong><span>новых видов участка и бани</span></article>
-        <article><strong>11</strong><span>страниц проекта</span></article>
+        <article><strong>12</strong><span>страниц проекта</span></article>
         <article><strong>0</strong><span>низкополигональных проходок</span></article>
       </section>
 
@@ -531,11 +545,12 @@ function HomePage() {
           text="Так подрядчик не путает красивый кадр с рабочим чертежом, а Дмитрий может отдельно проверить кухню, комнаты, сети, товары, стоимость и исходные документы."
         />
         <div className="page-card-grid">
-          {navItems.slice(1).map(([key, label, href], index) => (
+          {navItems.filter(([key]) => key !== "home").map(([key, label, href], index) => (
             <a className="page-card" href={route(href)} key={key}>
-              <span>0{index + 1}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{label}</strong>
               <p>
+                {key === "tour" && "33 последовательных ракурса дома и участка, включая исправленную мангальную."}
                 {key === "kitchen" && "Окно, гарнитур 5,20 м, остров, мойка, плита и все подключения."}
                 {key === "landscape" && "Четыре новых вида двора, свет, растения, план 20 × 30 м и товары."}
                 {key === "bath" && "Комната отдыха, моечная, парная, план 3 × 7 м и печное задание."}
@@ -875,7 +890,7 @@ function RoomsPage() {
 }
 
 function ModelPage() {
-  const [activeSheet, setActiveSheet] = useState(modelSheets[0][0]);
+  const [activeSheet, setActiveSheet] = useState<(typeof modelSheets)[number][0]>(modelSheets[0][0]);
   const sheet = useMemo(
     () => modelSheets.find((item) => item[0] === activeSheet) ?? modelSheets[0],
     [activeSheet],
@@ -884,9 +899,17 @@ function ModelPage() {
     <>
       <section className="content-section first">
         <PageIntro
-          eyebrow="Интерактивная проверка без проходки"
+          eyebrow="Интерактивная модель из Cinema 4D"
+          title="Осмотрите весь участок, поверните дом и войдите в комнаты"
+          text="В браузере загружается облегчённая копия той же сцены v20.2. Размеры дома, помещений и выбранной мебели сохранены; для монтажных работ рядом остаются отдельные координационные листы."
+        />
+        <C4DViewer />
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="Чертежи рядом с моделью"
           title="Переключайте этажи и инженерные слои"
-          text="Это понятный режим согласования. Он не маскирует низкое качество модели свободной прогулкой: вместо этого показывает тот лист, который нужен для конкретного решения."
+          text="Интерактивная модель помогает понять пространство, а листы ниже дают размеры и статусы решений."
         />
         <div className="model-review">
           <div className="model-tabs">
@@ -908,19 +931,19 @@ function ModelPage() {
         </div>
       </section>
       <section className="content-section evidence-callout">
-        <div><span className="eyebrow">Игровая версия</span><h2>Отделена от клиентского релиза</h2></div>
+        <div><span className="eyebrow">Следующий игровой слой</span><h2>Двери, коллизии и замена предметов</h2></div>
         <p>
-          Babylon.js/Three.js не сделают плохую модель реалистичной. Для игры сначала
-          нужны точные PBR-материалы, оптимизированные модели выбранной мебели/техники,
-          коллизии, двери и проверка масштаба. До этого интерактивный лист полезнее и честнее.
+          Текущая версия уже позволяет вращать модель и свободно перемещаться. Полная
+          игровая версия с физическими коллизиями, открываемыми дверями и заменой товаров
+          выпускается после утверждения планировки и чистового обмера.
         </p>
         <a className="button primary" href={route("/documents/")}>Открыть технический аудит</a>
       </section>
       <section className="content-section">
         <PageIntro
-          eyebrow="Повторный рендер Cinema 4D · 30.07.2026"
-          title="18 контрольных камер из нативной сцены v16"
-          text="Кадры повторно рассчитаны Cinema 4D Physical + AO в разрешении 1200 × 750. Они доказывают состав сцены и ракурсы, но остаются техническими — фотореалистичные эскизы опубликованы отдельно."
+          eyebrow="Контрольные камеры Cinema 4D · 30.07.2026"
+          title="Ракурсы из нативной сцены v20.2"
+          text="Кадры подтверждают ориентацию дома, состав помещений и расстановку предметов. Отдельно публикуются прошедшие визуальный контроль PBR-рендеры."
         />
         <VisualGallery items={c4dControlRenders} />
       </section>
@@ -1227,13 +1250,14 @@ export function ProjectV18({ page }: { page: PageKind }) {
       {page === "landscape" && <LandscapePage />}
       {page === "bath" && <BathPage />}
       {page === "kitchen" && <KitchenPage />}
-      {page === "rooms" && <RoomsPage />}
+      {page === "rooms" && <><RoomsPage /><RoomsV21 /></>}
+      {page === "tour" && <JourneyPage />}
       {page === "model" && <ModelPage />}
-      {page === "engineering" && <EngineeringPage />}
-      {page === "sheets" && <SheetsPage />}
-      {page === "catalog" && <CatalogPage />}
-      {page === "estimate" && <EstimatePage />}
-      {page === "documents" && <DocumentsPage />}
+      {page === "engineering" && <><EngineeringPage /><EngineeringV21 /></>}
+      {page === "sheets" && <><SheetsPage /><SheetsV21 /></>}
+      {page === "catalog" && <><CatalogPage /><ProductFirstV21 /></>}
+      {page === "estimate" && <><EstimatePage /><EstimateWorkflowV21 /></>}
+      {page === "documents" && <><DocumentsPage /><DocumentsV21 /></>}
       <Footer />
     </main>
   );

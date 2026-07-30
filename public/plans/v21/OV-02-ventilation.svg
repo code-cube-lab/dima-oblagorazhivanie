@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#fff"/><rect x="25" y="25" width="1550" height="950" fill="none" stroke="#111" stroke-width="2"/>
+  <image href="../v20/ventilation-schematic.svg" x="40" y="35" width="1520" height="780" preserveAspectRatio="xMidYMid meet"/>
+  <rect x="40" y="820" width="930" height="135" fill="#fff3d7" stroke="#b66a00" stroke-width="2"/>
+  <text x="60" y="850" font-family="Arial" font-size="15">СПДС-ориентир: ГОСТ Р 21.101-2020; рабочая документация ОВ — ГОСТ 21.602-2016.</text>
+  <text x="60" y="878" font-family="Arial" font-size="15">Расходы воздуха, сечения, шумоглушители, автоматика и проходки назначаются расчётом.</text>
+  <text x="60" y="906" font-family="Arial" font-size="15">Вытяжка плиты V-K01 и дымоудаление F-B01 показаны отдельными системами.</text>
+  <text x="60" y="934" font-family="Consolas" font-size="13">C4D: CAM_46, CAM_48, CAM_49 · все коды совпадают с ventilation-room-schedule.csv.</text>
+  <rect x="980" y="820" width="595" height="155" fill="#fff" stroke="#111" stroke-width="2"/><path d="M980 870h595M1240 820v155M1455 820v155M980 925h595" fill="none" stroke="#111" stroke-width="2"/>
+  <text x="995" y="848" font-family="Arial" font-size="14">Дима — благоустройство</text><text x="995" y="900" font-family="Arial" font-size="18">Вентиляция. Принципиальная схема</text><text x="995" y="948" font-family="Arial" font-size="14">Эскиз / координация</text>
+  <text x="1260" y="848" font-family="Arial" font-size="14">Стадия ЭП</text><text x="1260" y="900" font-family="Arial" font-size="14">Масштаб граф.</text><text x="1470" y="848" font-family="Arial" font-size="14">ОВ-02</text><text x="1470" y="900" font-family="Arial" font-size="14">v20.1</text>
+</svg>

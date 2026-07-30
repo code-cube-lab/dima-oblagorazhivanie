@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Дима · Дом и участок — подробный проект v19",
+  title: "Дима · Дом и участок — подробный проект v21",
   description:
     "Многостраничный проект дома и участка в Ставрополе: благоустройство, баня, комнаты, размеры, инженерия, товары, этапы и смета.",
   openGraph: {

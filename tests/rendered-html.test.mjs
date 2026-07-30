@@ -13,8 +13,8 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders all eleven v19 pages", async () => {
-  const routes = ["/", "/landscape", "/bath", "/kitchen", "/rooms", "/model", "/engineering", "/sheets", "/catalog", "/estimate", "/documents"];
+test("server-renders all twelve v21 pages", async () => {
+  const routes = ["/", "/tour", "/landscape", "/bath", "/kitchen", "/rooms", "/model", "/engineering", "/sheets", "/catalog", "/estimate", "/documents"];
   for (const pathname of routes) {
     const response = await render(pathname);
     assert.equal(response.status, 200, pathname);
@@ -22,12 +22,24 @@ test("server-renders all eleven v19 pages", async () => {
   }
 });
 
+test("tour publishes the corrected rear-corner mangal and AR-09 drawing", async () => {
+  const [html, source] = await Promise.all([
+    render("/tour").then((response) => response.text()),
+    readFile(new URL("../app/V21Additions.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(html, /Задний двор и мангальная/);
+  assert.match(html, /50_mangal-photo-match-overview_v20_2\.png/);
+  assert.match(html, /51_mangal-L-firebox_v20_2\.png/);
+  assert.match(source, /1640 × 1990 мм/);
+  assert.match(source, /AR-09-mangal-photo-match\.svg/);
+});
+
 test("home is render-first and contains no bad walkthrough", async () => {
   const response = await render("/");
   const html = await response.text();
   assert.match(html, /Дом, ремонт и участок — наглядно и по разделам/);
-  assert.match(html, /Плохая 3D-проходка удалена/);
   assert.match(html, /0<\/strong><span>низкополигональных проходок/);
+  assert.match(html, /12<\/strong><span>страниц проекта/);
   assert.doesNotMatch(html, /WASD|От третьего лица|PointerLockControls|ProjectViewerV17/);
   assert.match(
     html,
@@ -113,6 +125,22 @@ test("required v19 and inherited v18 drawings, renders and downloads exist", asy
     "../public/downloads/kitchen-engineering-v18.csv",
     "../public/downloads/estimate-v18.csv",
     "../public/downloads/github-tool-audit-v18.csv",
+  ];
+  for (const file of files) {
+    assert.equal(await access(new URL(file, import.meta.url)), undefined, file);
+  }
+});
+
+test("required v21 mangal scene, drawings, renders and specialist package exist", async () => {
+  const files = [
+    "../public/models/dima-master-v20-2.c4d",
+    "../public/models/dima-v20-2.glb",
+    "../public/plans/v21/AR-09-mangal-photo-match.svg",
+    "../public/renders/v21/c4d-v20-2/50_mangal-photo-match-overview_v20_2.png",
+    "../public/renders/v21/c4d-v20-2/51_mangal-L-firebox_v20_2.png",
+    "../public/renders/v21/c4d-v20-2/52_mangal-integrated-sink_v20_2.png",
+    "../public/downloads/v21/Dima-client-drawings-and-renders-v21.pdf",
+    "../public/downloads/v21/specialists/10-bath-mangal-fire-safety.pdf",
   ];
   for (const file of files) {
     assert.equal(await access(new URL(file, import.meta.url)), undefined, file);
