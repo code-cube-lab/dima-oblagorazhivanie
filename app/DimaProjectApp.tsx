@@ -390,10 +390,10 @@ const lightingGroups = [
 ];
 
 const products = [
-  ["Кухня «Мария» · Вектор софт", "от 298 063 ₽", "ориентир базовой компоновки; точный расчёт 5,2 м + остров", "https://stavropol.marya.ru/price/"],
+  ["Кухня «Мария» · Vector Touch", "от 280 736 ₽", "ориентир базовой компоновки; точный расчёт 5,2 м + остров", "https://stavropol.marya.ru/price/"],
   ["MAUNFELD CVI593SFBK LUX", "26 240 ₽", "индукционная панель с Flex Zone; проверить наличие и мощность", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
   ["MAUNFELD MBF177SWGR", "81 365 ₽", "встраиваемый холодильник-морозильник; сверить нишу и вентиляцию", "https://stavropol.nadommebel.com/catalog/vstraivaemaya-tekhnika/"],
-  ["Grohe Rapid SL 38528001", "31 350 ₽", "инсталляция 50×13,5×113 см; клавиша приобретается отдельно", "https://stavropol.santehnica.ru/product/69119.html"],
+  ["Grohe Rapid SL 38528001", "46 197 ₽", "инсталляция 50×13,5×113 см; гарантия 10 лет, клавиша отдельно", "https://stavropol.santehnica.ru/product/69119.html"],
   ["Матовый натяжной потолок", "280–700 ₽/м²", "публичный ориентир Ставрополя; итог только после замера", "https://potolokstavropol.ru/"],
   ["Световые линии", "от 2 800 ₽/м²", "уточнить состав профиля, блоки питания и сервисный доступ", "https://potolokstavropol.ru/"],
 ];
