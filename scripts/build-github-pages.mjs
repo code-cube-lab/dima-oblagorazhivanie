@@ -10,10 +10,7 @@ const outputDir = path.join(projectDir, "pages-dist");
 const repositoryName = "dima-oblagorazhivanie";
 const basePath = `/${repositoryName}`;
 
-if (
-  path.dirname(outputDir) !== projectDir ||
-  path.basename(outputDir) !== "pages-dist"
-) {
+if (path.dirname(outputDir) !== projectDir || path.basename(outputDir) !== "pages-dist") {
   throw new Error(`Unsafe output directory: ${outputDir}`);
 }
 
@@ -43,13 +40,7 @@ if (!response.ok) {
   throw new Error(`SSR snapshot failed with HTTP ${response.status}`);
 }
 
-const publicRoots = [
-  "assets",
-  "plans",
-  "renders",
-  "downloads",
-  "data",
-];
+const publicRoots = ["assets", "plans", "renders", "downloads", "data"];
 
 function applyBasePath(source) {
   let result = source;
@@ -57,10 +48,7 @@ function applyBasePath(source) {
     result = result.replaceAll(`/${root}/`, `${basePath}/${root}/`);
   }
   result = result.replaceAll("/favicon.svg", `${basePath}/favicon.svg`);
-  result = result.replaceAll(
-    "return`/`+e",
-    `return\`${basePath}/\`+e`,
-  );
+  result = result.replaceAll("return`/`+e", `return\`${basePath}/\`+e`);
   return result;
 }
 
@@ -95,13 +83,14 @@ const readme = `# Дима · Облагораживание
 
 Проект включает:
 
-- наглядную 3D-модель дома и участка;
-- архитектурные планы и контрольные рендеры;
+- точную GLB-модель из Cinema 4D;
+- планы участка и обоих этажей;
 - общий соединённый балкон с двумя выходами;
-- размеры, этапы, растения, освещение и инженерные системы;
-- смету, закупки и исходный архитектурный PDF.
+- баню 3 × 7 м, хозблок, дорожки, растения и освещение;
+- реалистичные кадры, размеры, этапы и диапазон стоимости;
+- исходный архитектурный PDF.
 
-> Материалы предназначены для предварительного проектирования. Рабочие решения по конструкциям, газу, электрике и инженерным сетям требуют проверки профильными специалистами.
+Материалы предназначены для предпроектного согласования. Рабочие решения по конструкциям, газу, электрике и инженерным сетям требуют проверки профильными специалистами.
 `;
 
 await writeFile(path.join(outputDir, "README.md"), readme, "utf8");
