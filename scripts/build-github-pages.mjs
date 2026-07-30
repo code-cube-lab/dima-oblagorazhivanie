@@ -27,7 +27,7 @@ const executionContext = {
   passThroughOnException() {},
 };
 const publicRoots = ["assets", "plans", "renders", "downloads", "data"];
-const routes = ["/", "/kitchen", "/rooms", "/model", "/engineering", "/catalog", "/estimate", "/documents"];
+const routes = ["/", "/landscape", "/bath", "/kitchen", "/rooms", "/model", "/engineering", "/sheets", "/catalog", "/estimate", "/documents"];
 
 function applyBasePath(source) {
   let result = source;
@@ -86,7 +86,7 @@ for (const assetName of assetNames) {
   }
 }
 
-const readme = `# Дима · Облагораживание · v18
+const readme = `# Дима · Облагораживание · v19
 
 Публичная многостраничная версия проекта дома и участка.
 
@@ -95,6 +95,8 @@ const readme = `# Дима · Облагораживание · v18
 Проект включает:
 
 - крупные фотореалистичные рендеры без низкополигональной проходки;
+- четыре новых вида благоустройства и три отдельных интерьера бани;
+- лист ЛД-01 с участком 20 × 30 м и лист БН-01 с баней 3 × 7 м;
 - отдельную страницу исправленной кухни с четырьмя ракурсами;
 - планы участка, этажей, кухни, электрики, воды и вентиляции;
 - общий соединённый балкон с двумя выходами;

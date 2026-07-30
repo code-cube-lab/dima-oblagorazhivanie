@@ -1,0 +1,72 @@
+{
+  "project": "Дима Облагораживание",
+  "revision": "v19",
+  "scope_stage": "эскизный проект для согласования и подготовки обмеров",
+  "checked_at": "2026-07-30T18:17:32+03:00",
+  "sources": [
+    {
+      "id": "SRC-PDF-01",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Снимок экрана 2025—09—13 в 18.38.43.pdf",
+      "pages": 18,
+      "status": "source_checked"
+    },
+    {
+      "id": "C4D-MASTER-16",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Cinema 4D v16\\02_Сцена\\Дима_Облагораживание_Master_v16.c4d",
+      "status": "source_checked"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F-SITE",
+      "value": "20.00 x 30.00 m",
+      "status": "source_checked",
+      "evidence": "SRC-PDF-01"
+    },
+    {
+      "id": "R-BATH",
+      "value": "3.00 x 7.00 m; 1.00 m from left and rear boundaries",
+      "status": "confirmed_requirement",
+      "evidence": "direct client requirement"
+    },
+    {
+      "id": "R-SHED",
+      "value": "1.00 x 3.00 m at left fence in front yard",
+      "status": "confirmed_requirement",
+      "evidence": "direct client requirement"
+    },
+    {
+      "id": "R-BATH-VISIBILITY",
+      "value": "bathhouse is hidden by the house in the front overview and shown only from the rear yard",
+      "status": "confirmed_requirement",
+      "evidence": "direct client correction 2026-07-30"
+    },
+    {
+      "id": "R-BALCONY",
+      "value": "connected balcony above garage with child-safe guard; exits from parents bedroom and children room",
+      "status": "confirmed_requirement",
+      "evidence": "direct client requirement and dima_v16_spec.json"
+    },
+    {
+      "id": "V-SURVEY",
+      "value": "laser survey, topographic survey and utility survey",
+      "status": "verify_on_site",
+      "evidence": "required before working drawings"
+    }
+  ],
+  "release_boundary": {
+    "allowed": [
+      "client review",
+      "visual comparison of front and rear scenarios",
+      "budget planning",
+      "product shortlisting",
+      "briefing of architect, landscape architect, MEP engineer and contractors"
+    ],
+    "forbidden": [
+      "construction from sketch sheets",
+      "electrical, water, sewer, ventilation or gas installation without signed working design",
+      "structural alteration of balcony or opening without survey and structural calculation",
+      "setting drainage levels without topographic survey"
+    ]
+  }
+}

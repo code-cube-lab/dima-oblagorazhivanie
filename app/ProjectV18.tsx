@@ -4,10 +4,13 @@ import { useMemo, useState } from "react";
 
 type PageKind =
   | "home"
+  | "landscape"
+  | "bath"
   | "kitchen"
   | "rooms"
   | "model"
   | "engineering"
+  | "sheets"
   | "catalog"
   | "estimate"
   | "documents";
@@ -24,10 +27,13 @@ type Product = {
 
 const navItems: [PageKind, string, string][] = [
   ["home", "Обзор", "/"],
+  ["landscape", "Участок", "/landscape/"],
+  ["bath", "Баня", "/bath/"],
   ["kitchen", "Кухня", "/kitchen/"],
   ["rooms", "Комнаты", "/rooms/"],
   ["model", "Планы", "/model/"],
   ["engineering", "Инженерия", "/engineering/"],
+  ["sheets", "Листы", "/sheets/"],
   ["catalog", "Товары", "/catalog/"],
   ["estimate", "Смета", "/estimate/"],
   ["documents", "Документы", "/documents/"],
@@ -73,11 +79,29 @@ const products: Product[] = [
   {
     room: "Кухня-гостиная",
     title: "MAUNFELD Domina 60",
-    size: "класс 600 мм",
-    price: "уточнить",
-    status: "кандидат",
+    size: "598 × 290 × 182 мм · патрубок Ø150",
+    price: "17 990 ₽",
+    status: "в продаже на дату проверки",
     note: "Канал, обратный клапан, питание и высоту установки согласовать с проектом вентиляции.",
     url: "https://www.maunfeld.ru/catalog/embedded/kukhonnaya-vytyazhka-maunfeld-domina-60-chyernyy",
+  },
+  {
+    room: "Кухня-гостиная",
+    title: "MAUNFELD EOEM.769B",
+    size: "595 × 547 × 595 мм · 2,03 кВт",
+    price: "47 490 ₽",
+    status: "нет в наличии; глубину 547/567 мм перепроверить",
+    note: "Ниша и вентиляционные зазоры проектируются только после выбора доступной модели.",
+    url: "https://www.maunfeld.ru/catalog/electric/shkaf-dukhovoy-elektricheskiy-maunfeld-eoem-769b",
+  },
+  {
+    room: "Кухня-гостиная",
+    title: "MAUNFELD JBMO725BK01",
+    size: "595 × 317 × 390 мм · 1,08 кВт",
+    price: "24 990 ₽",
+    status: "в продаже на дату проверки",
+    note: "Нужны паспортная ниша, вентиляция и доступная розетка.",
+    url: "https://www.maunfeld.ru/catalog/edmicrowave/mikrovolnovaya-pech-vstraivaemaya-maunfeld-jbmo725bk01",
   },
   {
     room: "Кухня-гостиная",
@@ -90,12 +114,12 @@ const products: Product[] = [
   },
   {
     room: "Санузлы",
-    title: "Grohe Rapid SL 38528001",
-    size: "монтажная рама · размер по паспорту",
-    price: "46 197 ₽",
+    title: "GROHE Rapid SL 39536000",
+    size: "около 500 × 135 × 1130 мм",
+    price: "120 000 ₽",
     status: "под заказ",
-    note: "Клавиша и часть крепежа могут приобретаться отдельно.",
-    url: "https://stavropol.santehnica.ru/product/69119.html",
+    note: "Ось канализации, конструкция стены, комплект и клавиша подтверждаются до монтажа.",
+    url: "https://stavropol.santehnica.ru/product/215901.html",
   },
   {
     room: "Спальни и гостиная",
@@ -117,14 +141,183 @@ const products: Product[] = [
   },
   {
     room: "Участок",
-    title: "Питомник · растения",
-    size: "взрослые размеры в дендроплане",
-    price: "сезонная цена",
-    status: "кандидат",
-    note: "Сорт, контейнер, приживаемость и полив подтверждаются перед закупкой.",
-    url: "https://stavropol.zpitomnik.ru/catalog/",
+    title: "Гортензия Strawberry Blossom",
+    size: "C2, 30–40 см · взрослая 1,5–2,0 × 1,2–1,5 м",
+    price: "1 400 ₽",
+    status: "мало, наличие проверить",
+    note: "Габарит взрослой кроны учитывается в плане; перед посадкой проверить почву, свет и полив.",
+    url: "https://stavropol.rasteniya24.ru/dekorativnye-rasteniya/gortenziya-metelchataya-strawberry-blossom",
+  },
+  {
+    room: "Участок",
+    title: "Лаванда Dwarf Blue",
+    size: "поставочный размер не указан",
+    price: "730 ₽",
+    status: "в наличии на дату проверки",
+    note: "Сажать только на солнечном дренированном месте; контейнер и фактический размер уточнить.",
+    url: "https://stavropol.pitomnik-rose.ru/product/lavanda-dvarf-blyu",
+  },
+  {
+    room: "Участок",
+    title: "Можжевельник Tamariscifolia",
+    size: "C2, 15–25 см",
+    price: "930 ₽",
+    status: "много на дату проверки",
+    note: "В модели показывается взрослая крона; точные отступы и безопасность для детей проверяются.",
+    url: "https://stavropol.rasteniya24.ru/dekorativnye-rasteniya/mozhzhevelnik-kazackij-tamariscifolia",
+  },
+  {
+    room: "Участок",
+    title: "Тротуарная плитка «Старый город»",
+    size: "серый цвет · толщина 40 мм",
+    price: "750 ₽/м²",
+    status: "только пешеходные дорожки",
+    note: "Не применять под автомобиль; основание, уклоны и фактический объём — по рабочему плану.",
+    url: "https://stavropol.gs-com.ru/tile/oldcity/tp-oldcity-gray-4sm/",
+  },
+  {
+    room: "Участок",
+    title: "Лоток Gidrolica Standart DN100",
+    size: "1000 × 146 × 135 мм · C250",
+    price: "727,20 ₽ без решётки",
+    status: "в наличии на дату проверки",
+    note: "Количество и отметки нельзя назначать без топосъёмки, расхода воды и точки сброса.",
+    url: "https://shop.gidrolica.ru/product/lotok-vodootvodnyj-gidrolica-standart-lv-10-14-5-13-5-plastikovyj169/",
+  },
+  {
+    room: "Участок",
+    title: "Maytoni Line O484WL-L6GF3K",
+    size: "170 × 80 × 160 мм · 6 Вт · 3000K · IP65",
+    price: "16 190 ₽",
+    status: "более 20 шт. на дату проверки",
+    note: "Кандидат для фасада и балкона; количество определяется светорасчётом.",
+    url: "https://maytoni.ru/catalog/street/bra/o484wl-l6gf3k/",
+  },
+  {
+    room: "Баня",
+    title: "Везувий Скиф Стандарт 16 ДТ-4",
+    size: "16 кВт · парная 8–18 м³ · H 640 мм",
+    price: "51 250 ₽",
+    status: "кандидат, не закупать отдельно",
+    note: "Нужен проект печи, основания, экранов, пожарных отступов и полного дымохода.",
+    url: "https://26.teplozhar.ru/dlya-bani-i-sauni/skif-standart-dt-4-to-n079908.html",
+  },
+  {
+    room: "Баня",
+    title: "Дверь «Банный эксперт»",
+    size: "680 × 1800 × 8 мм · коробка осина",
+    price: "12 000 ₽",
+    status: "в наличии на дату проверки",
+    note: "Проём и направление открывания согласовать с планом эвакуации и конструкцией перегородки.",
+    url: "https://stavropol.pechi-online.ru/shop/dver_bronza_matovoe_18068_8_mm_3_petli_korobka_osina",
+  },
+  {
+    room: "Баня",
+    title: "Сэндвич-труба Ferrum Ø115/200",
+    size: "Ø115/200 × 1000 мм · стенка 0,5 мм",
+    price: "3 614 ₽ за секцию",
+    status: "не является комплектом дымохода",
+    note: "Высоту, проход кровли и полный набор элементов назначает профильный проект.",
+    url: "https://stavropol.pechi-online.ru/shop/dymoxod_uteplennyj_nerzhaveyushhij_05_zerkalnyj_nerzhaveyushhij_d-115_200L1m_po_vode_ferrum-1400778906",
+  },
+  {
+    room: "Санузлы",
+    title: "Ванна Abber AB9315 L/R",
+    size: "1700 × 750 × 600 мм · 210 л",
+    price: "85 900 ₽",
+    status: "в наличии на дату проверки",
+    note: "Выбрать левую/правую версию; проверить слив и нагрузку перекрытия.",
+    url: "https://stavropol.santehnica.ru/product/415971.html",
+  },
+  {
+    room: "Санузлы",
+    title: "Душевой уголок Veconi Rovigo",
+    size: "1200 × 800 × 1950 мм · стекло 6 мм",
+    price: "42 676 ₽",
+    status: "в наличии на дату проверки",
+    note: "Уклоны, слив и зону открывания двери проверить до гидроизоляции.",
+    url: "https://stavropol.santehnica.ru/product/1690101.html",
+  },
+  {
+    room: "Санузлы",
+    title: "Тумба Jacob Delafon Tolbiac",
+    size: "1185 × 456 × 520 мм",
+    price: "47 434 ₽",
+    status: "тумба без раковины",
+    note: "Окончательный комплект и выводы воды согласовать до облицовки.",
+    url: "https://stavropol.santehnica.ru/brand/jacob-delafon/tolbiac/",
+  },
+  {
+    room: "Освещение",
+    title: "Maytoni Focus C071CL-7W3K-B",
+    size: "120 × 80 мм · отверстие Ø85 · 7 Вт · 3000K",
+    price: "3 600 ₽",
+    status: "кандидат + IES",
+    note: "Количество только по расчёту освещённости; IP20 не использовать в мокрых/наружных зонах.",
+    url: "https://maytoni.ru/catalog/functional/potolochnye-svetilniki-func/potolochnye-vstraivaemye-svetilniki/svetilniki-downlight/c071cl-7w3k-b/",
+  },
+  {
+    room: "Строительные материалы",
+    title: "Knauf Rotband 30 кг",
+    size: "мешок 30 кг",
+    price: "650,53 ₽",
+    status: "цену уточнить перед заказом",
+    note: "Количество только после обмера площади, кривизны и влажности основания.",
+    url: "https://stavropol.prinesipoday.ru/catalog/stroitelnye-smesi/shtukaturki/shtukaturka-dlya-vnutrennikh-rabot/",
+  },
+  {
+    room: "Строительные материалы",
+    title: "Ceresit CL 51",
+    size: "15 кг",
+    price: "6 440,26 ₽",
+    status: "кандидат гидроизоляции",
+    note: "Расход определяется картой мокрых зон, основанием, лентами и примыканиями.",
+    url: "https://stavropol.prinesipoday.ru/catalog/gidroizolyatsiya/gidroizolyatsiya-polimernaya/",
+  },
+  {
+    room: "Электрика",
+    title: "ВВГ-Пнг(А)-LS 3×2,5",
+    size: "3 × 2,5 мм² · ориентировочно 5,4 × 11,3 мм",
+    price: "115,20 ₽/м",
+    status: "наличие на странице устарело — звонок обязателен",
+    note: "Марка, метраж, трасса и защита только по однолинейной схеме и расчёту нагрузок.",
+    url: "https://dixi-st.com/katalog-dixi/kabelno-provodnaya/kabel/silovoj/kabel-vvg-pnga-ls-3h25-gost-pk",
   },
 ];
+
+const landscapeRenders = [
+  ["Передний двор · баня не видна", "/renders/v19/01-landscape-overview-concept.png", "Эскиз: бетонный передний двор, справа зелёная полоса, слева у забора только хозблок 1 × 3 м. Баня находится за домом и этим ракурсом полностью скрыта."],
+  ["Задний двор · баня слева", "/renders/v19/02-rear-yard-concept.png", "Эскиз атмосферы: здесь показана баня 3 × 7 м с отступом 1 м от левого и заднего заборов, газон, цветники и мангальная у дома; проёмы сверять по PDF."],
+  ["Правая сторона", "/renders/v19/03-right-green-strip-concept.png", "Эскиз: непрерывная дорожка 1,20 м, взрослые растения и болларды 3000K."],
+  ["Вечерний фасад", "/renders/v19/04-front-evening-lighting-concept.png", "Сценарий света без изменения утверждённого фасада."],
+] as const;
+
+const bathRenders = [
+  ["Баня · комната отдыха", "/renders/v19/05-bath-lounge-concept.png", "Эскизная зона 3,00 × 2,70 м: стол, лавка, хранение и чайная линия."],
+  ["Баня · моечная", "/renders/v19/06-bath-wash-concept.png", "Эскизная зона 3,00 × 1,50 м: душ, трап, тумба и влагостойкие материалы."],
+  ["Баня · парная", "/renders/v19/07-bath-steam-concept.png", "Эскизная зона 3,00 × 2,80 м: полки и кандидат печи; пожарные узлы не утверждены."],
+] as const;
+
+const c4dControlRenders = [
+  ["C4D · передний фасад PDF", "/renders/v19/c4d-control/01-front-pdf.png", "Технический контроль стороны и проёмов без клиентских изменений."],
+  ["C4D · задний фасад PDF", "/renders/v19/c4d-control/02-rear-pdf.png", "Технический контроль трёх нижних и двух верхних проёмов."],
+  ["C4D · правый фасад PDF", "/renders/v19/c4d-control/03-right-pdf.png", "Правый фасад не зеркален; два горизонтальных окна первого этажа."],
+  ["C4D · левый фасад PDF", "/renders/v19/c4d-control/04-left-pdf.png", "Левый фасад с исходными проёмами и зоной будущего общего балкона."],
+  ["C4D · с улицы", "/renders/v19/c4d-control/05-street-proposal.png", "Клиентский вариант общего балкона над гаражом."],
+  ["C4D · общий балкон", "/renders/v19/c4d-control/06-connected-balcony.png", "Связь двери детской и бокового выхода родителей; конструкция требует расчёта."],
+  ["C4D · задний двор", "/renders/v19/c4d-control/07-rear-mangal.png", "Контроль примыкания мангальной зоны к дому."],
+  ["C4D · баня 3 × 7 м", "/renders/v19/c4d-control/08-bathhouse.png", "Габаритная модель бани без утверждённых внутренних инженерных узлов."],
+  ["C4D · участок", "/renders/v19/c4d-control/09-site-overview.png", "Общий технический вид дома, дорожек, зелёной полосы и заднего двора."],
+  ["C4D · план участка", "/renders/v19/c4d-control/10-site-plan.png", "Ортографический контроль расстановки."],
+  ["C4D · план первого этажа", "/renders/v19/c4d-control/11-floor1.png", "Планировка, ремонт и свет как координационное задание."],
+  ["C4D · план второго этажа", "/renders/v19/c4d-control/12-floor2.png", "Спальни, санузлы, детские и общий балкон."],
+  ["C4D · кухня-гостиная", "/renders/v19/c4d-control/13-kitchen.png", "Габаритный контроль мебели; не фотореалистичная подача."],
+  ["C4D · спальня родителей", "/renders/v19/c4d-control/14-parents.png", "Мебельные оболочки и проходы."],
+  ["C4D · комната Дарины", "/renders/v19/c4d-control/15-darina.png", "Сон, учёба, гимнастика и выход на общий балкон."],
+  ["C4D · комната Ярика", "/renders/v19/c4d-control/16-yarik.png", "Сон, учёба, хранение и свободная игровая зона."],
+  ["C4D · санузел родителей", "/renders/v19/c4d-control/17-bathroom.png", "Габаритная расстановка сантехники; выводы ещё не рабочие."],
+  ["C4D · ограждение балкона", "/renders/v19/c4d-control/18-balcony-detail.png", "Балкон 7,50 м, высокие боковые экраны и безопасное ограждение."],
+] as const;
 
 const roomRenders = [
   ["Фасад с улицы", "/renders/v16/01-front-photoreal.png", "Гараж слева, витраж справа — ориентир незеркальной подачи."],
@@ -222,7 +415,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <strong>Дима · Облагораживание · v18</strong>
+        <strong>Дима · Облагораживание · v19</strong>
         <span>Многостраничный предпроект для согласования, расчётов и закупки.</span>
       </div>
       <p>
@@ -281,6 +474,28 @@ function RenderGallery({ onlyKitchen = false }: { onlyKitchen?: boolean }) {
   );
 }
 
+function VisualGallery({
+  items,
+}: {
+  items: readonly (readonly [string, string, string])[];
+}) {
+  return (
+    <div className="render-grid">
+      {items.map(([title, image, note]) => (
+        <figure className="render-card" key={title}>
+          <a href={asset(image)} target="_blank">
+            <img src={asset(image)} alt={title} />
+          </a>
+          <figcaption>
+            <strong>{title}</strong>
+            <span>{note}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 function HomePage() {
   return (
     <>
@@ -288,7 +503,7 @@ function HomePage() {
         <img src={asset("/renders/v16/01-front-photoreal.png")} alt="Фасад дома с улицы" />
         <div className="home-hero-shade" />
         <div className="home-hero-copy">
-          <span className="eyebrow">Предпроект v18 · Ставрополь · 30 июля 2026</span>
+          <span className="eyebrow">Предпроект v19 · Ставрополь · 30 июля 2026</span>
           <h1>Дом, ремонт и участок — наглядно и по разделам</h1>
           <p>
             Плохая 3D-проходка удалена. Теперь клиент сначала видит крупные
@@ -296,16 +511,16 @@ function HomePage() {
             реальные товары и поэтапную стоимость.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={route("/kitchen/")}>Открыть исправленную кухню</a>
-            <a className="button secondary" href={route("/model/")}>Проверить планы</a>
+            <a className="button primary" href={route("/landscape/")}>Открыть благоустройство</a>
+            <a className="button secondary" href={route("/sheets/")}>Листы для мастеров</a>
           </div>
         </div>
       </section>
 
       <section className="summary-band">
         <article><strong>18</strong><span>листов исходного PDF</span></article>
-        <article><strong>4</strong><span>новых ракурса кухни</span></article>
-        <article><strong>8</strong><span>страниц проекта</span></article>
+        <article><strong>7</strong><span>новых видов участка и бани</span></article>
+        <article><strong>11</strong><span>страниц проекта</span></article>
         <article><strong>0</strong><span>низкополигональных проходок</span></article>
       </section>
 
@@ -322,9 +537,12 @@ function HomePage() {
               <strong>{label}</strong>
               <p>
                 {key === "kitchen" && "Окно, гарнитур 5,20 м, остров, мойка, плита и все подключения."}
+                {key === "landscape" && "Четыре новых вида двора, свет, растения, план 20 × 30 м и товары."}
+                {key === "bath" && "Комната отдыха, моечная, парная, план 3 × 7 м и печное задание."}
                 {key === "rooms" && "Крупные интерьерные и наружные рендеры с пояснениями."}
                 {key === "model" && "Переключаемые планы этажей и инженерные слои."}
                 {key === "engineering" && "ЭОМ, вода, канализация и задания для специалистов."}
+                {key === "sheets" && "Реестр архитектурных, инженерных, мебельных и ландшафтных листов."}
                 {key === "catalog" && "Реальные кандидаты с размерами, ценой, статусом и ссылкой."}
                 {key === "estimate" && "Диапазоны, этапы, контрольные результаты и исключения."}
                 {key === "documents" && "PDF, CSV, журналы и проверенные GitHub-инструменты."}
@@ -354,6 +572,120 @@ function HomePage() {
           на глухой стене 5530 мм; гарнитур 5200 мм не пересекает ни один проём.
         </p>
         <a className="button primary" href={route("/kitchen/")}>Посмотреть доказательство</a>
+      </section>
+    </>
+  );
+}
+
+function LandscapePage() {
+  const landscapeProducts = products.filter((product) =>
+    ["Участок", "Освещение"].includes(product.room),
+  );
+  return (
+    <>
+      <section className="content-section first">
+        <PageIntro
+          eyebrow="Благоустройство · участок 20 × 30 м"
+          title="Двор показан с четырёх сторон — отдельно от точного плана"
+          text="Фотореалистичные изображения ниже показывают будущую атмосферу и материалы. Точная расстановка, подтверждённые габариты и запреты собраны на листе ЛД-01; изображения не используются для измерения."
+        />
+        <StatusKey />
+        <div className="alert warning">
+          <strong>Честный статус</strong>
+          <p>
+            Общий вид, зелёная полоса и вечерний свет — эскизные визуализации. Дом
+            и участок сверяются по PDF и Cinema 4D; водоотвод, отметки и основания
+            покрытий заблокированы до топосъёмки.
+          </p>
+        </div>
+      </section>
+      <section className="content-section compact">
+        <VisualGallery items={landscapeRenders} />
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="ЛД-01"
+          title="Размерный план: маршруты имеют начало и конец"
+          text="На плане показаны участок, дом, передний бетонный двор, правая зелёная полоса, баня 3 × 7 м, хозблок 1 × 3 м, дорожки 1,20 м, посадки и точки света."
+        />
+        <div className="single-sheet-layout">
+          <a href={asset("/plans/v19/landscape-plan.svg")} target="_blank">
+            <img src={asset("/plans/v19/landscape-plan.svg")} alt="ЛД-01 — план благоустройства с размерами" />
+          </a>
+          <aside className="checklist-card">
+            <span className="eyebrow">Что подтверждено</span>
+            <h2>Габариты и пожелания</h2>
+            <ul>
+              <li>Участок 20,00 × 30,00 м.</li>
+              <li>Баня 3,00 × 7,00 м, по 1,00 м слева и сзади.</li>
+              <li>Хозблок 1,00 × 3,00 м у левого забора.</li>
+              <li>Передний двор — преимущественно бетон.</li>
+              <li>Зелень — справа и вдоль маршрута к заднему двору.</li>
+              <li>Меньше деревьев, больше цветов и кустарников.</li>
+            </ul>
+            <a className="button primary" href={asset("/plans/v19/landscape-plan.svg")} target="_blank">
+              Открыть лист крупно
+            </a>
+          </aside>
+        </div>
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="Товары, видимые в проекте"
+          title="Покрытия, растения и свет открываются по ссылке"
+          text="Цены — ориентир на 30.07.2026. Количество считается после топосъёмки, пирогов покрытий, светорасчёта и финального посадочного плана."
+        />
+        <ProductGrid items={landscapeProducts} />
+      </section>
+    </>
+  );
+}
+
+function BathPage() {
+  const bathProducts = products.filter((product) => product.room === "Баня");
+  return (
+    <>
+      <section className="content-section first">
+        <PageIntro
+          eyebrow="Баня · 3,00 × 7,00 м · задний двор слева"
+          title="Внутри бани теперь три отдельных помещения и понятный план"
+          text="Комната отдыха, моечная и парная показаны раздельно. Их размеры — планировочный вариант; печь, дымоход, вентиляция, слив, фундамент и пожарные узлы должны быть рассчитаны профильными специалистами."
+        />
+        <StatusKey />
+      </section>
+      <section className="content-section compact">
+        <VisualGallery items={bathRenders} />
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="БН-01"
+          title="Планировка и задания печнику, сантехнику и электрику"
+          text="Лист показывает зоны и мебельные габариты, но прямо запрещает строительство до выпуска профильных разделов."
+        />
+        <div className="single-sheet-layout">
+          <a href={asset("/plans/v19/bath-plan.svg")} target="_blank">
+            <img src={asset("/plans/v19/bath-plan.svg")} alt="БН-01 — план бани 3 на 7 метров" />
+          </a>
+          <aside className="calculation-card">
+            <span className="eyebrow">Баланс площади</span>
+            <strong>2,80 + 1,50 + 2,70 = 7,00 м</strong>
+            <p>Парная ≈ 8,4 м², моечная ≈ 4,5 м², комната отдыха ≈ 8,1 м² до вычета перегородок.</p>
+            <hr />
+            <strong>Главный стоп-фактор</strong>
+            <p>Печь и дымоход нельзя покупать отдельными деталями без полного печного проекта и проверки основания.</p>
+            <a className="button primary" href={asset("/plans/v19/bath-plan.svg")} target="_blank">
+              Открыть лист крупно
+            </a>
+          </aside>
+        </div>
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="Комплектация бани"
+          title="Кандидаты привязаны к габаритам и ограничениям"
+          text="Карточка товара открывает страницу продавца. Статус «кандидат» не разрешает закупку до расчёта."
+        />
+        <ProductGrid items={bathProducts} />
       </section>
     </>
   );
@@ -584,6 +916,14 @@ function ModelPage() {
         </p>
         <a className="button primary" href={route("/documents/")}>Открыть технический аудит</a>
       </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="Повторный рендер Cinema 4D · 30.07.2026"
+          title="18 контрольных камер из нативной сцены v16"
+          text="Кадры повторно рассчитаны Cinema 4D Physical + AO в разрешении 1200 × 750. Они доказывают состав сцены и ракурсы, но остаются техническими — фотореалистичные эскизы опубликованы отдельно."
+        />
+        <VisualGallery items={c4dControlRenders} />
+      </section>
     </>
   );
 }
@@ -651,6 +991,88 @@ function EngineeringPage() {
   );
 }
 
+const sheetGroups = [
+  ["АР", "Архитектура и обмеры", "16", "Планы 1/2 этажей, 4 фасада, разрез и исходный PDF доступны; новый балкон и проём требуют обмера и конструктора.", "частично"],
+  ["ЭОМ", "Электрика", "18", "Есть предварительные планы двух этажей и кухни; щит, нагрузки, кабели, защиты и трассы — после ТУ.", "задание"],
+  ["СС", "Слаботочные сети", "4", "Интернет, камеры, домофон и датчики нужно согласовать с мебелью, воротами и электрикой.", "реестр"],
+  ["ВК", "Вода и канализация", "12", "Показаны потребители обоих этажей, кухни, мангальной и бани; стояки, диаметры и уклоны не утверждены.", "задание"],
+  ["ОВ", "Отопление и вентиляция", "13", "Нужны теплопотери, воздухообмены, оборудование, трассы и отдельное дымоудаление мангальной.", "blocked"],
+  ["ГСВ", "Газ", "8", "Только отдельный раздел по ТУ и лицензированному проекту. Интернет-схемы не применяются.", "blocked"],
+  ["ЛД", "Участок и благоустройство", "15", "ЛД-01 выпущен как эскиз; топография, вертикальная планировка, ливнёвка и пироги покрытий заблокированы.", "эскиз"],
+  ["БН", "Баня 3 × 7 м", "13", "БН-01 и три интерьера выпущены как вариант; фундамент, печь, дымоход, вентиляция, ВК и ЭОМ заблокированы.", "эскиз"],
+] as const;
+
+function SheetsPage() {
+  return (
+    <>
+      <section className="content-section first">
+        <PageIntro
+          eyebrow="Реестр проекта · 99 требуемых листов"
+          title="Мастеру показывается не картинка, а нужный раздел и его статус"
+          text="Реестр разделяет исходные чертежи, эскизные задания и будущую рабочую документацию. Ни один лист со статусом blocked нельзя использовать для монтажа."
+        />
+        <div className="alert warning">
+          <strong>Почему не все 99 листов помечены «готово»</strong>
+          <p>
+            Исходный PDF допускает отклонение фактической коробки до 12 см. Без
+            лазерного обмера, обследования конструкций, ТУ и топосъёмки нельзя честно
+            назначить монтажные координаты, кабели, диаметры, уклоны, газ и усиления.
+          </p>
+        </div>
+      </section>
+      <section className="content-section">
+        <div className="sheet-register">
+          <div className="table-head">
+            <span>Раздел</span><span>Состав</span><span>Листов</span><span>Текущий результат</span><span>Статус</span>
+          </div>
+          {sheetGroups.map(([code, title, count, result, status]) => (
+            <article key={code}>
+              <strong>{code}</strong>
+              <span>{title}</span>
+              <b>{count}</b>
+              <p>{result}</p>
+              <em className={`sheet-status ${status}`}>{status}</em>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="content-section">
+        <PageIntro
+          eyebrow="Доступные листы"
+          title="Что уже можно открыть крупно и передать для согласования"
+          text="Это комплект для обсуждения с профильными специалистами. Рабочий выпуск появляется после закрытия входных данных."
+        />
+        <div className="sheet-grid">
+          {[
+            ["Исходная архитектура · 18 листов", "/downloads/official-architecture.pdf", "/plans/v16/source-front.png", "Главный источник размеров, планов, фасадов и разреза."],
+            ["ЛД-01 · благоустройство", "/plans/v19/landscape-plan.svg", "/plans/v19/landscape-plan.svg", "Дом, покрытия, дорожки, баня, хозблок, растения и свет."],
+            ["БН-01 · баня 3 × 7 м", "/plans/v19/bath-plan.svg", "/plans/v19/bath-plan.svg", "Планировочный вариант и задания специалистам."],
+            ["КМ-01 · кухня", "/plans/v18/kitchen-plan.svg", "/plans/v18/kitchen-plan.svg", "Гарнитур, остров, проходы и привязка к глухой стене."],
+            ["КМ-03 · кухня, инженерия", "/plans/v18/kitchen-mep.svg", "/plans/v18/kitchen-mep.svg", "Техническое задание ЭОМ/ВК/ОВ."],
+            ["ЭОМ-01 · первый этаж", "/plans/v17/electrical-floor1.svg", "/plans/v17/electrical-floor1.svg", "Предварительная расстановка потребителей и света."],
+            ["ЭОМ-02 · второй этаж", "/plans/v17/electrical-floor2.svg", "/plans/v17/electrical-floor2.svg", "Спальни, детские, санузлы и балкон."],
+            ["ВК-01 · принципиальная схема", "/plans/v17/water-sewer.svg", "/plans/v17/water-sewer.svg", "Потребители двух этажей, кухни, мангальной и бани."],
+          ].map(([title, href, preview, note]) => (
+            <figure className="sheet-card" key={title}>
+              <a href={asset(href)} target="_blank"><img src={asset(preview)} alt={title} /></a>
+              <figcaption><strong>{title}</strong><span>{note}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+      <section className="content-section evidence-callout">
+        <div><span className="eyebrow">Порядок допуска</span><h2>Сначала обмер, затем рабочие листы</h2></div>
+        <p>
+          Обмерщик фиксирует коробку и вводы; архитектор обновляет планы; конструктор
+          считает балкон и новый дверной проём; затем инженеры выпускают ЭОМ, ВК, ОВ
+          и газ. После координации мебельщик получает чистовые развёртки.
+        </p>
+        <a className="button primary" href={route("/estimate/")}>Открыть этапы работ</a>
+      </section>
+    </>
+  );
+}
+
 function ProductGrid({ items = products }: { items?: Product[] }) {
   return (
     <div className="product-grid">
@@ -690,7 +1112,7 @@ function CatalogPage() {
           в проект заносятся паспортные размеры, вентиляционные зазоры, зоны открывания,
           мощность, вода, слив и сервисный доступ.
         </p>
-        <a className="button primary" href={asset("/downloads/shopping-catalog-v18.csv")} download>Скачать каталог CSV</a>
+        <a className="button primary" href={asset("/downloads/shopping-catalog-v19.csv")} download>Скачать каталог v19 · 30 позиций</a>
       </section>
     </>
   );
@@ -756,7 +1178,7 @@ function DocumentsPage() {
         <div className="document-grid">
           {[
             ["Исходный PDF · 18 листов", "/downloads/official-architecture.pdf", "Главный источник планов, фасадов, разреза и размеров."],
-            ["Каталог товаров v18", "/downloads/shopping-catalog-v18.csv", "Габариты, цена, статус, источник и условия привязки."],
+            ["Каталог товаров v19 · 30 позиций", "/downloads/shopping-catalog-v19.csv", "Техника, сантехника, свет, материалы, баня, участок и растения."],
             ["BOQ кухни v18", "/downloads/kitchen-boq-v18.csv", "Модули, оборудование и предварительные диапазоны стоимости."],
             ["Инженерное задание кухни", "/downloads/kitchen-engineering-v18.csv", "Потребители, исходные мощности и ответственные."],
             ["Смета v18", "/downloads/estimate-v18.csv", "Разделы, диапазоны, источники и исключения."],
@@ -802,10 +1224,13 @@ export function ProjectV18({ page }: { page: PageKind }) {
     <main>
       <Header active={page} />
       {page === "home" && <HomePage />}
+      {page === "landscape" && <LandscapePage />}
+      {page === "bath" && <BathPage />}
       {page === "kitchen" && <KitchenPage />}
       {page === "rooms" && <RoomsPage />}
       {page === "model" && <ModelPage />}
       {page === "engineering" && <EngineeringPage />}
+      {page === "sheets" && <SheetsPage />}
       {page === "catalog" && <CatalogPage />}
       {page === "estimate" && <EstimatePage />}
       {page === "documents" && <DocumentsPage />}

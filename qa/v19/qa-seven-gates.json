@@ -1,0 +1,246 @@
+{
+  "project": "Дима Облагораживание",
+  "revision": "v19",
+  "checked_at": "2026-07-30T18:17:32+03:00",
+  "reviewer": "independent-read-only",
+  "scope_stage": "эскизный проект для согласования",
+  "overall_status": "BLOCKED_FOR_CONSTRUCTION",
+  "release_decision": "Клиентское многостраничное приложение разрешено к публикации. Рабочая документация для монтажа заблокирована до обмеров и подписанных разделов.",
+  "manifest": [
+    {
+      "id": "SRC_PDF",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Снимок экрана 2025—09—13 в 18.38.43.pdf",
+      "bytes": 33602750,
+      "sha256": "2794f112fe36ea85b52b9c7a308e4bc0d823477563bd06d945743ec63a9b2a1e"
+    },
+    {
+      "id": "C4D_MASTER",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Cinema 4D v16\\02_Сцена\\Дима_Облагораживание_Master_v16.c4d",
+      "bytes": 12955665,
+      "sha256": "6eb5c7feb5f8355419d35e47b389ceaeb2e518d3c50cd874e76a743a7ec7384e"
+    },
+    {
+      "id": "C4D_SPEC",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Cinema 4D v16\\01_Исходники\\dima_v16_spec.json",
+      "bytes": 9114,
+      "sha256": "ea2bd9d9f634b6781a5f74fc400de628fdc2fe6e4da4eca3735ced1bf882bda9"
+    },
+    {
+      "id": "C4D_RENDER_REPORT",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Cinema 4D v16\\07_Документы\\geometry-render-report-v16.json",
+      "bytes": 5947,
+      "sha256": "8c8eb2cfc6f7ccafdafdd301a4e64fc25b4ebb4277813f438b1a39c369a827eb"
+    },
+    {
+      "id": "PLAN_LANDSCAPE",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v19\\landscape-plan.svg",
+      "bytes": 9043,
+      "sha256": "1e4de1f1f1d92501eb9fd02f98be09a60d2ae3f03b130799f12cb0df7c0ec7d5"
+    },
+    {
+      "id": "PLAN_BATH",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v19\\bath-plan.svg",
+      "bytes": 7892,
+      "sha256": "a6094e1d66063eaa0ebd6c11a9ef5e246cbd458a1577d2a9fa24a063b1af6f07"
+    },
+    {
+      "id": "RENDER_FRONT",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v19\\01-landscape-overview-concept.png",
+      "bytes": 2654722,
+      "sha256": "86a6677d4a0a8dc7d488fc2384e9e349a42b03283aac0dee0b1098b78428def3"
+    },
+    {
+      "id": "RENDER_REAR",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v19\\02-rear-yard-concept.png",
+      "bytes": 2847495,
+      "sha256": "d3fb72353f1765698419f6b6556b06ac7037521e34c31a75fb13ea421507cd5a"
+    },
+    {
+      "id": "C4D_FRONT_CONTROL",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v19\\c4d-control\\01-front-pdf.png",
+      "bytes": 162260,
+      "sha256": "1555c4ad1c75782fdab9a5ffa59a6b87a018eb1d5c0e3f2cc36c9f45052bdbcc"
+    },
+    {
+      "id": "C4D_BALCONY_CONTROL",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v19\\c4d-control\\06-connected-balcony.png",
+      "bytes": 407575,
+      "sha256": "58eeb61a95824e5d17df9f196ae80173c0593b1f7384881809e13e740da40a77"
+    },
+    {
+      "id": "C4D_BATH_CONTROL",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v19\\c4d-control\\08-bathhouse.png",
+      "bytes": 369955,
+      "sha256": "46c47fd919501f3a10c1900c66e3a16e65e198b90ea1451454e701cf4ce58d1a"
+    },
+    {
+      "id": "CATALOG",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\downloads\\shopping-catalog-v19.csv",
+      "bytes": 8711,
+      "sha256": "176c2ffcafadfd2f8cf43e417d1943fae282c1b98888537d2a1b4278e0198993"
+    },
+    {
+      "id": "BROWSER_QA",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\qa\\v18\\local-browser-qa.json",
+      "bytes": 10056,
+      "sha256": "1baacb094c3bb81fa46d4902d1860154e0a9d2699c43eccad608d7a1beeb3817"
+    }
+  ],
+  "gates": {
+    "G1": {
+      "status": "BLOCKED",
+      "evidence": ["SRC_PDF", "C4D_SPEC"],
+      "checks": [
+        {
+          "id": "G1-SOURCES",
+          "name": "Исходники и границы достоверности",
+          "owner": "архитектор",
+          "status": "PASS",
+          "evidence": ["SRC_PDF", "C4D_SPEC"]
+        },
+        {
+          "id": "G1-SURVEY",
+          "name": "Фактический обмер и топосъёмка",
+          "owner": "геодезист",
+          "status": "BLOCKED",
+          "evidence": ["SRC_PDF"],
+          "blocking_note": "PDF допускает отклонение фактической коробки до 12 см; лазерный обмер, топосъёмка и исполнительная съёмка сетей отсутствуют."
+        }
+      ]
+    },
+    "G2": {
+      "status": "BLOCKED",
+      "evidence": ["SRC_PDF", "C4D_MASTER", "C4D_FRONT_CONTROL", "C4D_BALCONY_CONTROL"],
+      "checks": [
+        {
+          "id": "G2-VIEWS",
+          "name": "Планы, фасады и контрольные камеры",
+          "owner": "архитектор",
+          "status": "PASS",
+          "evidence": ["SRC_PDF", "C4D_FRONT_CONTROL"]
+        },
+        {
+          "id": "G2-ALTERATIONS",
+          "name": "Общий балкон и новый дверной проём",
+          "owner": "конструктор",
+          "status": "BLOCKED",
+          "evidence": ["C4D_SPEC", "C4D_BALCONY_CONTROL"],
+          "blocking_note": "Клиентское изменение показано только как эскиз; требуется обследование основания, расчёт конструктора и узлы ограждения."
+        }
+      ]
+    },
+    "G3": {
+      "status": "BLOCKED",
+      "evidence": ["C4D_SPEC"],
+      "checks": [
+        {
+          "id": "G3-MEP",
+          "name": "ЭОМ, ВК, ОВ и газ",
+          "owner": "профильные проектировщики",
+          "status": "BLOCKED",
+          "evidence": ["C4D_SPEC"],
+          "blocking_note": "На сайте размещены задания и принципиальные схемы; ТУ, расчёты, диаметры, уклоны, кабели, защиты и подписи специалистов отсутствуют."
+        }
+      ]
+    },
+    "G4": {
+      "status": "BLOCKED",
+      "evidence": ["PLAN_LANDSCAPE", "PLAN_BATH", "RENDER_FRONT", "RENDER_REAR"],
+      "checks": [
+        {
+          "id": "G4-VISIBILITY",
+          "name": "Разделение переднего и заднего ракурсов",
+          "owner": "ландшафтный архитектор",
+          "status": "PASS",
+          "evidence": ["RENDER_FRONT", "RENDER_REAR"],
+          "note": "На переднем кадре баня скрыта домом; виден только хозблок 1 x 3 м. На заднем кадре баня показана слева."
+        },
+        {
+          "id": "G4-DRAINAGE",
+          "name": "Отметки и водоотвод",
+          "owner": "инженер генплана",
+          "status": "BLOCKED",
+          "evidence": ["PLAN_LANDSCAPE"],
+          "blocking_note": "Не назначать отметки, уклоны и место сброса до топосъёмки и расчёта ливневого водоотвода."
+        },
+        {
+          "id": "G4-BATH",
+          "name": "Размещение и инженерия бани",
+          "owner": "архитектор и инженер",
+          "status": "BLOCKED",
+          "evidence": ["PLAN_BATH", "C4D_BATH_CONTROL"],
+          "blocking_note": "Размер и отступы являются требованием заказчика; нормативные, пожарные и фундаментные решения не подтверждены."
+        }
+      ]
+    },
+    "G5": {
+      "status": "BLOCKED",
+      "evidence": ["C4D_MASTER", "C4D_RENDER_REPORT"],
+      "checks": [
+        {
+          "id": "G5-NATIVE",
+          "name": "Нативная сцена Cinema 4D и повторный рендер",
+          "owner": "BIM/CAD-координатор",
+          "status": "PASS",
+          "evidence": ["C4D_MASTER", "C4D_RENDER_REPORT"]
+        },
+        {
+          "id": "G5-ROUNDTRIP",
+          "name": "Координаты, единицы и обмен C4D-GLB",
+          "owner": "BIM/CAD-координатор",
+          "status": "BLOCKED",
+          "evidence": ["C4D_MASTER"],
+          "blocking_note": "Нативная сцена повторно отрендерена, но обменная модель не принята как точная основа игры до натурного обмера и проверки незеркальности каждого фасада."
+        }
+      ]
+    },
+    "G6": {
+      "status": "BLOCKED",
+      "evidence": ["RENDER_FRONT", "RENDER_REAR", "C4D_FRONT_CONTROL", "C4D_BATH_CONTROL"],
+      "checks": [
+        {
+          "id": "G6-COUNT",
+          "name": "Набор клиентских и контрольных ракурсов",
+          "owner": "визуализатор",
+          "status": "PASS",
+          "evidence": ["RENDER_FRONT", "RENDER_REAR", "C4D_FRONT_CONTROL", "C4D_BATH_CONTROL"]
+        },
+        {
+          "id": "G6-MODEL-MATCH",
+          "name": "Совпадение фотореалистичных эскизов с геометрией",
+          "owner": "независимый проверяющий",
+          "status": "BLOCKED",
+          "evidence": ["RENDER_FRONT", "RENDER_REAR", "C4D_FRONT_CONTROL"],
+          "blocking_note": "Фотореалистичные изображения являются отдельными эскизами и не доказаны как рендеры принятой точной C4D-геометрии."
+        }
+      ]
+    },
+    "G7": {
+      "status": "PASS",
+      "evidence": ["CATALOG", "BROWSER_QA"],
+      "checks": [
+        {
+          "id": "G7-WEB",
+          "name": "Локальная проверка 11 страниц",
+          "owner": "веб-разработчик",
+          "status": "PASS",
+          "evidence": ["BROWSER_QA"]
+        },
+        {
+          "id": "G7-CATALOG",
+          "name": "Каталог товаров с датой проверки",
+          "owner": "комплектатор",
+          "status": "PASS",
+          "evidence": ["CATALOG"]
+        },
+        {
+          "id": "G7-SCOPE",
+          "name": "Явное отделение эскиза от рабочего проекта",
+          "owner": "координатор",
+          "status": "PASS",
+          "evidence": ["PLAN_LANDSCAPE", "PLAN_BATH", "BROWSER_QA"]
+        }
+      ]
+    }
+  }
+}

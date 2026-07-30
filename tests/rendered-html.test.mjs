@@ -13,8 +13,8 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders all eight v18 pages", async () => {
-  const routes = ["/", "/kitchen", "/rooms", "/model", "/engineering", "/catalog", "/estimate", "/documents"];
+test("server-renders all eleven v19 pages", async () => {
+  const routes = ["/", "/landscape", "/bath", "/kitchen", "/rooms", "/model", "/engineering", "/sheets", "/catalog", "/estimate", "/documents"];
   for (const pathname of routes) {
     const response = await render(pathname);
     assert.equal(response.status, 200, pathname);
@@ -70,8 +70,37 @@ test("engineering, catalog and estimate pages expose contractor-ready registers 
   assert.match(estimate, /Интернет-цены не являются офертой/);
 });
 
-test("required v18 drawings, renders and downloads exist", async () => {
+test("landscape, bath and sheet pages expose renders, dimensions, limits and product links", async () => {
+  const [landscape, bath, sheets] = await Promise.all([
+    render("/landscape").then((response) => response.text()),
+    render("/bath").then((response) => response.text()),
+    render("/sheets").then((response) => response.text()),
+  ]);
+  assert.match(landscape, /участок 20 × 30 м/i);
+  assert.match(landscape, /landscape-overview-concept\.png/);
+  assert.match(landscape, /landscape-plan\.svg/);
+  assert.match(landscape, /Тротуарная плитка «Старый город»/);
+  assert.match(bath, /3,00 × 7,00 м/);
+  assert.match(bath, /bath-lounge-concept\.png/);
+  assert.match(bath, /bath-wash-concept\.png/);
+  assert.match(bath, /bath-steam-concept\.png/);
+  assert.match(bath, /пожарные узлы/i);
+  assert.match(sheets, /99 требуемых листов/);
+  assert.match(sheets, /blocked нельзя использовать для монтажа/);
+});
+
+test("required v19 and inherited v18 drawings, renders and downloads exist", async () => {
   const files = [
+    "../public/plans/v19/landscape-plan.svg",
+    "../public/plans/v19/bath-plan.svg",
+    "../public/renders/v19/01-landscape-overview-concept.png",
+    "../public/renders/v19/02-rear-yard-concept.png",
+    "../public/renders/v19/03-right-green-strip-concept.png",
+    "../public/renders/v19/04-front-evening-lighting-concept.png",
+    "../public/renders/v19/05-bath-lounge-concept.png",
+    "../public/renders/v19/06-bath-wash-concept.png",
+    "../public/renders/v19/07-bath-steam-concept.png",
+    "../public/downloads/shopping-catalog-v19.csv",
     "../public/plans/v18/kitchen-plan.svg",
     "../public/plans/v18/kitchen-elevation.svg",
     "../public/plans/v18/kitchen-mep.svg",

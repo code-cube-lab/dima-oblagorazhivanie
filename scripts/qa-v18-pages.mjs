@@ -9,7 +9,7 @@ const publicDir = path.join(projectDir, "pages-dist");
 const reportDir = path.join(projectDir, "qa", "v18");
 const basePath = "/dima-oblagorazhivanie";
 const externalBase = process.env.DIMA_QA_URL?.replace(/\/$/, "");
-const routes = ["", "kitchen", "rooms", "model", "engineering", "catalog", "estimate", "documents"];
+const routes = ["", "landscape", "bath", "kitchen", "rooms", "model", "engineering", "sheets", "catalog", "estimate", "documents"];
 const playwrightEntry =
   "C:\\Users\\GIGA\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\\index.mjs";
 
@@ -101,7 +101,7 @@ try {
       clientWidth: document.documentElement.clientWidth,
       scrollWidth: document.documentElement.scrollWidth,
     }));
-    if (route === "" || route === "kitchen") {
+    if (["", "landscape", "bath", "kitchen", "sheets"].includes(route)) {
       await page.screenshot({
         path: path.join(reportDir, externalBase ? `${route || "home"}-public.png` : `${route || "home"}-local.png`),
         fullPage: true,
@@ -118,6 +118,12 @@ try {
           ? bodyText.includes("5530 мм") &&
             bodyText.includes("5200 мм") &&
             bodyText.includes("Посудомоечная машина")
+          : route === "landscape"
+            ? bodyText.length > 1000 && images.length >= 4
+          : route === "bath"
+            ? bodyText.length > 800 && images.length >= 3
+          : route === "sheets"
+            ? bodyText.length > 1200
           : bodyText.includes("Дима · Облагораживание"),
       imagesLoad: images.every((image) => image.complete && image.width > 0),
       brokenImages: images.filter((image) => !image.complete || image.width === 0),

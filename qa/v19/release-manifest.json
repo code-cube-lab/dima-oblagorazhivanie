@@ -1,0 +1,70 @@
+{
+  "project": "Дима Облагораживание",
+  "revision": "v19",
+  "generated_at": "2026-07-30T18:17:32+03:00",
+  "scope_stage": "эскизный проект для согласования",
+  "overall_status": "BLOCKED_FOR_CONSTRUCTION",
+  "publication_status": "ALLOWED_AS_CLIENT_PREVIEW",
+  "files": [
+    {
+      "id": "SRC_PDF",
+      "bytes": 33602750,
+      "sha256": "2794f112fe36ea85b52b9c7a308e4bc0d823477563bd06d945743ec63a9b2a1e"
+    },
+    {
+      "id": "C4D_MASTER",
+      "bytes": 12955665,
+      "sha256": "6eb5c7feb5f8355419d35e47b389ceaeb2e518d3c50cd874e76a743a7ec7384e"
+    },
+    {
+      "id": "C4D_SPEC",
+      "bytes": 9114,
+      "sha256": "ea2bd9d9f634b6781a5f74fc400de628fdc2fe6e4da4eca3735ced1bf882bda9"
+    },
+    {
+      "id": "PLAN_LANDSCAPE",
+      "bytes": 9043,
+      "sha256": "1e4de1f1f1d92501eb9fd02f98be09a60d2ae3f03b130799f12cb0df7c0ec7d5"
+    },
+    {
+      "id": "PLAN_BATH",
+      "bytes": 7892,
+      "sha256": "a6094e1d66063eaa0ebd6c11a9ef5e246cbd458a1577d2a9fa24a063b1af6f07"
+    },
+    {
+      "id": "RENDER_FRONT",
+      "bytes": 2654722,
+      "sha256": "86a6677d4a0a8dc7d488fc2384e9e349a42b03283aac0dee0b1098b78428def3"
+    },
+    {
+      "id": "RENDER_REAR",
+      "bytes": 2847495,
+      "sha256": "d3fb72353f1765698419f6b6556b06ac7037521e34c31a75fb13ea421507cd5a"
+    },
+    {
+      "id": "CATALOG",
+      "bytes": 8711,
+      "sha256": "176c2ffcafadfd2f8cf43e417d1943fae282c1b98888537d2a1b4278e0198993"
+    },
+    {
+      "id": "BROWSER_QA",
+      "bytes": 10056,
+      "sha256": "1baacb094c3bb81fa46d4902d1860154e0a9d2699c43eccad608d7a1beeb3817"
+    },
+    {
+      "id": "PROJECT_FACTS",
+      "bytes": 2543,
+      "sha256": "802a0a58419292f5022bd3f16627c0de3d76e9e1f258f67f7f6998d000829901"
+    },
+    {
+      "id": "QA_SEVEN_GATES",
+      "bytes": 11333,
+      "sha256": "a0c8404bd4669733c18a9bb5391cfbc97b1ab82b457984382b9dcd0dbca22a09"
+    },
+    {
+      "id": "QA_REPORT",
+      "bytes": 3379,
+      "sha256": "9626527eb62d3e97137caddd8797613395bbe4315a5d88d7eeb7b014fc832e77"
+    }
+  ]
+}
