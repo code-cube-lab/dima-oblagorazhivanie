@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}
+      .title{font-family:Georgia,serif;font-size:40px}
+      .sub{font-size:18px;fill:#557078}
+      .label{font-size:17px;font-weight:700}
+      .small{font-size:14px}
+      .tiny{font-size:12px}
+      .dim{stroke:#b96039;stroke-width:2;fill:none;marker-start:url(#a);marker-end:url(#a)}
+      .ext{stroke:#b96039;stroke-width:1;stroke-dasharray:6 6}
+      .wall{fill:#203b42}
+      .cab{fill:#c8b49d;stroke:#173841;stroke-width:2}
+      .tall{fill:#9a8875;stroke:#173841;stroke-width:2}
+      .island{fill:#dbc9b2;stroke:#173841;stroke-width:3}
+      .glazing{fill:#cce7ef;stroke:#355e72;stroke-width:3}
+      .verify{fill:#fff0eb;stroke:#a5473f;stroke-width:2}
+    </style>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M8 0L0 4L8 8" fill="none" stroke="#b96039" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f4ec"/>
+  <text x="70" y="75" class="title">КМ-01 · План кухни-гостиной</text>
+  <text x="70" y="108" class="sub">Предпроект v18 · все размеры в мм · мебель только после чистового обмера</text>
+
+  <rect x="110" y="190" width="1100" height="570" fill="#fffdf8" stroke="#173841" stroke-width="6"/>
+  <rect x="320" y="184" width="210" height="18" class="glazing"/>
+  <rect x="650" y="184" width="250" height="18" class="glazing"/>
+  <rect x="1198" y="305" width="18" height="220" class="glazing"/>
+  <text x="355" y="170" class="small">наружное остекление — свободно</text>
+  <text x="1035" y="287" class="small">окно — свободно</text>
+
+  <rect x="220" y="650" width="1000" height="18" class="wall"/>
+  <text x="600" y="705" class="label">ГЛУХАЯ ВНУТРЕННЯЯ СТЕНА · 5530</text>
+
+  <g transform="translate(250 548)">
+    <rect x="0" y="0" width="106" height="100" class="tall"/>
+    <rect x="106" y="0" width="106" height="100" class="tall"/>
+    <rect x="212" y="0" width="53" height="100" class="cab"/>
+    <rect x="265" y="0" width="141" height="100" class="cab"/>
+    <rect x="406" y="0" width="159" height="100" class="cab"/>
+    <rect x="565" y="0" width="106" height="100" class="cab"/>
+    <rect x="671" y="0" width="141" height="100" class="cab"/>
+    <rect x="812" y="0" width="106" height="100" class="cab"/>
+    <text x="53" y="35" text-anchor="middle" class="tiny">K01</text>
+    <text x="53" y="55" text-anchor="middle" class="tiny">ХОЛ</text>
+    <text x="159" y="35" text-anchor="middle" class="tiny">K02</text>
+    <text x="159" y="55" text-anchor="middle" class="tiny">ДУХ</text>
+    <text x="238" y="45" text-anchor="middle" class="tiny">300</text>
+    <text x="335" y="45" text-anchor="middle" class="tiny">ПОДГ.</text>
+    <text x="485" y="38" text-anchor="middle" class="tiny">ПАНЕЛЬ</text>
+    <rect x="445" y="55" width="80" height="28" rx="5" fill="#222"/>
+    <text x="618" y="45" text-anchor="middle" class="tiny">ЯЩ.</text>
+    <text x="741" y="36" text-anchor="middle" class="tiny">МОЙКА</text>
+    <ellipse cx="741" cy="68" rx="43" ry="18" fill="#e8ecea" stroke="#355e72"/>
+    <text x="865" y="45" text-anchor="middle" class="tiny">ПММ</text>
+    <text x="53" y="92" text-anchor="middle" class="tiny">600</text>
+    <text x="159" y="92" text-anchor="middle" class="tiny">600</text>
+    <text x="335" y="92" text-anchor="middle" class="tiny">800</text>
+    <text x="485" y="92" text-anchor="middle" class="tiny">900</text>
+    <text x="618" y="92" text-anchor="middle" class="tiny">600</text>
+    <text x="741" y="92" text-anchor="middle" class="tiny">800</text>
+    <text x="865" y="92" text-anchor="middle" class="tiny">600</text>
+  </g>
+
+  <rect x="460" y="340" width="480" height="200" rx="3" class="island"/>
+  <text x="700" y="425" text-anchor="middle" class="label">ОСТРОВ</text>
+  <text x="700" y="452" text-anchor="middle" class="small">2400 × 1000</text>
+  <text x="700" y="476" text-anchor="middle" class="tiny">без мойки и варочной панели</text>
+
+  <line x1="460" y1="315" x2="940" y2="315" class="dim"/>
+  <line x1="460" y1="315" x2="460" y2="340" class="ext"/>
+  <line x1="940" y1="315" x2="940" y2="340" class="ext"/>
+  <text x="700" y="300" text-anchor="middle" class="label">2400</text>
+
+  <line x1="425" y1="340" x2="425" y2="540" class="dim"/>
+  <line x1="425" y1="340" x2="460" y2="340" class="ext"/>
+  <line x1="425" y1="540" x2="460" y2="540" class="ext"/>
+  <text x="400" y="445" transform="rotate(-90 400 445)" text-anchor="middle" class="label">1000</text>
+
+  <line x1="970" y1="540" x2="970" y2="648" class="dim"/>
+  <line x1="940" y1="540" x2="985" y2="540" class="ext"/>
+  <line x1="918" y1="648" x2="985" y2="648" class="ext"/>
+  <text x="995" y="600" class="label">1100 · чистый проход</text>
+
+  <line x1="220" y1="735" x2="1220" y2="735" class="dim"/>
+  <line x1="220" y1="670" x2="220" y2="748" class="ext"/>
+  <line x1="1220" y1="670" x2="1220" y2="748" class="ext"/>
+  <text x="720" y="725" text-anchor="middle" class="label">5530 · по листу 7 PDF</text>
+
+  <line x1="250" y1="790" x2="1168" y2="790" class="dim"/>
+  <line x1="250" y1="650" x2="250" y2="803" class="ext"/>
+  <line x1="1168" y1="650" x2="1168" y2="803" class="ext"/>
+  <text x="709" y="780" text-anchor="middle" class="label">5200 · сумма модулей</text>
+
+  <rect x="1260" y="190" width="280" height="280" rx="10" class="verify"/>
+  <text x="1290" y="230" class="label">Проверить на объекте</text>
+  <text x="1290" y="268" class="small">• чистовую длину стены</text>
+  <text x="1290" y="300" class="small">• углы и вертикали</text>
+  <text x="1290" y="332" class="small">• высоту подоконников</text>
+  <text x="1290" y="364" class="small">• открывание всех дверей</text>
+  <text x="1290" y="396" class="small">• точки воды и вентиляции</text>
+  <text x="1290" y="428" class="small">• паспорта всей техники</text>
+
+  <rect x="1260" y="500" width="280" height="172" rx="10" fill="#e9f2e8" stroke="#6a886b" stroke-width="2"/>
+  <text x="1290" y="542" class="label">Инвариант</text>
+  <text x="1290" y="580" class="small">Ни один шкаф, прибор,</text>
+  <text x="1290" y="608" class="small">столешница или вытяжка</text>
+  <text x="1290" y="636" class="small">не перекрывает окно/дверь.</text>
+
+  <text x="70" y="865" class="tiny">Статус: проектное предложение. Не производственный чертёж. Источник стены 5530 мм: архитектурный PDF, лист 7.</text>
+</svg>

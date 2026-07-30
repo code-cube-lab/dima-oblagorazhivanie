@@ -2,146 +2,112 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
+  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${pathname}`);
   const { default: worker } = await import(workerUrl.href);
-
   return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
+    new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
   );
 }
 
-test("server-renders the Dima project shell", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
-  assert.match(html, /<title>Дима · Дом и участок — интерактивный проект<\/title>/i);
-  assert.match(html, /Дом и участок, которые можно проверить/);
-  assert.match(html, /Осмотрите дом днём и ночью, затем пройдите его в масштабе/);
-  assert.match(html, /Гараж слева, высокий витраж справа/);
-  assert.match(html, /Баня 3×7 м/);
-  assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
-});
-
-test("keeps the two balcony exits connected across the full garage width", async () => {
-  const [app, specText, front, route, model] = await Promise.all([
-    readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../public/data/dima-v16-spec.json", import.meta.url), "utf8"),
-    access(new URL("../public/renders/v16/01-front-photoreal.png", import.meta.url)),
-    access(new URL("../public/renders/v16/02-balcony-photoreal.png", import.meta.url)),
-    access(new URL("../public/models/dima-v16.glb", import.meta.url)),
-  ]);
-
-  assert.match(app, /Спальня с боковым выходом на общий балкон/);
-  assert.match(app, /новым выходом на безопасный балкон/);
-  assert.match(app, /единый Г‑образный балкон/);
-  assert.match(app, /GLTFLoader/);
-
-  const parsed = JSON.parse(specText);
-  const frontDoor = parsed.facade_openings.front.find(
-    (item) => item.name === "child_balcony_door",
-  );
-  const sideDoor = parsed.facade_openings.left.find(
-    (item) => item.name === "parents_balcony_door",
-  );
-  assert.equal(frontDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
-  assert.equal(sideDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
-  assert.equal(parsed.client_changes.connected_balcony.guard_height, 1.2);
-  assert.equal(parsed.client_changes.connected_balcony.high_privacy_screen_height, 1.8);
-  assert.deepEqual(parsed.client_changes.connected_balcony.front_rect, [1.5, 4.45, 9, 5.89]);
-  assert.equal(parsed.client_changes.connected_balcony.maximum_clear_gap, 0.1);
-  assert.equal(front, undefined);
-  assert.equal(route, undefined);
-  assert.equal(model, undefined);
-});
-
-test("publishes interior renovation, equipment, contractor candidates, and lighting", async () => {
-  const app = await readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8");
-  assert.match(app, /кухня 5,2 м, остров/);
-  assert.match(app, /MAUNFELD CVI593SFBK LUX/);
-  assert.match(app, /17 групп света/);
-  assert.match(app, /Авито — пока не внедрено как подтверждённый источник/);
-  assert.match(app, /24,35–45,40 млн ₽/);
-});
-
-test("publishes v17 game controls, engineering sheets, shopping register, and room view sets", async () => {
-  const [app, viewer, electrical1, electrical2, water, catalog, sequence, kitchenViews] =
-    await Promise.all([
-      readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
-      readFile(new URL("../app/ProjectViewerV17.tsx", import.meta.url), "utf8"),
-      access(new URL("../public/plans/v17/electrical-floor1.svg", import.meta.url)),
-      access(new URL("../public/plans/v17/electrical-floor2.svg", import.meta.url)),
-      access(new URL("../public/plans/v17/water-sewer.svg", import.meta.url)),
-      access(new URL("../public/downloads/shopping-catalog-v17.csv", import.meta.url)),
-      access(new URL("../public/downloads/construction-sequence-v17.csv", import.meta.url)),
-      access(new URL("../public/renders/v17/11-kitchen-four-views.png", import.meta.url)),
-    ]);
-
-  assert.match(app, /От третьего лица/);
-  assert.match(app, /Ночь · включить свет/);
-  assert.match(app, /ЭОМ-01 · первый этаж/);
-  assert.match(app, /ВК-01 · вода и канализация/);
-  assert.match(app, /MAUNFELD CVI593SFBK LUX/);
-  assert.match(app, /41 490 ₽ · нет в наличии/);
-  assert.match(viewer, /MODEL_ROOT_REAL_SCALE/);
-  assert.match(viewer, /Проверка участка 20 × 30 м пройдена/);
-  assert.equal(electrical1, undefined);
-  assert.equal(electrical2, undefined);
-  assert.equal(water, undefined);
-  assert.equal(catalog, undefined);
-  assert.equal(sequence, undefined);
-  assert.equal(kitchenViews, undefined);
-});
-
-test("keeps one L01-L17 lighting dictionary across JSON, CSV, app, and GLB names", async () => {
-  const [specText, csv, app] = await Promise.all([
-    readFile(new URL("../public/data/dima-v16-spec.json", import.meta.url), "utf8"),
-    readFile(new URL("../public/downloads/lighting-v16.csv", import.meta.url), "utf8"),
-    readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
-  ]);
-  const spec = JSON.parse(specText);
-  const groups = [
-    ...spec.lighting_program.interior_groups,
-    ...spec.lighting_program.exterior_groups,
-  ];
-  assert.equal(groups.length, 17);
-  assert.deepEqual(groups, [
-    "L01 кухонная рабочая зона",
-    "L02 кухонный остров",
-    "L03 гостиная",
-    "L04 обеденный стол",
-    "L05 гостевая спальня",
-    "L06 спальня родителей",
-    "L07 детская Дарины",
-    "L08 детская Ярика",
-    "L09 санузлы",
-    "L10 холлы и лестница",
-    "L11 кухонная LED-подсветка",
-    "L12 дорожки",
-    "L13 общий балкон",
-    "L14 мангальная",
-    "L15 баня",
-    "L16 фасады дома",
-    "L17 хозблок",
-  ]);
-  for (const group of groups) {
-    const id = group.slice(0, 3);
-    assert.match(csv, new RegExp(`^${id};`, "m"));
+test("server-renders all eight v18 pages", async () => {
+  const routes = ["/", "/kitchen", "/rooms", "/model", "/engineering", "/catalog", "/estimate", "/documents"];
+  for (const pathname of routes) {
+    const response = await render(pathname);
+    assert.equal(response.status, 200, pathname);
+    assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   }
-  assert.match(app, /\["L12–L13", "Дорожки и общий балкон"/);
-  assert.match(app, /\["L14–L17", "Мангальная, баня, фасады, хозблок"/);
+});
+
+test("home is render-first and contains no bad walkthrough", async () => {
+  const response = await render("/");
+  const html = await response.text();
+  assert.match(html, /Дом, ремонт и участок — наглядно и по разделам/);
+  assert.match(html, /Плохая 3D-проходка удалена/);
+  assert.match(html, /0<\/strong><span>низкополигональных проходок/);
+  assert.doesNotMatch(html, /WASD|От третьего лица|PointerLockControls/);
+});
+
+test("kitchen page fixes the glazing conflict and publishes four corrected renders", async () => {
+  const response = await render("/kitchen");
+  const html = await response.text();
+  assert.match(html, /5530 мм/);
+  assert.match(html, /5200 мм/);
+  assert.match(html, /по 165 мм/);
+  assert.match(html, /2400 × 1000 мм/);
+  assert.match(html, /1100 мм/);
+  assert.match(html, /Индукционная панель/);
+  assert.match(html, /Посудомоечная машина/);
+  assert.match(html, /наружные окна и двери остаются свободными/);
+  assert.match(html, /kitchen-01-overview\.png/);
+  assert.match(html, /kitchen-02-dining-view\.png/);
+  assert.match(html, /kitchen-03-work-zone\.png/);
+  assert.match(html, /kitchen-04-evening\.png/);
+});
+
+test("engineering, catalog and estimate pages expose contractor-ready registers with limits", async () => {
+  const [engineering, catalog, estimate] = await Promise.all([
+    render("/engineering").then((response) => response.text()),
+    render("/catalog").then((response) => response.text()),
+    render("/estimate").then((response) => response.text()),
+  ]);
+  assert.match(engineering, /Запрет на монтаж по эскизу/);
+  assert.match(engineering, /7,0 кВт по кандидату/);
+  assert.match(engineering, /Технические условия/);
+  assert.match(catalog, /590 × 520 × 58 мм/);
+  assert.match(catalog, /540 × 545 × 1775 мм/);
+  assert.match(catalog, /41 490 ₽/);
+  assert.match(catalog, /84 990 ₽/);
+  assert.match(estimate, /24,35–45,40 млн ₽/);
+  assert.match(estimate, /27,27–50,85 млн ₽/);
+  assert.match(estimate, /Интернет-цены не являются офертой/);
+});
+
+test("required v18 drawings, renders and downloads exist", async () => {
+  const files = [
+    "../public/plans/v18/kitchen-plan.svg",
+    "../public/plans/v18/kitchen-elevation.svg",
+    "../public/plans/v18/kitchen-mep.svg",
+    "../public/renders/v18/kitchen-01-overview.png",
+    "../public/renders/v18/kitchen-02-dining-view.png",
+    "../public/renders/v18/kitchen-03-work-zone.png",
+    "../public/renders/v18/kitchen-04-evening.png",
+    "../public/downloads/shopping-catalog-v18.csv",
+    "../public/downloads/kitchen-boq-v18.csv",
+    "../public/downloads/kitchen-engineering-v18.csv",
+    "../public/downloads/estimate-v18.csv",
+    "../public/downloads/github-tool-audit-v18.csv",
+  ];
+  for (const file of files) {
+    assert.equal(await access(new URL(file, import.meta.url)), undefined, file);
+  }
+});
+
+test("kitchen arithmetic closes and the 5530 mm source dimension is documented", async () => {
+  const [app, plan, boq] = await Promise.all([
+    readFile(new URL("../app/ProjectV18.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../public/plans/v18/kitchen-plan.svg", import.meta.url), "utf8"),
+    readFile(new URL("../public/downloads/kitchen-boq-v18.csv", import.meta.url), "utf8"),
+  ]);
+  assert.match(app, /600 \+ 600 \+ 300 \+ 800 \+ 900 \+ 600 \+ 800 \+ 600 = 5200 мм/);
+  assert.match(app, /5530 − 5200 = 330 мм/);
+  assert.match(plan, /5530 · по листу 7 PDF/);
+  assert.match(plan, /5200 · сумма модулей/);
+  assert.match(boq, /не добавлять повторно к общедомовой смете/);
+});
+
+test("documents page includes pinned GitHub HEAD revisions and adoption decisions", async () => {
+  const [html, audit] = await Promise.all([
+    render("/documents").then((response) => response.text()),
+    readFile(new URL("../public/downloads/github-tool-audit-v18.csv", import.meta.url), "utf8"),
+  ]);
+  assert.match(html, /Babylon\.js/);
+  assert.match(html, /glTF Transform/);
+  assert.match(html, /не подключается новый игровой движок/);
+  assert.match(audit, /eba30de865cfbf31ac736f792defd9a60ff28d57/);
+  assert.match(audit, /227f5a188c8f362ee636ddf9553612d9742c4200/);
+  assert.match(audit, /dd665ec2862382df7f4fa9c9f0db9bb593326d62/);
 });

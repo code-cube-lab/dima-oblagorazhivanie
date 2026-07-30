@@ -1,5 +1,5 @@
-import { DimaProjectApp } from "./DimaProjectApp";
+import { ProjectV18 } from "./ProjectV18";
 
 export default function Home() {
-  return <DimaProjectApp />;
+  return <ProjectV18 page="home" />;
 }

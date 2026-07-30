@@ -1,0 +1,99 @@
+{
+  "project": "Дима Облагораживание",
+  "revision": "v18",
+  "generated_at": "2026-07-30T13:27:29.434Z",
+  "scope_stage": "предпроект для согласования",
+  "overall_status": "BLOCKED",
+  "files": [
+    {
+      "id": "SRC_PDF",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Снимок экрана 2025—09—13 в 18.38.43.pdf",
+      "bytes": 33602750,
+      "sha256": "2794f112fe36ea85b52b9c7a308e4bc0d823477563bd06d945743ec63a9b2a1e"
+    },
+    {
+      "id": "FACTS",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\qa\\v18\\project-facts.json",
+      "bytes": 1950,
+      "sha256": "8f76a4d72fc7a90d1f693fea339cf26991d9c0ba051502f7b94632e0bf4ce3c2"
+    },
+    {
+      "id": "BROWSER_QA",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\qa\\v18\\local-browser-qa.json",
+      "bytes": 7454,
+      "sha256": "7bf0ad14f9807a38e3202c606c34fd988965a25aefd72202d01a6284f8bfc680"
+    },
+    {
+      "id": "PLAN_KITCHEN",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v18\\kitchen-plan.svg",
+      "bytes": 6977,
+      "sha256": "eaef5e0f04f73b910f833d8367914e87096617859cd8d923bec5319faadc6631"
+    },
+    {
+      "id": "ELEVATION_KITCHEN",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v18\\kitchen-elevation.svg",
+      "bytes": 5287,
+      "sha256": "1c5074604c2eb6cc1cb37b7cd18cae0f96a834ebc02291c6782741b45bf92d56"
+    },
+    {
+      "id": "MEP_KITCHEN",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v18\\kitchen-mep.svg",
+      "bytes": 6801,
+      "sha256": "7562c44347d87cc9d9da3731c8840592efd7114def20f6ca164085efc8eb787b"
+    },
+    {
+      "id": "FLOOR_1",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v16\\floor-1-c4d.png",
+      "bytes": 287805,
+      "sha256": "df8444919876eda8880fe30278af20e675fc539aa846650d99b456a9dd7e5866"
+    },
+    {
+      "id": "FLOOR_2",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\plans\\v16\\floor-2-c4d.png",
+      "bytes": 284581,
+      "sha256": "ba0bc383b2a46af27173d52064ceb3b8298677b21bf978a9fde0881c4d709117"
+    },
+    {
+      "id": "RENDER_K1",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v18\\kitchen-01-overview.png",
+      "bytes": 2193425,
+      "sha256": "a5fa768ceab31b343828be052e6aefe043c754bb562e6d19e819ad0c96203e98"
+    },
+    {
+      "id": "RENDER_K2",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v18\\kitchen-02-dining-view.png",
+      "bytes": 2302387,
+      "sha256": "ce74f40963205a4f999c6126a67f67b28b80c6ee9fc1c06b48851f247a2a0c95"
+    },
+    {
+      "id": "RENDER_K3",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v18\\kitchen-03-work-zone.png",
+      "bytes": 2139677,
+      "sha256": "fc2b040bf624940fd205cfd4dbc48eb12af9e04ed52cf6391baa94c5974b5192"
+    },
+    {
+      "id": "RENDER_K4",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\renders\\v18\\kitchen-04-evening.png",
+      "bytes": 2157263,
+      "sha256": "04ef46fc869ab60e13d4ef10055c675069f7b2a4d50be5d6c8760b8159bc6d2d"
+    },
+    {
+      "id": "ESTIMATE",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\downloads\\estimate-v18.csv",
+      "bytes": 4560,
+      "sha256": "cc23fed14f61c811e7876c74506c042cc7b74934fc4143449db91d0fdab5f90b"
+    },
+    {
+      "id": "CATALOG",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\downloads\\shopping-catalog-v18.csv",
+      "bytes": 3121,
+      "sha256": "7b190722961663858517f0cffdbf86dec6017f6144fb85c7126c7374f4f7bcd4"
+    },
+    {
+      "id": "GITHUB_AUDIT",
+      "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\public\\downloads\\github-tool-audit-v18.csv",
+      "bytes": 1701,
+      "sha256": "2cdc2868e940277feba13d421866ad85808ea9b5dabd92180cd3d5d04a6efa07"
+    }
+  ]
+}

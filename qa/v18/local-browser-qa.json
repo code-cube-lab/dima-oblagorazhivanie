@@ -1,0 +1,329 @@
+{
+  "checkedAt": "2026-07-30T13:27:29.249Z",
+  "external": false,
+  "passed": true,
+  "checks": [
+    {
+      "route": "home",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "home",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "home",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "home",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "home",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "kitchen",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "kitchen",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "kitchen",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "kitchen",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "kitchen",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "rooms",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "rooms",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "rooms",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "rooms",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "rooms",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "model",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "model",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "model",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "model",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "model",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "engineering",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "engineering",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "engineering",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "engineering",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "engineering",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "catalog",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "catalog",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "catalog",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "catalog",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "catalog",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "estimate",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "estimate",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "estimate",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "estimate",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "estimate",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "documents",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "documents",
+      "check": "noWalkthrough",
+      "pass": true
+    },
+    {
+      "route": "documents",
+      "check": "expectedContent",
+      "pass": true
+    },
+    {
+      "route": "documents",
+      "check": "imagesLoad",
+      "pass": true
+    },
+    {
+      "route": "documents",
+      "check": "noHorizontalScroll",
+      "pass": true
+    },
+    {
+      "route": "kitchen-mobile",
+      "check": "status",
+      "pass": true
+    },
+    {
+      "route": "kitchen-mobile",
+      "check": "noHorizontalScroll",
+      "pass": true
+    }
+  ],
+  "results": [
+    {
+      "route": "home",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "kitchen",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/kitchen/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "rooms",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/rooms/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "model",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/model/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "engineering",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/engineering/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "catalog",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/catalog/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "estimate",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/estimate/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "documents",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/documents/",
+      "status": 200,
+      "title": "Дима · Дом и участок — подробный проект v18",
+      "noWalkthrough": true,
+      "expectedContent": true,
+      "imagesLoad": true,
+      "brokenImages": [],
+      "noHorizontalScroll": true,
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "kitchen-mobile",
+      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/kitchen/",
+      "status": 200,
+      "noHorizontalScroll": true
+    }
+  ]
+}

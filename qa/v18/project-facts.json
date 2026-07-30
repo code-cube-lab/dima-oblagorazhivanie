@@ -1,0 +1,71 @@
+{
+  "revision": "v18",
+  "scope_stage": "предпроект для согласования",
+  "checked_at": "2026-07-30",
+  "sources": [
+    {
+      "id": "SRC-PDF-01",
+      "path": "C:\\!_2_Projeckt\\Дима Облагораживание\\Снимок экрана 2025—09—13 в 18.38.43.pdf",
+      "pages": 18,
+      "status": "source_checked"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F-KITCHEN-AREA",
+      "value": "50.12 m2",
+      "status": "source_checked",
+      "evidence": "SRC-PDF-01 page 7"
+    },
+    {
+      "id": "F-KITCHEN-WALL",
+      "value": "5530 mm",
+      "status": "source_checked",
+      "evidence": "SRC-PDF-01 page 7"
+    },
+    {
+      "id": "P-KITCHEN-RUN",
+      "value": "5200 mm",
+      "status": "proposed",
+      "evidence": "public/plans/v18/kitchen-plan.svg"
+    },
+    {
+      "id": "P-KITCHEN-FILLERS",
+      "value": "165 + 165 mm",
+      "status": "proposed",
+      "evidence": "5530 - 5200 = 330 mm"
+    },
+    {
+      "id": "P-KITCHEN-ISLAND",
+      "value": "2400 x 1000 mm",
+      "status": "proposed",
+      "evidence": "public/plans/v18/kitchen-plan.svg"
+    },
+    {
+      "id": "P-KITCHEN-AISLE",
+      "value": "1100 mm",
+      "status": "proposed",
+      "evidence": "public/plans/v18/kitchen-plan.svg"
+    },
+    {
+      "id": "V-KITCHEN-FINAL",
+      "value": "clean-finish control measurement",
+      "status": "verify_on_site",
+      "evidence": "required before production"
+    }
+  ],
+  "release_boundary": {
+    "allowed": [
+      "client review",
+      "budget planning",
+      "product shortlisting",
+      "briefing of architect, MEP engineer and furniture maker"
+    ],
+    "forbidden": [
+      "furniture production without control measurement",
+      "electrical installation from preliminary diagrams",
+      "water, sewer, ventilation or gas installation without working design",
+      "structural alteration of balcony or opening without engineer calculation"
+    ]
+  }
+}

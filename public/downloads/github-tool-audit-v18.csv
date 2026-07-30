@@ -1,0 +1,7 @@
+Репозиторий;URL;HEAD 30.07.2026;Лицензия;Назначение;Решение;Причина
+mrdoob/three.js;https://github.com/mrdoob/three.js/;eba30de865cfbf31ac736f792defd9a60ff28d57;MIT;веб-просмотр GLB;adopt;уже используется но не улучшает исходную модель
+BabylonJS/Babylon.js;https://github.com/BabylonJS/Babylon.js/;227f5a188c8f362ee636ddf9553612d9742c4200;Apache-2.0;будущая игровая сборка PBR столкновения взаимодействия;sandbox-test;подключать после точной PBR модели и fixture
+donmccurdy/glTF-Transform;https://github.com/donmccurdy/glTF-Transform;dd665ec2862382df7f4fa9c9f0db9bb593326d62;MIT;проверка оптимизация и сжатие GLB;adopt;подходит для воспроизводимого пайплайна экспорта
+pmndrs/react-three-fiber;https://github.com/pmndrs/react-three-fiber;7dfaeaaab270ebef2b176e8bcaa5819702c34794;MIT;React обвязка Three.js;reference-only;не решает качество геометрии материалов и света
+IfcOpenShell/IfcOpenShell;https://github.com/IfcOpenShell/IfcOpenShell;8deefe497cca8b9fd41e29e809ec0d0ad9478169;LGPL-3.0 и GPL по компонентам;IFC объемы свойства коллизии;sandbox-test;нужен корректный IFC и проверка компонентных лицензий
+FreeCAD/FreeCAD;https://github.com/FreeCAD/FreeCAD;552849c2855089130ed0c1cd86186edb1667b8b0;LGPL-2.1;параметрические размеры и листы;adopt;независимый CAD-контроль масштаба
