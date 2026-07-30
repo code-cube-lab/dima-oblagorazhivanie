@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-30T22:14:46.064Z",
+  "checkedAt": "2026-07-30T22:31:19.164Z",
   "external": false,
   "passed": true,
   "checks": [
@@ -317,7 +317,7 @@
   "results": [
     {
       "route": "home",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -331,7 +331,7 @@
     },
     {
       "route": "tour",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/tour/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/tour/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -345,7 +345,7 @@
     },
     {
       "route": "landscape",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/landscape/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/landscape/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -359,7 +359,7 @@
     },
     {
       "route": "bath",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/bath/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/bath/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -373,7 +373,7 @@
     },
     {
       "route": "kitchen",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/kitchen/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/kitchen/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -387,7 +387,7 @@
     },
     {
       "route": "rooms",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/rooms/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/rooms/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -401,7 +401,7 @@
     },
     {
       "route": "model",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/model/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/model/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -415,7 +415,7 @@
     },
     {
       "route": "engineering",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/engineering/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/engineering/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -429,7 +429,7 @@
     },
     {
       "route": "sheets",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/sheets/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/sheets/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -443,7 +443,7 @@
     },
     {
       "route": "catalog",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/catalog/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/catalog/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -457,7 +457,7 @@
     },
     {
       "route": "estimate",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/estimate/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/estimate/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -471,7 +471,7 @@
     },
     {
       "route": "documents",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/documents/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/documents/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v21",
       "noWalkthrough": true,
@@ -485,7 +485,7 @@
     },
     {
       "route": "kitchen-mobile",
-      "url": "http://127.0.0.1:55758/dima-oblagorazhivanie/kitchen/",
+      "url": "http://127.0.0.1:55554/dima-oblagorazhivanie/kitchen/",
       "status": 200,
       "noHorizontalScroll": true
     }
