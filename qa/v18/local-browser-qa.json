@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-30T13:27:29.249Z",
+  "checkedAt": "2026-07-30T13:32:27.715Z",
   "external": false,
   "passed": true,
   "checks": [
@@ -217,7 +217,7 @@
   "results": [
     {
       "route": "home",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -230,7 +230,7 @@
     },
     {
       "route": "kitchen",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/kitchen/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/kitchen/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -243,7 +243,7 @@
     },
     {
       "route": "rooms",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/rooms/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/rooms/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -256,7 +256,7 @@
     },
     {
       "route": "model",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/model/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/model/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -269,7 +269,7 @@
     },
     {
       "route": "engineering",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/engineering/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/engineering/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -282,7 +282,7 @@
     },
     {
       "route": "catalog",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/catalog/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/catalog/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -295,7 +295,7 @@
     },
     {
       "route": "estimate",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/estimate/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/estimate/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -308,7 +308,7 @@
     },
     {
       "route": "documents",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/documents/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/documents/",
       "status": 200,
       "title": "Дима · Дом и участок — подробный проект v18",
       "noWalkthrough": true,
@@ -321,7 +321,7 @@
     },
     {
       "route": "kitchen-mobile",
-      "url": "http://127.0.0.1:52974/dima-oblagorazhivanie/kitchen/",
+      "url": "http://127.0.0.1:60945/dima-oblagorazhivanie/kitchen/",
       "status": 200,
       "noHorizontalScroll": true
     }

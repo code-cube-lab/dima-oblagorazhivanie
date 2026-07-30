@@ -2,7 +2,7 @@
   "project": "Дима Облагораживание",
   "revision": "v18",
   "reviewer": "residential-project-qa-gatekeeper",
-  "checked_at": "2026-07-30T13:27:29.434Z",
+  "checked_at": "2026-07-30T13:32:27.897Z",
   "independent": true,
   "scope_stage": "предпроект для согласования",
   "overall_status": "BLOCKED",
@@ -24,7 +24,7 @@
       "id": "BROWSER_QA",
       "path": "C:\\Users\\GIGA\\Documents\\Codex\\2026-07-28\\st-3\\work\\dima_interactive_v14\\qa\\v18\\local-browser-qa.json",
       "bytes": 7454,
-      "sha256": "7bf0ad14f9807a38e3202c606c34fd988965a25aefd72202d01a6284f8bfc680"
+      "sha256": "11f5f16767fcf444c16f29799a93fe168acee3f8f49f4d3289507fffe0321d91"
     },
     {
       "id": "PLAN_KITCHEN",

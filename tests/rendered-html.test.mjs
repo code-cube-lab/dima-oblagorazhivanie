@@ -28,7 +28,11 @@ test("home is render-first and contains no bad walkthrough", async () => {
   assert.match(html, /Дом, ремонт и участок — наглядно и по разделам/);
   assert.match(html, /Плохая 3D-проходка удалена/);
   assert.match(html, /0<\/strong><span>низкополигональных проходок/);
-  assert.doesNotMatch(html, /WASD|От третьего лица|PointerLockControls/);
+  assert.doesNotMatch(html, /WASD|От третьего лица|PointerLockControls|ProjectViewerV17/);
+  assert.match(
+    html,
+    /https:\/\/code-cube-lab\.github\.io\/dima-oblagorazhivanie\/og\.png/,
+  );
 });
 
 test("kitchen page fixes the glazing conflict and publishes four corrected renders", async () => {

@@ -10,20 +10,11 @@ export const metadata: Metadata = {
     description: "Проект дома и участка в Ставрополе: рендеры, размеры, кухня, общий балкон, баня, инженерия, товары и стоимость.",
     type: "website",
     locale: "ru_RU",
-    images: [
-      {
-        url: "https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png",
-        width: 1737,
-        height: 910,
-        alt: "Дима · Облагораживание — дом и участок",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Дима · Облагораживание",
     description: "Рендеры, размеры, кухня, инженерия, товары и стоимость.",
-    images: ["https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -38,6 +29,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta
+          property="og:image"
+          content="https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"
+        />
+        <meta property="og:image:width" content="1737" />
+        <meta property="og:image:height" content="910" />
+        <meta property="og:image:alt" content="Дима · Облагораживание — дом и участок" />
+        <meta
+          name="twitter:image"
+          content="https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
