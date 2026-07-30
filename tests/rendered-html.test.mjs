@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -37,17 +37,19 @@ test("server-renders the Dima project shell", async () => {
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 
-test("keeps the two balcony exits distinct and connected", async () => {
-  const [app, specText] = await Promise.all([
+test("keeps the two balcony exits connected across the full garage width", async () => {
+  const [app, specText, front, route, model] = await Promise.all([
     readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../public/data/dima-v15-spec.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/data/dima-v16-spec.json", import.meta.url), "utf8"),
+    access(new URL("../public/renders/v16/01-front-photoreal.png", import.meta.url)),
+    access(new URL("../public/renders/v16/02-balcony-photoreal.png", import.meta.url)),
+    access(new URL("../public/models/dima-v16.glb", import.meta.url)),
   ]);
 
   assert.match(app, /Спальня с боковым выходом на общий балкон/);
   assert.match(app, /новым выходом на безопасный балкон/);
   assert.match(app, /единый Г‑образный балкон/);
   assert.match(app, /GLTFLoader/);
-  assert.match(app, /https:\/\/code-cube-lab\.github\.io\/dima-oblagorazhivanie/);
 
   const parsed = JSON.parse(specText);
   const frontDoor = parsed.facade_openings.front.find(
@@ -59,5 +61,19 @@ test("keeps the two balcony exits distinct and connected", async () => {
   assert.equal(frontDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
   assert.equal(sideDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
   assert.equal(parsed.client_changes.connected_balcony.guard_height, 1.2);
+  assert.equal(parsed.client_changes.connected_balcony.high_privacy_screen_height, 1.8);
+  assert.deepEqual(parsed.client_changes.connected_balcony.front_rect, [1.5, 4.45, 9, 5.89]);
   assert.equal(parsed.client_changes.connected_balcony.maximum_clear_gap, 0.1);
+  assert.equal(front, undefined);
+  assert.equal(route, undefined);
+  assert.equal(model, undefined);
+});
+
+test("publishes interior renovation, equipment, contractor candidates, and lighting", async () => {
+  const app = await readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8");
+  assert.match(app, /кухня 5,2 м, остров/);
+  assert.match(app, /MAUNFELD CVI593SFBK LUX/);
+  assert.match(app, /17 групп света/);
+  assert.match(app, /Авито — пока не внедрено как подтверждённый источник/);
+  assert.match(app, /24,65–45,40 млн ₽/);
 });
