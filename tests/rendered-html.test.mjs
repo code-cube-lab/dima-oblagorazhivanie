@@ -30,41 +30,39 @@ test("server-renders the Dima project shell", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Дима · Дом и участок — интерактивный проект<\/title>/i);
-  assert.match(html, /Дом, который можно понять до начала работ/);
-  assert.match(html, /Один общий балкон, два разных выхода/);
-  assert.match(html, /второе верхнее лицевое окно сохранено/);
+  assert.match(html, /Дом и участок, которые можно проверить/);
+  assert.match(html, /Осмотрите дом с любой стороны и включите комнаты/);
+  assert.match(html, /Гараж слева, высокий витраж справа/);
+  assert.match(html, /Баня 3×7 м/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 
 test("keeps the two balcony exits distinct and connected", async () => {
-  const [app, facts, front, route] = await Promise.all([
+  const [app, specText, front, route, model] = await Promise.all([
     readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
-    readFile(
-      "C:/!_2_Projeckt/Дима Облагораживание/Cinema 4D v13/07_Документы/project-facts.json",
-      "utf8",
-    ),
-    access(new URL("../public/renders/01-front-elevation-v14.png", import.meta.url)),
-    access(new URL("../public/renders/03-common-balcony-two-exits-v14.png", import.meta.url)),
+    readFile(new URL("../public/data/dima-v15-spec.json", import.meta.url), "utf8"),
+    access(new URL("../public/renders/v15/01-front-photoreal.png", import.meta.url)),
+    access(new URL("../public/renders/v15/02-balcony-photoreal.png", import.meta.url)),
+    access(new URL("../public/models/dima-v15.glb", import.meta.url)),
   ]);
 
-  assert.match(app, /parents-side-balcony-door/);
-  assert.match(app, /child-balcony-door/);
-  assert.match(app, /Единая лицевая часть общего балкона 7,95×1,95 м/);
-  assert.doesNotMatch(app, /child-balcony-door-bedroom-4/);
+  assert.match(app, /Спальня с боковым выходом на общий балкон/);
+  assert.match(app, /новым выходом на безопасный балкон/);
+  assert.match(app, /единый Г‑образный балкон/);
+  assert.match(app, /GLTFLoader/);
 
-  const parsed = JSON.parse(facts);
-  const doors = parsed.facts.find(
-    (item) => item.id === "ARCH-COMMON-BALCONY-DOORS",
+  const parsed = JSON.parse(specText);
+  const frontDoor = parsed.facade_openings.front.find(
+    (item) => item.name === "child_balcony_door",
   );
-  const balcony = parsed.facts.find(
-    (item) => item.id === "ARCH-COMMON-L-BALCONY",
+  const sideDoor = parsed.facade_openings.left.find(
+    (item) => item.name === "parents_balcony_door",
   );
-  assert.equal(doors.value.openings.length, 2);
-  assert.equal(doors.value.unchanged_front_window_width, 1200);
-  assert.equal(
-    balcony.value.footprint_segments.slab_overlap_at_corner.minimum_clear_route,
-    1200,
-  );
+  assert.equal(frontDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
+  assert.equal(sideDoor.source.startsWith("ИЗМЕНЕНИЕ КЛИЕНТА"), true);
+  assert.equal(parsed.client_changes.connected_balcony.guard_height, 1.2);
+  assert.equal(parsed.client_changes.connected_balcony.maximum_clear_gap, 0.1);
   assert.equal(front, undefined);
   assert.equal(route, undefined);
+  assert.equal(model, undefined);
 });

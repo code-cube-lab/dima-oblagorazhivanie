@@ -44,3 +44,9 @@ next-env.d.ts
 # local preview processes
 /.dev-server.*
 /.preview.*
+/.qa-static.*
+/.v15-server.*
+/qa-static/
+/pages-dist/
+/github-pages-*-qa.png
+/github-pages-qa.png
