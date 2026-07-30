@@ -106,3 +106,42 @@ test("publishes v17 game controls, engineering sheets, shopping register, and ro
   assert.equal(sequence, undefined);
   assert.equal(kitchenViews, undefined);
 });
+
+test("keeps one L01-L17 lighting dictionary across JSON, CSV, app, and GLB names", async () => {
+  const [specText, csv, app] = await Promise.all([
+    readFile(new URL("../public/data/dima-v16-spec.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/downloads/lighting-v16.csv", import.meta.url), "utf8"),
+    readFile(new URL("../app/DimaProjectApp.tsx", import.meta.url), "utf8"),
+  ]);
+  const spec = JSON.parse(specText);
+  const groups = [
+    ...spec.lighting_program.interior_groups,
+    ...spec.lighting_program.exterior_groups,
+  ];
+  assert.equal(groups.length, 17);
+  assert.deepEqual(groups, [
+    "L01 кухонная рабочая зона",
+    "L02 кухонный остров",
+    "L03 гостиная",
+    "L04 обеденный стол",
+    "L05 гостевая спальня",
+    "L06 спальня родителей",
+    "L07 детская Дарины",
+    "L08 детская Ярика",
+    "L09 санузлы",
+    "L10 холлы и лестница",
+    "L11 кухонная LED-подсветка",
+    "L12 дорожки",
+    "L13 общий балкон",
+    "L14 мангальная",
+    "L15 баня",
+    "L16 фасады дома",
+    "L17 хозблок",
+  ]);
+  for (const group of groups) {
+    const id = group.slice(0, 3);
+    assert.match(csv, new RegExp(`^${id};`, "m"));
+  }
+  assert.match(app, /\["L12–L13", "Дорожки и общий балкон"/);
+  assert.match(app, /\["L14–L17", "Мангальная, баня, фасады, хозблок"/);
+});

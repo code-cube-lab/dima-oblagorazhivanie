@@ -1,0 +1,39 @@
+{
+  "project": "Дима · Облагораживание",
+  "revision": "v17-web",
+  "source_commit": "git-commit-containing-this-manifest",
+  "public_url": "https://code-cube-lab.github.io/dima-oblagorazhivanie/?v=17",
+  "private_url": "https://dima-oblagorazhivanie-v14.giovannafithian58.chatgpt.site",
+  "native_model": "C:/!_2_Projeckt/Дима Облагораживание/Cinema 4D v16/02_Сцена/Дима_Облагораживание_Master_v16.c4d",
+  "exchange_model": "public/models/dima-v16.glb",
+  "deliverables": [
+    "интерактивная 3D-модель в реальном масштабе",
+    "день, вечер, ночь и группы света L01-L17",
+    "режимы осмотра, первого и третьего лица",
+    "пять листов по четыре интерьерных ракурса",
+    "предварительные планы ЭОМ двух этажей",
+    "предварительная схема ВК дома и участка",
+    "каталог комплектации с прямыми ссылками",
+    "11 этапов работ после готовой коробки"
+  ],
+  "external_code": [
+    {
+      "project": "mrdoob/three.js",
+      "version": "0.185.1",
+      "license": "MIT",
+      "decision": "adopt"
+    },
+    {
+      "project": "dimforge/rapier",
+      "version": "0.19.3",
+      "license": "Apache-2.0",
+      "decision": "approved for the next physics iteration; not bundled in v17"
+    },
+    {
+      "project": "donmccurdy/glTF-Transform",
+      "version": "4.4.2",
+      "license": "MIT",
+      "decision": "approved for offline optimization; not bundled in v17"
+    }
+  ]
+}

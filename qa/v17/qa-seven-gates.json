@@ -1,0 +1,214 @@
+{
+  "project": "Дима · Облагораживание",
+  "revision": "v17-web",
+  "checked_at": "2026-07-30T13:55:00+03:00",
+  "reviewer": "independent-read-only",
+  "manifest": [
+    {
+      "id": "SOURCE-PDF",
+      "path": "C:/!_2_Projeckt/Дима Облагораживание/Снимок экрана 2025—09—13 в 18.38.43.pdf",
+      "sha256": "2794f112fe36ea85b52b9c7a308e4bc0d823477563bd06d945743ec63a9b2a1e",
+      "bytes": 33602750
+    },
+    {
+      "id": "C4D-MASTER",
+      "path": "C:/!_2_Projeckt/Дима Облагораживание/Cinema 4D v16/02_Сцена/Дима_Облагораживание_Master_v16.c4d",
+      "sha256": "6eb5c7feb5f8355419d35e47b389ceaeb2e518d3c50cd874e76a743a7ec7384e",
+      "bytes": 12955665
+    },
+    {
+      "id": "GLB-MODEL",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/models/dima-v16.glb",
+      "sha256": "d07d3bb4e7ff6b693be9cc1abffd2fb65687a8d69b90dbd60cb1d35510ef0b00",
+      "bytes": 34312124
+    },
+    {
+      "id": "PROJECT-FACTS",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/data/dima-v16-spec.json",
+      "sha256": "5260ad49f95932bff3b4ee0d40f6bf181f2b4867899cde3e29989abbf0ac3b5c",
+      "bytes": 9058
+    },
+    {
+      "id": "WEB-APP",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/app/DimaProjectApp.tsx",
+      "sha256": "b2ba0eee8e1fb07d8a46d71a24c336ed30dcb87512338ef437c1d2cd16442d5f",
+      "bytes": 66125
+    },
+    {
+      "id": "WEB-VIEWER",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/app/ProjectViewerV17.tsx",
+      "sha256": "0826e68b4034d58bb15d7c5416c92a9fd263a29b0ed9a6058d8cf319a2cb71cb",
+      "bytes": 28855
+    },
+    {
+      "id": "EOM-01",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/plans/v17/electrical-floor1.svg",
+      "sha256": "c45ddc6c195c43e9baa19d43a0e99360c6e821a156c2517d4a9d72ef5240dea3",
+      "bytes": 7163
+    },
+    {
+      "id": "EOM-02",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/plans/v17/electrical-floor2.svg",
+      "sha256": "5ea06f95404d1489dff47140681be3595fc27e67dde3d732abe2f208f3a37e5e",
+      "bytes": 7028
+    },
+    {
+      "id": "VK-01",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/plans/v17/water-sewer.svg",
+      "sha256": "9e07d261ccde2743db064aaf13e0b0552d5a0131096c9f0221a51ad628f904ce",
+      "bytes": 6406
+    },
+    {
+      "id": "RENDER-KITCHEN",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/renders/v17/11-kitchen-four-views.png",
+      "sha256": "59d81d81dff552275f5037b746c846e913c2192bc461c83afecda620bcfa5cff",
+      "bytes": 2031279
+    },
+    {
+      "id": "RENDER-PARENTS",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/renders/v17/12-parents-four-views.png",
+      "sha256": "6b402373e34e76ec905c8fc29726cb38e1cf255da9508087ef96d9fc291c4e32",
+      "bytes": 2101265
+    },
+    {
+      "id": "RENDER-DARINA",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/renders/v17/13-darina-four-views.png",
+      "sha256": "4309ee3f5adc03a6119455534ca468d64413295c5f994f26b66a0b8f1c0e0b5f",
+      "bytes": 1903139
+    },
+    {
+      "id": "RENDER-YARIK",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/renders/v17/14-yarik-four-views.png",
+      "sha256": "f6ba5dd440daa5e3d2b21887d427aa2d6b3887db6d178c6d6d4bc5e1e401ddd5",
+      "bytes": 1850761
+    },
+    {
+      "id": "RENDER-BATH",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/renders/v17/15-bathroom-four-views.png",
+      "sha256": "c17426d22f8665b6a18226261ad4f3d0e6c446608faab46057041a91cd32e7fd",
+      "bytes": 1893357
+    },
+    {
+      "id": "SHOPPING",
+      "path": "C:/Users/GIGA/Documents/Codex/2026-07-28/st-3/work/dima_interactive_v14/public/downloads/shopping-catalog-v17.csv",
+      "sha256": "2eb3e6dc7ad82a34b0fb0fb74350a0319ee17a167f26ca1d2f68857e2b3f0bc7",
+      "bytes": 5744
+    }
+  ],
+  "gates": {
+    "G1": {
+      "status": "PASS",
+      "evidence": ["SOURCE-PDF", "PROJECT-FACTS"],
+      "checks": [
+        {
+          "id": "G1-01",
+          "name": "Источник, масштаб и границы стадии",
+          "owner": "архитектор",
+          "status": "PASS",
+          "evidence": ["SOURCE-PDF", "PROJECT-FACTS"],
+          "note": "PDF существует, SHA-256 совпал; участок 20×30 м и дом 14,50×11,46 м отделены от требований клиента и допущений."
+        }
+      ]
+    },
+    "G2": {
+      "status": "PASS",
+      "evidence": ["SOURCE-PDF", "C4D-MASTER", "GLB-MODEL"],
+      "checks": [
+        {
+          "id": "G2-01",
+          "name": "Ориентация и клиентские изменения",
+          "owner": "архитектор",
+          "status": "PASS",
+          "evidence": ["SOURCE-PDF", "C4D-MASTER", "GLB-MODEL"],
+          "note": "Гараж слева, витраж справа; единый балкон 7,50 м над гаражом; два выхода; баня 3×7 м и хозблок 1×3 м отражены на сайте."
+        }
+      ]
+    },
+    "G3": {
+      "status": "PASS",
+      "evidence": ["EOM-01", "EOM-02", "VK-01"],
+      "checks": [
+        {
+          "id": "G3-01",
+          "name": "Безопасная граница инженерных схем",
+          "owner": "координатор инженерных систем",
+          "status": "PASS",
+          "evidence": ["EOM-01", "EOM-02", "VK-01"],
+          "note": "На каждом листе есть отметка «предварительное задание, не рабочий проект»; кабели, защиты, диаметры, уклоны и газ не назначены без расчёта."
+        },
+        {
+          "id": "G3-02",
+          "name": "Единый справочник света L01-L17",
+          "owner": "проектировщик ЭОМ",
+          "status": "PASS",
+          "evidence": ["PROJECT-FACTS", "GLB-MODEL", "WEB-APP"],
+          "note": "JSON, CSV, сайт, SVG и имена узлов GLB сведены к одной нумерации; автоматический тест пройден."
+        }
+      ]
+    },
+    "G4": {
+      "status": "PASS",
+      "evidence": ["PROJECT-FACTS", "VK-01"],
+      "checks": [
+        {
+          "id": "G4-01",
+          "name": "Участок, маршруты, посадки и обслуживание",
+          "owner": "ландшафтный архитектор",
+          "status": "PASS",
+          "evidence": ["PROJECT-FACTS", "VK-01", "GLB-MODEL"],
+          "note": "Показаны замкнутые габариты участка, бетонный передний двор, правая зелёная полоса, баня, мангальная, дорожки, растения и наружный свет; водоотвод отмечен как требующий топосъёмки."
+        }
+      ]
+    },
+    "G5": {
+      "status": "PASS",
+      "evidence": ["C4D-MASTER", "GLB-MODEL", "WEB-VIEWER"],
+      "checks": [
+        {
+          "id": "G5-01",
+          "name": "Нативная модель и обмен",
+          "owner": "BIM/Cinema 4D координатор",
+          "status": "PASS",
+          "evidence": ["C4D-MASTER", "GLB-MODEL", "WEB-VIEWER"],
+          "note": "C4D и GLB физически существуют, хеши совпали; веб-просмотрщик больше не применяет fitScale и проверяет диапазон участка 20×30 м."
+        }
+      ]
+    },
+    "G6": {
+      "status": "PASS",
+      "evidence": ["RENDER-KITCHEN", "RENDER-PARENTS", "RENDER-DARINA", "RENDER-YARIK", "RENDER-BATH", "GLB-MODEL"],
+      "checks": [
+        {
+          "id": "G6-01",
+          "name": "Чистые визуализации и проверяемая модель",
+          "owner": "визуализатор",
+          "status": "PASS",
+          "evidence": ["RENDER-KITCHEN", "RENDER-PARENTS", "RENDER-DARINA", "RENDER-YARIK", "RENDER-BATH", "GLB-MODEL"],
+          "note": "Пять листов содержат 20 чистых интерьерных ракурсов; сайт отдельно показывает контрольные планы, C4D-кадры и интерактивные комнатные камеры, а генеративные листы подписаны как визуализация материалов."
+        }
+      ]
+    },
+    "G7": {
+      "status": "PASS",
+      "evidence": ["WEB-APP", "WEB-VIEWER", "SHOPPING"],
+      "checks": [
+        {
+          "id": "G7-01",
+          "name": "Публичный интерактив и мобильная версия",
+          "owner": "веб-релиз",
+          "status": "PASS",
+          "evidence": ["WEB-APP", "WEB-VIEWER", "GLB-MODEL"],
+          "note": "https://code-cube-lab.github.io/dima-oblagorazhivanie/?v=17 вернул HTTP 200; 20 автоматических проверок сайта, GLB, изображений, управления, ночного света и мобильной ширины прошли."
+        },
+        {
+          "id": "G7-02",
+          "name": "Комплектация и лицензии",
+          "owner": "комплектатор",
+          "status": "PASS",
+          "evidence": ["SHOPPING", "WEB-APP"],
+          "note": "Каталог различает подтверждённый товар, кандидат и недоступную модель; прямые HTTPS-ссылки и дата цен указаны; Three.js 0.185.1 используется по MIT."
+        }
+      ]
+    }
+  }
+}
