@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#173841}
+      .title{font-family:Georgia,serif;font-size:40px}
+      .sub{font-size:18px;fill:#557078}
+      .label{font-size:16px;font-weight:700}
+      .small{font-size:13px}
+      .tiny{font-size:11px}
+      .cab{fill:#d6c5b0;stroke:#173841;stroke-width:2}
+      .power{fill:#fff1e8;stroke:#b96039;stroke-width:3}
+      .water{fill:#e4f2f7;stroke:#355e72;stroke-width:3}
+      .vent{fill:#ebf1e8;stroke:#627861;stroke-width:3}
+      .linep{stroke:#b96039;stroke-width:3;fill:none}
+      .linew{stroke:#355e72;stroke-width:3;fill:none}
+      .linev{stroke:#627861;stroke-width:3;fill:none;stroke-dasharray:8 5}
+      .verify{fill:#fff0eb;stroke:#a5473f;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#f7f4ec"/>
+  <text x="70" y="75" class="title">КМ-03 · Электрика, вода и вентиляция кухни</text>
+  <text x="70" y="108" class="sub">Предварительное задание · окончательные защиты, кабели, отметки и диаметры назначает профильный проект</text>
+
+  <g transform="translate(125 235)">
+    <rect x="0" y="0" width="120" height="380" class="cab"/>
+    <rect x="120" y="0" width="120" height="380" class="cab"/>
+    <rect x="240" y="210" width="60" height="170" class="cab"/>
+    <rect x="300" y="210" width="160" height="170" class="cab"/>
+    <rect x="460" y="210" width="180" height="170" class="cab"/>
+    <rect x="640" y="210" width="120" height="170" class="cab"/>
+    <rect x="760" y="210" width="160" height="170" class="cab"/>
+    <rect x="920" y="210" width="120" height="170" class="cab"/>
+    <text x="60" y="408" text-anchor="middle" class="tiny">K01 ХОЛ</text>
+    <text x="180" y="408" text-anchor="middle" class="tiny">K02 ДУХ</text>
+    <text x="270" y="408" text-anchor="middle" class="tiny">K03</text>
+    <text x="380" y="408" text-anchor="middle" class="tiny">K04 ПОДГ.</text>
+    <text x="550" y="408" text-anchor="middle" class="tiny">K05 ПАНЕЛЬ</text>
+    <text x="700" y="408" text-anchor="middle" class="tiny">K06</text>
+    <text x="840" y="408" text-anchor="middle" class="tiny">K07 МОЙКА</text>
+    <text x="980" y="408" text-anchor="middle" class="tiny">K08 ПММ</text>
+
+    <circle cx="60" cy="110" r="15" class="power"/><text x="60" y="115" text-anchor="middle" class="tiny">E1</text>
+    <circle cx="180" cy="110" r="15" class="power"/><text x="180" y="115" text-anchor="middle" class="tiny">E2</text>
+    <circle cx="550" cy="330" r="18" class="power"/><text x="550" y="335" text-anchor="middle" class="tiny">E3</text>
+    <circle cx="980" cy="330" r="15" class="power"/><text x="980" y="335" text-anchor="middle" class="tiny">E4</text>
+    <circle cx="820" cy="190" r="15" class="power"/><text x="820" y="195" text-anchor="middle" class="tiny">E5</text>
+    <circle cx="880" cy="190" r="15" class="power"/><text x="880" y="195" text-anchor="middle" class="tiny">E5</text>
+    <circle cx="550" cy="80" r="18" class="vent"/><text x="550" y="85" text-anchor="middle" class="tiny">V1</text>
+    <circle cx="815" cy="330" r="16" class="water"/><text x="815" y="335" text-anchor="middle" class="tiny">W1</text>
+    <circle cx="865" cy="330" r="16" class="water"/><text x="865" y="335" text-anchor="middle" class="tiny">W2</text>
+  </g>
+
+  <path d="M675 315V185H1260" class="linev"/>
+  <path d="M940 565V690H1335" class="linew"/>
+  <path d="M1090 565V720H1335" class="linew"/>
+  <path d="M185 345H75" class="linep"/>
+  <path d="M305 345H75" class="linep"/>
+  <path d="M675 565V760H75" class="linep"/>
+  <path d="M1105 565V790H75" class="linep"/>
+
+  <rect x="70" y="160" width="280" height="105" rx="8" class="power"/>
+  <text x="90" y="190" class="label">E1 · холодильник</text>
+  <text x="90" y="218" class="small">Отдельная доступная розетка.</text>
+  <text x="90" y="244" class="small">Не за компрессором.</text>
+
+  <rect x="70" y="285" width="280" height="105" rx="8" class="power"/>
+  <text x="90" y="315" class="label">E2 · духовой шкаф</text>
+  <text x="90" y="343" class="small">Мощность и линия — по паспорту.</text>
+  <text x="90" y="369" class="small">Розетка в соседней доступной зоне.</text>
+
+  <rect x="70" y="675" width="360" height="90" rx="8" class="power"/>
+  <text x="90" y="705" class="label">E3 · индукционная панель</text>
+  <text x="90" y="733" class="small">Кандидат 7,0 кВт. Отдельная линия и защита — расчёт ЭОМ.</text>
+
+  <rect x="70" y="780" width="360" height="90" rx="8" class="power"/>
+  <text x="90" y="810" class="label">E4 · ПММ</text>
+  <text x="90" y="838" class="small">Розетка в соседнем модуле, не за машиной и не под протечкой.</text>
+
+  <rect x="1260" y="150" width="280" height="105" rx="8" class="vent"/>
+  <text x="1280" y="180" class="label">V1 · вытяжка</text>
+  <text x="1280" y="208" class="small">Канал и обратный клапан</text>
+  <text x="1280" y="234" class="small">после расчёта ОВ.</text>
+
+  <rect x="1260" y="300" width="280" height="105" rx="8" class="power"/>
+  <text x="1280" y="330" class="label">E5 · фартук</text>
+  <text x="1280" y="358" class="small">Бытовые розетки вне мойки</text>
+  <text x="1280" y="384" class="small">и горячей зоны.</text>
+
+  <rect x="1260" y="650" width="280" height="105" rx="8" class="water"/>
+  <text x="1280" y="680" class="label">W1 · мойка/фильтр</text>
+  <text x="1280" y="708" class="small">ХВС, ГВС, слив, перекрытие</text>
+  <text x="1280" y="734" class="small">и сервисный доступ.</text>
+
+  <rect x="1260" y="770" width="280" height="105" rx="8" class="water"/>
+  <text x="1280" y="800" class="label">W2 · ПММ</text>
+  <text x="1280" y="828" class="small">Подключение через доступный</text>
+  <text x="1280" y="854" class="small">узел в модуле мойки.</text>
+
+  <rect x="420" y="120" width="760" height="70" rx="8" class="verify"/>
+  <text x="800" y="150" text-anchor="middle" class="label">Все отметки розеток и выводов уточнить после выбора техники и чистового обмера.</text>
+  <text x="800" y="174" text-anchor="middle" class="small">Не штробить несущие элементы без согласования конструктора.</text>
+</svg>
