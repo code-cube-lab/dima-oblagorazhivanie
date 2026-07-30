@@ -2,28 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Дима · Дом и участок — интерактивный проект",
+  title: "Дима · Дом и участок — подробный проект v18",
   description:
-    "Понятный проект дома и участка в Ставрополе: чертежи, 3D-прогулка, ремонт, мебель, техника, освещение, растения и смета.",
+    "Многостраничный проект дома и участка в Ставрополе: фотореалистичные рендеры, кухня, размеры, инженерия, товары, этапы и смета.",
   openGraph: {
     title: "Дима · Облагораживание",
-    description: "3D-проект дома и участка в Ставрополе: размеры, интерьер, общий балкон над гаражом, баня, посадки, свет и стоимость.",
+    description: "Проект дома и участка в Ставрополе: рендеры, размеры, кухня, общий балкон, баня, инженерия, товары и стоимость.",
     type: "website",
     locale: "ru_RU",
-    images: [
-      {
-        url: "https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png",
-        width: 1737,
-        height: 910,
-        alt: "Дима · Облагораживание — дом и участок",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Дима · Облагораживание",
-    description: "3D-проект, размеры, интерьер, освещение и стоимость.",
-    images: ["https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"],
+    description: "Рендеры, размеры, кухня, инженерия, товары и стоимость.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -38,6 +29,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta
+          property="og:image"
+          content="https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"
+        />
+        <meta property="og:image:width" content="1737" />
+        <meta property="og:image:height" content="910" />
+        <meta property="og:image:alt" content="Дима · Облагораживание — дом и участок" />
+        <meta
+          name="twitter:image"
+          content="https://code-cube-lab.github.io/dima-oblagorazhivanie/og.png"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
