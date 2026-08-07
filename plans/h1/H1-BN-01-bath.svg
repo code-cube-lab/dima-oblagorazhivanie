@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420.0mm" height="297.0mm" viewBox="0 0 420.0 297.0">
+<title>Баня 7000 × 3000 — планировочная координация</title>
+<defs><marker id="arr" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto"><path d="M4,0 L0,2 L4,4" fill="none" stroke="#111" stroke-width="0.35"/></marker><pattern id="hatch" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3" stroke="#9ca3af" stroke-width="0.35"/></pattern></defs>
+<rect width="420" height="297" fill="#fff"/>
+<g font-family="Arial, DejaVu Sans, sans-serif" fill="#111" stroke-linecap="square">
+<rect x="20.00" y="5.00" width="395.00" height="287.00" stroke="#111" fill="none" stroke-width="0.7"/>
+<line x1="20.00" y1="256.00" x2="415.00" y2="256.00" stroke="#111" stroke-width="0.5"/>
+<line x1="285.00" y1="256.00" x2="285.00" y2="292.00" stroke="#111" stroke-width="0.5"/>
+<line x1="350.00" y1="256.00" x2="350.00" y2="292.00" stroke="#111" stroke-width="0.5"/>
+<line x1="285.00" y1="268.00" x2="415.00" y2="268.00" stroke="#111" stroke-width="0.35"/>
+<line x1="285.00" y1="280.00" x2="415.00" y2="280.00" stroke="#111" stroke-width="0.35"/>
+<text x="288.00" y="264.00" font-size="3.4" font-weight="700" text-anchor="start" fill="#111" stroke="none">Михайличенко · Инженер ИИ</text>
+<text x="288.00" y="275.00" font-size="2.35" font-weight="400" text-anchor="start" fill="#111" stroke="none">Баня 7000 × 3000 — планировочная коо…</text>
+<text x="288.00" y="287.00" font-size="3.2" font-weight="700" text-anchor="start" fill="#111" stroke="none">H1-БН-01 · стадия H1-KOORD</text>
+<text x="353.00" y="264.00" font-size="3.0" font-weight="400" text-anchor="start" fill="#111" stroke="none">Масштаб: М 1:50</text>
+<text x="353.00" y="275.00" font-size="3.0" font-weight="400" text-anchor="start" fill="#111" stroke="none">Лист 9/10 · изм. 00</text>
+<text x="353.00" y="287.00" font-size="3.0" font-weight="400" text-anchor="start" fill="#111" stroke="none">Дата: 07.08.2026</text>
+<text x="23.00" y="289.00" font-size="2.8" font-weight="700" text-anchor="start" fill="#b91c1c" stroke="none">КООРДИНАЦИЯ. НЕ ДЛЯ МОНТАЖА. НУЖНЫ ОБМЕР, РАСЧЁТ И ПОДПИСИ ПРОФИЛЬНЫХ СПЕЦИАЛИСТОВ.</text>
+<text x="35.00" y="18.00" font-size="5.5" font-weight="700" text-anchor="start" fill="#111" stroke="none">БАНЯ 7 × 3 м · КООРДИНАЦИОННЫЙ ВАРИАНТ</text>
+<rect x="40.00" y="52.00" width="140.00" height="60.00" stroke="#111" fill="url(#hatch)" stroke-width="1.0"/>
+<line x1="88.00" y1="52.00" x2="88.00" y2="112.00" stroke="#111" stroke-width="0.8"/>
+<line x1="132.00" y1="52.00" x2="132.00" y2="112.00" stroke="#111" stroke-width="0.8"/>
+<text x="64.00" y="80.00" font-size="3.1" font-weight="700" text-anchor="middle" fill="#111" stroke="none">КОМНАТА ОТДЫХА</text>
+<text x="110.00" y="80.00" font-size="3.1" font-weight="700" text-anchor="middle" fill="#111" stroke="none">МОЕЧНАЯ</text>
+<text x="156.00" y="72.00" font-size="3.1" font-weight="700" text-anchor="middle" fill="#111" stroke="none">ПАРНАЯ</text>
+<text x="64.00" y="87.00" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2400 · H1</text>
+<text x="110.00" y="87.00" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2200 · H1</text>
+<text x="156.00" y="79.00" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2400 · H1</text>
+<line x1="40.00" y1="70.00" x2="40.00" y2="90.00" stroke="#2563eb" stroke-width="2.2"/>
+<text x="44.00" y="66.00" font-size="2.6" font-weight="700" text-anchor="start" fill="#1d4ed8" stroke="none">вход</text>
+<line x1="88.00" y1="112.00" x2="106.00" y2="112.00" stroke="#2563eb" stroke-width="2.0"/>
+<line x1="132.00" y1="112.00" x2="150.00" y2="112.00" stroke="#2563eb" stroke-width="2.0"/>
+<rect x="156.00" y="86.00" width="16.00" height="18.00" stroke="#dc2626" fill="#fee2e2" stroke-width="0.6"/>
+<text x="164.00" y="109.00" font-size="2.6" font-weight="700" text-anchor="middle" fill="#991b1b" stroke="none">печь</text>
+<line x1="40.00" y1="52.00" x2="40.00" y2="44.00" stroke="#111" stroke-width="0.25"/>
+<line x1="180.00" y1="52.00" x2="180.00" y2="44.00" stroke="#111" stroke-width="0.25"/>
+<line x1="40.00" y1="42.00" x2="180.00" y2="42.00" stroke="#111" stroke-width="0.3" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="110.00" y="40.80" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">7 000</text>
+<line x1="40.00" y1="52.00" x2="28.00" y2="52.00" stroke="#111" stroke-width="0.25"/>
+<line x1="40.00" y1="112.00" x2="28.00" y2="112.00" stroke="#111" stroke-width="0.25"/>
+<line x1="30.00" y1="52.00" x2="30.00" y2="112.00" stroke="#111" stroke-width="0.3" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="28.80" y="82.00" font-family="Arial, DejaVu Sans, sans-serif" font-size="2.8" text-anchor="middle" transform="rotate(-90 28.80 82.00)">3 000</text>
+<line x1="40.00" y1="112.00" x2="40.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="88.00" y1="112.00" x2="88.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="40.00" y1="122.00" x2="88.00" y2="122.00" stroke="#111" stroke-width="0.3" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="64.00" y="120.80" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2 400 · H1</text>
+<line x1="88.00" y1="112.00" x2="88.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="132.00" y1="112.00" x2="132.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="88.00" y1="122.00" x2="132.00" y2="122.00" stroke="#111" stroke-width="0.3" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="110.00" y="120.80" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2 200 · H1</text>
+<line x1="132.00" y1="112.00" x2="132.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="180.00" y1="112.00" x2="180.00" y2="124.00" stroke="#111" stroke-width="0.25"/>
+<line x1="132.00" y1="122.00" x2="180.00" y2="122.00" stroke="#111" stroke-width="0.3" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="156.00" y="120.80" font-size="2.8" font-weight="400" text-anchor="middle" fill="#111" stroke="none">2 400 · H1</text>
+<rect x="230.00" y="40.00" width="105.00" height="48.00" stroke="#6b7280" fill="#f8fafc" stroke-width="0.35"/>
+<text x="233.00" y="46.00" font-size="3.2" font-weight="700" text-anchor="start" fill="#111" stroke="none">ПРИМЕЧАНИЯ</text>
+<text x="233.00" y="53.00" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">Статус: ТРЕБУЕТ ПРОЕКТА БАНИ</text>
+<text x="233.00" y="58.30" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">Основание: Требование заказчика</text>
+<text x="233.00" y="63.60" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">Единицы линейных размеров: мм.</text>
+<text x="233.00" y="68.90" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">Размеры с PDF не заменяют исполнительный обмер.</text>
+<text x="233.00" y="74.20" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">Красный контур — новое/непроверенное решение H1.</text>
+<text x="233.00" y="79.50" font-size="2.8" font-weight="400" text-anchor="start" fill="#111" stroke="none">До закрытия ворот G1–G7 лист не выдавать в монтаж.</text>
+<text x="230.00" y="102.00" font-size="3.4" font-weight="700" text-anchor="start" fill="#111" stroke="none">СОСТАВ ПРОЕКТА БАНИ ДО СТРОИТЕЛЬСТВА</text>
+<text x="230.00" y="110.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">1. АР: точная планировка, двери, окна, высоты и отделка.</text>
+<text x="230.00" y="116.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">2. КР: фундамент по геологии, каркас/кладка, кровля.</text>
+<text x="230.00" y="122.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">3. ОВ: приток, вытяжка, воздухообмен, просушка.</text>
+<text x="230.00" y="128.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">4. ВК: ввод, слив, трапы, уклоны, защита от замерзания.</text>
+<text x="230.00" y="134.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">5. ЭОМ: влажные зоны, защиты, уравнивание потенциалов.</text>
+<text x="230.00" y="140.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">6. Печь/дымоход: паспорт, разделки, экраны, пожарные отступы.</text>
+<text x="230.00" y="146.00" font-size="2.9" font-weight="400" text-anchor="start" fill="#111" stroke="none">7. ГП: отметки, дорожка, водоотвод, отступы от сетей.</text>
+<text x="40.00" y="168.00" font-size="3.4" font-weight="700" text-anchor="start" fill="#111" stroke="none">ПРИВЯЗКА НА УЧАСТКЕ</text>
+<text x="40.00" y="175.00" font-size="3.0" font-weight="400" text-anchor="start" fill="#111" stroke="none">7000 вдоль задней границы; 3000 в глубину участка;</text>
+<text x="40.00" y="181.00" font-size="3.0" font-weight="400" text-anchor="start" fill="#111" stroke="none">отступы 1000 слева и 1000 сзади — требование H1.</text>
+<text x="40.00" y="187.00" font-size="3.0" font-weight="700" text-anchor="start" fill="#b91c1c" stroke="none">Проверить местные нормы, сети, пожарные разрывы и геодезию.</text>
+</g></svg>

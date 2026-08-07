@@ -1,0 +1,23 @@
+{
+  "project": "Дима Облагораживание",
+  "revision": "v23.2",
+  "checked_at": "2026-08-07T06:00:00+03:00",
+  "reviewer": "residential-super-qa-read-only",
+  "release_status": "BLOCKED",
+  "manifest": [
+    {"id": "SOURCE-PDF", "path": "C:/!_2_Projeckt/Дима Облагораживание/Снимок экрана 2025—09—13 в 18.38.43.pdf", "sha256": "2794f112fe36ea85b52b9c7a308e4bc0d823477563bd06d945743ec63a9b2a1e", "bytes": 33602750},
+    {"id": "CAD-V23-1", "path": "C:/!_2_Projeckt/Дима Облагораживание/Выдача_v23/01_AutoCAD_v23_1/Dima-project-v23-1-AutoCAD.dwg", "sha256": "1471e5f92748f3c38ed4dfe8e4111264279e8b5f68bb437527e973a50b2f2aaa", "bytes": 287744},
+    {"id": "AR-09", "path": "C:/!_2_Projeckt/Дима Облагораживание/Выдача_v23/01_AutoCAD_v23_1/AR-09-AutoCAD-v23-1.pdf", "sha256": "d501ed918ba63b8497fe3f5587cd907b5cb4ca5f8c7d6cf8a4849e619a7759d3", "bytes": 113884},
+    {"id": "VIS-DAY", "path": "C:/!_2_Projeckt/Дима Облагораживание/Выдача_v23/03_Фотореалистичные_концепты/mangal-source-bound-day.png", "sha256": "e5884540b5bf06be0b9e94eb684c0c9546e8d7f748ba7d5e9d2a02d10b86833f", "bytes": 2432841},
+    {"id": "VIS-NIGHT", "path": "C:/!_2_Projeckt/Дима Облагораживание/Выдача_v23/03_Фотореалистичные_концепты/mangal-source-bound-night.png", "sha256": "b07a006769d52d458a9779605c2bc590ea84febac2eab9cb2af3f22e7e0b02aa", "bytes": 2208482}
+  ],
+  "gates": {
+    "G1": {"status": "BLOCKED", "evidence": ["SOURCE-PDF"], "checks": [{"id": "G1-01", "name": "Топосъёмка и обмер", "owner": "geodesist+architect-surveyor", "status": "BLOCKED", "evidence": ["SOURCE-PDF"], "blocking_note": "Нет топосъёмки и лазерного обмера"}]},
+    "G2": {"status": "BLOCKED", "evidence": ["SOURCE-PDF", "CAD-V23-1"], "checks": [{"id": "G2-01", "name": "Архитектурная сверка", "owner": "residential-architect", "status": "BLOCKED", "evidence": ["SOURCE-PDF", "CAD-V23-1"], "blocking_note": "Есть конфликт глубины дома и нет принятого обмера"}]},
+    "G3": {"status": "BLOCKED", "evidence": [], "checks": [{"id": "G3-01", "name": "Инженерные расчёты", "owner": "residential-mep-utilities-coordinator", "status": "BLOCKED", "evidence": ["SOURCE-PDF"], "blocking_note": "Нет ТУ, паспортов и принятой архитектуры"}]},
+    "G4": {"status": "BLOCKED", "evidence": [], "checks": [{"id": "G4-01", "name": "Участок и водоотвод", "owner": "site-grading-drainage-planner", "status": "BLOCKED", "evidence": ["SOURCE-PDF"], "blocking_note": "Нет отметок и окончательных наружных сетей"}]},
+    "G5": {"status": "BLOCKED", "evidence": ["CAD-V23-1", "AR-09"], "checks": [{"id": "G5-01", "name": "Точная сводная модель", "owner": "residential-bim-cad-coordinator", "status": "BLOCKED", "evidence": ["CAD-V23-1", "AR-09"], "blocking_note": "DWG существует, но исходные гейты не закрыты"}]},
+    "G6": {"status": "BLOCKED", "evidence": ["VIS-DAY", "VIS-NIGHT"], "checks": [{"id": "G6-01", "name": "Визуальная приёмка", "owner": "cinema4d-render-qa", "status": "BLOCKED", "evidence": ["VIS-DAY", "VIS-NIGHT"], "blocking_note": "Есть только два AI-концепта без принятой C4D/PBR-модели и шести согласованных ракурсов"}]},
+    "G7": {"status": "BLOCKED", "evidence": [], "checks": [{"id": "G7-01", "name": "Финальный выпуск", "owner": "residential-super-qa", "status": "BLOCKED", "evidence": ["SOURCE-PDF"], "blocking_note": "Гейты G1-G6 не имеют PASS"}]}
+  }
+}

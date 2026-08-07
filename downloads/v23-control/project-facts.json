@@ -1,0 +1,129 @@
+{
+  "project": {
+    "name": "Дима Облагораживание",
+    "location": "Ставрополь, юго-запад",
+    "stage": "preliminary",
+    "units": "mm",
+    "coordinate_system": "Временная рамка: X от переднего левого угла участка вправо, Y в глубину; заменить после топосъёмки",
+    "revision": "v23.2"
+  },
+  "facts": [
+    {
+      "id": "SITE-IDEAL-SIZE",
+      "discipline": "survey",
+      "owner_skill": "site-survey-boundary-coordinator",
+      "property": "site.ideal_size",
+      "value": [20000, 30000],
+      "unit": "mm",
+      "status": "confirmed_requirement",
+      "source": {"message": "Принятая заказчиком идеализированная рамка участка", "checked_at": "2026-08-07"},
+      "note": "Не является кадастровой или исполнительной границей"
+    },
+    {
+      "id": "ARCH-HOUSE-WIDTH",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "house.width",
+      "value": 14500,
+      "unit": "mm",
+      "status": "source_checked",
+      "source": {"path": "C:/!_2_Projeckt/Дима Облагораживание/Снимок экрана 2025—09—13 в 18.38.43.pdf", "checked_at": "2026-08-07"},
+      "note": "Сверить лазерным обмером"
+    },
+    {
+      "id": "ARCH-HOUSE-DEPTH-CONFLICT",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "house.depth",
+      "value": null,
+      "unit": "mm",
+      "status": "verify_on_site",
+      "source": {"message": "В материалах встречаются 11460 и 11510 мм", "checked_at": "2026-08-07"},
+      "note": "Запрещает точную посадку мебели, сетей и участка до обмера"
+    },
+    {
+      "id": "ARCH-NO-FACADE-CHANGE",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "house.facade_change",
+      "value": false,
+      "unit": "boolean",
+      "status": "confirmed_requirement",
+      "source": {"message": "Не реконструировать балкон, окна и фасадные проёмы", "checked_at": "2026-08-07"},
+      "note": "Обязательное правило всех последующих листов и визуализаций"
+    },
+    {
+      "id": "SITE-BATH-SIZE",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "bath.size",
+      "value": [3000, 7000],
+      "unit": "mm",
+      "status": "confirmed_requirement",
+      "source": {"message": "Баня 3 × 7 м, сзади слева", "checked_at": "2026-08-07"},
+      "note": "Размещение и нормативные отступы проверить после топосъёмки"
+    },
+    {
+      "id": "SITE-SHED-SIZE",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "shed.size",
+      "value": [1000, 3000],
+      "unit": "mm",
+      "status": "confirmed_requirement",
+      "source": {"message": "Хозблок 1 × 3 м у левого забора", "checked_at": "2026-08-07"},
+      "note": "Привязку к границе подтвердить геодезистом"
+    },
+    {
+      "id": "MANGAL-LAYOUT",
+      "discipline": "architecture",
+      "owner_skill": "residential-architect",
+      "property": "mangal.orientation",
+      "value": "counter_sink_left__tall_firebox_lower_niche_right__house_opening_clear",
+      "unit": "enum",
+      "status": "source_checked",
+      "source": {"path": "C:/Users/GIGA/AppData/Local/Temp/codex-clipboard-fa6eaf52-1136-449a-8ad5-71fd290f7b9f.png", "checked_at": "2026-08-07"},
+      "note": "Размеры кладки и дымоход рассчитывает печник после обмера"
+    },
+    {
+      "id": "CAD-RELEASE",
+      "discipline": "bim_cad",
+      "owner_skill": "residential-bim-cad-coordinator",
+      "property": "cad.release",
+      "value": "v23.1",
+      "unit": "revision",
+      "status": "source_checked",
+      "source": {"path": "C:/!_2_Projeckt/Дима Облагораживание/Выдача_v23/01_AutoCAD_v23_1/Dima-project-v23-1-AutoCAD.dwg", "checked_at": "2026-08-07"},
+      "note": "Координационный комплект, не для строительства"
+    },
+    {
+      "id": "VIS-MANGAL-DAY-NIGHT",
+      "discipline": "visualization",
+      "owner_skill": "cinema4d-archviz-landscape",
+      "property": "visual.mangal_concepts",
+      "value": 2,
+      "unit": "images",
+      "status": "proposed",
+      "source": {"message": "Два AI-концепта на основе исходной фотографии", "checked_at": "2026-08-07"},
+      "note": "Не являются C4D/Redshift-приёмкой или источником размеров"
+    }
+  ],
+  "decisions": [
+    {"id": "D-001", "decision": "Балкон, окна и фасады не менять", "status": "accepted", "checked_at": "2026-08-07"},
+    {"id": "D-002", "decision": "Каждый результат проверяет следующий специалист до начала своей работы", "status": "accepted", "checked_at": "2026-08-07"}
+  ],
+  "open_questions": [
+    {"id": "Q-001", "question": "Какова фактическая глубина и диагонали коробки?", "owner": "architect-surveyor", "blocks": ["G2", "G3", "G5", "G6"]},
+    {"id": "Q-002", "question": "Где проходят фактические границы, отметки и существующие сети?", "owner": "geodesist", "blocks": ["G1", "G3", "G4", "G5"]},
+    {"id": "Q-003", "question": "Какие модели оборудования, мебели и света утверждены?", "owner": "client-procurement", "blocks": ["G3", "G4", "G5", "G6", "G7"]}
+  ],
+  "gates": {
+    "G1": {"status": "BLOCKED", "owner": "site-survey-boundary-coordinator", "checked_at": "2026-08-07", "evidence": [], "scope_stage": "exact-site-base"},
+    "G2": {"status": "BLOCKED", "owner": "residential-architect", "checked_at": "2026-08-07", "evidence": ["CAD-RELEASE"], "scope_stage": "architecture"},
+    "G3": {"status": "BLOCKED", "owner": "residential-mep-utilities-coordinator", "checked_at": "2026-08-07", "evidence": [], "scope_stage": "engineering"},
+    "G4": {"status": "BLOCKED", "owner": "hardscape-paving-designer", "checked_at": "2026-08-07", "evidence": [], "scope_stage": "site-design"},
+    "G5": {"status": "BLOCKED", "owner": "residential-bim-cad-coordinator", "checked_at": "2026-08-07", "evidence": ["CAD-RELEASE"], "scope_stage": "coordinated-model"},
+    "G6": {"status": "BLOCKED", "owner": "cinema4d-archviz-landscape", "checked_at": "2026-08-07", "evidence": ["VIS-MANGAL-DAY-NIGHT"], "scope_stage": "visual-presentation"},
+    "G7": {"status": "BLOCKED", "owner": "residential-super-qa", "checked_at": "2026-08-07", "evidence": [], "scope_stage": "release"}
+  }
+}
